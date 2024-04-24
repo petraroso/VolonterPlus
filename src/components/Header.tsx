@@ -11,10 +11,12 @@ export default function Header() {
         <img src={logo} className="logo" alt={"logo"} />
       </NavLink>
 
-      <div className="icons">
+      <input type="checkbox" id="check" />
+
+      <label htmlFor="check" className="icons">
         <i className="bx bx-menu" id="menu-icon"></i>
         <i className="bx bx-x" id="close-icon"></i>
-      </div>
+      </label>
 
       <nav className="navbar">
         <NavLink

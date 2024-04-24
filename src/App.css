@@ -37,12 +37,17 @@
   color: red;
 }
 .admin-toggle {
-  display: inline-block;
+  display: inline-flex;
   font-size: 1.15rem;
   color: var(--clr-gray);
   font-weight: 500;
   margin-left: 2.5rem;
 }
+
+#check {
+  display: none;
+}
+
 .icons {
   position: absolute;
   right: 5%;
@@ -62,6 +67,8 @@
   cursor: pointer;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.748);
   position: relative;
+
+  margin-left: 0.5rem;
 }
 
 .toggle-btn .thumb {
@@ -86,36 +93,54 @@
   left: 20px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1045px) {
   .header {
     padding: 1.3rem 5%;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 930px) {
   .icons {
     display: inline-flex;
   }
-  .icons #close-icon{
+  #check:checked ~ .icons #menu-icon {
     display: none;
+  }
+
+  .icons #close-icon {
+    display: none;
+  }
+  #check:checked ~ .icons #close-icon {
+    display: block;
   }
   .navbar {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    height: 17.7rem;
+    height: 0;
     background: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(50px);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: 0.3s ease;
+  }
+  #check:checked ~ .navbar {
+    height: 17.7rem;
   }
   .navbar a {
     display: block;
     font-size: 1.1rem;
     margin: 1.5rem 0;
     text-align: center;
+    transform: translateY(-50px);
+    transition: 0.3s ease;
   }
-  .admin-toggle{
+  #check:checked ~ .navbar a {
+    transform: translateY(0);
+  }
+  .admin-toggle {
+    justify-content: center;
     width: 100%;
     text-align: center;
     margin: 0;
