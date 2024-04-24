@@ -6,6 +6,7 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
+import { AdminContext } from "./AdminContext";
 
 import ActivitiesPage from "./pages/ActivitiesPage";
 import AssociationsPage from "./pages/AssociationsPage";
@@ -16,15 +17,11 @@ import VolunteersPage from "./pages/VolunteersPage";
 import Layout from "./components/Layout";
 
 import "./index.css";
-import "./App.css"
+import "./App.css";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route
-      path="/"
-      element={<Layout />}
-      errorElement={ <NotFoundPage/>}
-    >
+    <Route path="/" element={<Layout />} errorElement={<NotFoundPage />}>
       <Route path="" element={<HomePage />} />
       <Route path="activities" element={<ActivitiesPage />} />
       <Route path="associations" element={<AssociationsPage />} />
@@ -33,8 +30,12 @@ const router = createBrowserRouter(
   )
 );
 
+const initialAdminState = { admin: false, setAdmin: () => {} };
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AdminContext.Provider value={initialAdminState}>
+      <RouterProvider router={router} />
+    </AdminContext.Provider>
   </React.StrictMode>
 );
