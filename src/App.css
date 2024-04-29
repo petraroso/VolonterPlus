@@ -93,6 +93,12 @@
   left: 20px;
 }
 
+/*Activities page*/
+.activity-image{
+  height: 100px;
+  width: 200px;
+}
+
 @media (max-width: 1045px) {
   .header {
     padding: 1.3rem 5%;
