@@ -1,0 +1,77 @@
+{
+  "activities": [
+    {
+      "id": 1,
+      "name": "Čišćenje rijeke Jadro",
+      "description": "Čišćenje rijeke Jadro Čišćenje rijeke Jadro Čišćenje rijeke Jadro",
+      "date": "2024-13-05",
+      "location": "Izvor Jadra",
+      "image": "../shirt.jpg",
+      "association": "Most",
+      "volunteers": "ivo ivic"
+    },
+    {
+      "id": 2,
+      "name": "Čišćenje rijeke Jadro",
+      "description": "Čišćenje rijeke Jadro Čišćenje rijeke Jadro Čišćenje rijeke Jadro",
+      "date": "2024-13-05",
+      "location": "Izvor Jadra",
+      "image": "../shirt.jpg",
+      "association": "Most",
+      "volunteers": "ivo ivic"
+    },
+    {
+      "id": 3,
+      "name": "Čišćenje rijeke Jadro",
+      "description": "Čišćenje rijeke Jadro Čišćenje rijeke Jadro Čišćenje rijeke Jadro",
+      "date": "2024-13-05",
+      "location": "Izvor Jadra",
+      "image": "../shirt.jpg",
+      "association": "Most",
+      "volunteers": "ivo ivic"
+    }
+  ],
+  "volunteers": [
+    {
+      "id": "1",
+      "ime": "Ivana",
+      "prezime": "Ivić"
+    },
+    {
+      "id": "2",
+      "ime": "Ana",
+      "prezime": "Horvat"
+    },
+    {
+      "id": "3",
+      "ime": "John",
+      "prezime": "Smith"
+    },
+    {
+      "id": "4",
+      "ime": "London"
+    },
+    {
+      "id": "5",
+      "ime": "Madrid"
+    },
+    {
+      "id": "6",
+      "ime": "Berlin"
+    },
+    {
+      "id": "7",
+      "ime": "Rim"
+    }
+  ],
+  "klase": [
+    {
+      "ime": "Ekonomska",
+      "oznaka": "E"
+    },
+    {
+      "ime": "Poslovna",
+      "oznaka": "B"
+    }
+  ]
+}
