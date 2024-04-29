@@ -26,7 +26,6 @@ export default function ActivitiesPage() {
       .catch((err) => console.log(err.message));
   }, []);
 
-  console.log(activities);
   return (
     <>
       <h2>Popis aktivnosti</h2>
