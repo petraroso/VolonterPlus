@@ -14,7 +14,11 @@ interface ActivityCardProps {
 export default function ActivityCard({ activity }: ActivityCardProps) {
   return (
     <div className="activity-card">
-        <img src={activity.image} alt="Activity site" className="activity-image"/>
+      <img
+        src={activity.image}
+        alt="Activity site"
+        className="activity-image"
+      />
       <h3>{activity.name}</h3>
       <p>{activity.date}</p>
       <p>
