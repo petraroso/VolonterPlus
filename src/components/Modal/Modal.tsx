@@ -12,10 +12,9 @@ export default function Modal({
       <div className="modal">
         <div onClick={toggleModal} className="overlay"></div>
         <div className="modal-content">
-          <h3>Hello modal</h3>
           {children}
           <button onClick={toggleModal} className="close-modal">
-            Zatvori
+            <i className="bx bx-x"></i>
           </button>
         </div>
       </div>

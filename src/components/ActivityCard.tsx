@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Modal from "./Modal/Modal";
+import ActivityDetails from "./ActivityDetails";
 
 interface Activity {
   id: number;
@@ -28,7 +29,11 @@ export default function ActivityCard({ activity }: ActivityCardProps) {
   }
   return (
     <>
-      {modal && <Modal toggleModal={toggleModal}></Modal>}
+      {modal && (
+        <Modal toggleModal={toggleModal}>
+          <ActivityDetails activity={activity} />
+        </Modal>
+      )}
       <div onClick={toggleModal} className="activity-card">
         <img
           src={activity.image}
