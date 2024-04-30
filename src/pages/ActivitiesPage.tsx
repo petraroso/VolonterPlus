@@ -11,9 +11,12 @@ interface Activity {
   location: string;
   image: string;
   association: string;
-  volunteers: string;
+  volunteers: Volunteer[];
 }
-
+interface Volunteer {
+  name: string;
+  surname: string;
+}
 export default function ActivitiesPage() {
   const [activities, setActivities] = useState<Activity[]>([]);
   const [sortValue, setSortValue] = useState("latest");
@@ -25,7 +28,7 @@ export default function ActivitiesPage() {
         setActivities(sortedActivitiesAscending(res.data));
       })
       .catch((err) => console.log(err.message));
-  }, []);
+  }, [activities]);
 
   const handleSort = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = event.target;

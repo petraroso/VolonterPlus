@@ -6,13 +6,18 @@ interface Activity {
   location: string;
   image: string;
   association: string;
-  volunteers: string;
+  volunteers: Volunteer[];
+}
+interface Volunteer {
+  name: string;
+  surname: string;
 }
 interface ActivityCardProps {
   activity: Activity;
 }
 
 export default function ActivityDetails({ activity }: ActivityCardProps) {
+  
   return (
     <>
       <h3>{activity.name}</h3>
@@ -23,7 +28,12 @@ export default function ActivityDetails({ activity }: ActivityCardProps) {
         <i className="bx bx-location-plus"></i>
         {activity.location}
       </p>
-      <p>{activity.volunteers}</p>
+      <h4>Volonteri:</h4>
+      {activity.volunteers.map((volunteer, index) => (
+        <p key={index}>
+          {volunteer.name} {volunteer.surname}
+        </p>
+      ))}
     </>
   );
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Modal from "./Modal/Modal";
 import ActivityDetails from "./ActivityDetails";
+import ActivitySignUp from "./ActivitySignUp";
 
 interface Activity {
   id: number;
@@ -10,7 +11,11 @@ interface Activity {
   location: string;
   image: string;
   association: string;
-  volunteers: string;
+  volunteers: Volunteer[];
+}
+interface Volunteer {
+  name: string;
+  surname: string;
 }
 interface ActivityCardProps {
   activity: Activity;
@@ -32,6 +37,10 @@ export default function ActivityCard({ activity }: ActivityCardProps) {
       {modal && (
         <Modal toggleModal={toggleModal}>
           <ActivityDetails activity={activity} />
+          <ActivitySignUp
+            activityId={activity.id}
+            existingVolunteers={activity.volunteers}
+          />
         </Modal>
       )}
       <div onClick={toggleModal} className="activity-card">

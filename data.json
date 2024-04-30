@@ -8,7 +8,40 @@
       "location": "Izvor Jadra",
       "image": "../jadro.jpg",
       "association": "Most",
-      "volunteers": "ivo ivic"
+      "volunteers": [
+        {
+          "name": "Ivo",
+          "surname": "Ivic"
+        },
+        {
+          "name": "Ana",
+          "surname": "Anic"
+        },
+        {
+          "name": "Marko",
+          "surname": "Markovic"
+        },
+        {
+          "name": "Pero",
+          "surname": "Perić"
+        },
+        {
+          "name": "Ivan",
+          "surname": "Ivandić"
+        },
+        {
+          "name": "Pero",
+          "surname": "Pero"
+        },
+        {
+          "name": "Pero",
+          "surname": "Pero"
+        },
+        {
+          "name": "Bero",
+          "surname": "Beo"
+        }
+      ]
     },
     {
       "id": 2,
@@ -18,7 +51,20 @@
       "location": "Split",
       "image": "../jadro.jpg",
       "association": "Most",
-      "volunteers": "ivo ivic"
+      "volunteers": [
+        {
+          "name": "Pero",
+          "surname": "Peric"
+        },
+        {
+          "name": "Marina",
+          "surname": "Marinic"
+        },
+        {
+          "name": "Ante",
+          "surname": "Antic"
+        }
+      ]
     },
     {
       "id": 3,
@@ -28,7 +74,28 @@
       "location": "Izvor Jadra",
       "image": "../jadro.jpg",
       "association": "Most",
-      "volunteers": "ivo ivic"
+      "volunteers": [
+        {
+          "name": "Janko",
+          "surname": "Jankovic"
+        },
+        {
+          "name": "Maja",
+          "surname": "Majic"
+        },
+        {
+          "name": "Petar",
+          "surname": "Petrovic"
+        },
+        {
+          "name": "Pero",
+          "surname": "PEro"
+        },
+        {
+          "name": "Bero",
+          "surname": "Beroo"
+        }
+      ]
     }
   ],
   "volunteers": [
