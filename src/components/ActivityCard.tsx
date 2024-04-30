@@ -27,15 +27,10 @@ export default function ActivityCard({ activity }: ActivityCardProps) {
     setModal(!modal);
   };
 
-  if (modal) {
-    document.body.classList.add("active-modal");
-  } else {
-    document.body.classList.remove("active-modal");
-  }
   return (
     <>
       {modal && (
-        <Modal toggleModal={toggleModal}>
+        <Modal modal={modal} toggleModal={toggleModal}>
           <ActivityDetails activity={activity} />
           <ActivitySignUp
             activityId={activity.id}

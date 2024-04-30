@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 import ActivityCard from "../components/ActivityCard";
+import PlusButton from "../components/PlusButton/PlusButton";
+import Modal from "../components/Modal/Modal";
 
 interface Activity {
   id: number;
@@ -20,6 +22,7 @@ interface Volunteer {
 export default function ActivitiesPage() {
   const [activities, setActivities] = useState<Activity[]>([]);
   const [sortValue, setSortValue] = useState("latest");
+  const [openNewActivityForm, setOpenNewActivityForm] = useState(false);
 
   useEffect(() => {
     axios
@@ -58,6 +61,10 @@ export default function ActivitiesPage() {
     return new Date(`${year}-${month}-${day}`);
   };
 
+  const toggleOpenNewActivityForm = () => {
+    setOpenNewActivityForm(!openNewActivityForm);
+  };
+
   return (
     <>
       <h2>Popis aktivnosti</h2>
@@ -68,6 +75,15 @@ export default function ActivitiesPage() {
       {activities.map((activity, index) => (
         <ActivityCard key={index} activity={activity} />
       ))}
+      <PlusButton openModal={toggleOpenNewActivityForm} />
+      {openNewActivityForm && (
+        <Modal
+          modal={openNewActivityForm}
+          toggleModal={toggleOpenNewActivityForm}
+        >
+          <p>forma za unos</p>
+        </Modal>
+      )}
     </>
   );
 }

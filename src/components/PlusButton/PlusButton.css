@@ -1,0 +1,26 @@
+.add-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+.open-modal {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.open-modal:hover {
+  background-color: darkgreen;
+}
+
+.open-modal:focus {
+  outline: none;
+}
