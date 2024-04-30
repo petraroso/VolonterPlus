@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import ActivityCard from "../components/ActivityCard";
 import PlusButton from "../components/PlusButton/PlusButton";
 import Modal from "../components/Modal/Modal";
+import ActivityForm from "../components/Forms/ActivityForm";
 
 interface Activity {
   id: number;
@@ -81,7 +82,7 @@ export default function ActivitiesPage() {
           modal={openNewActivityForm}
           toggleModal={toggleOpenNewActivityForm}
         >
-          <p>forma za unos</p>
+          <ActivityForm />
         </Modal>
       )}
     </>

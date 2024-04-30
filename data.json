@@ -96,6 +96,16 @@
           "surname": "Beroo"
         }
       ]
+    },
+    {
+      "name": "Čišćenje rijeke Cetine",
+      "date": "2024-06-27",
+      "image": "../jadro.jpg",
+      "location": "Omiš",
+      "byAssociation": "true",
+      "association": "Cetinjani",
+      "description": "fsehfshfklsnfkdsnflijseoif fnjsdkcf sfisdf sf si dis efisfi os",
+      "id": 4
     }
   ],
   "volunteers": [

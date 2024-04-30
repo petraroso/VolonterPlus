@@ -17,7 +17,6 @@ interface ActivityCardProps {
 }
 
 export default function ActivityDetails({ activity }: ActivityCardProps) {
-  
   return (
     <>
       <h3>{activity.name}</h3>
@@ -28,12 +27,16 @@ export default function ActivityDetails({ activity }: ActivityCardProps) {
         <i className="bx bx-location-plus"></i>
         {activity.location}
       </p>
-      <h4>Volonteri:</h4>
-      {activity.volunteers.map((volunteer, index) => (
-        <p key={index}>
-          {volunteer.name} {volunteer.surname}
-        </p>
-      ))}
+      {activity.volunteers && (
+        <>
+          <h4>Volonteri:</h4>
+          {activity.volunteers.map((volunteer, index) => (
+            <p key={index}>
+              {volunteer.name} {volunteer.surname}
+            </p>
+          ))}
+        </>
+      )}
     </>
   );
 }
