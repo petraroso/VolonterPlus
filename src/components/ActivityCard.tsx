@@ -1,3 +1,6 @@
+import { useState } from "react";
+import Modal from "./Modal/Modal";
+
 interface Activity {
   id: number;
   name: string;
@@ -12,19 +15,33 @@ interface ActivityCardProps {
   activity: Activity;
 }
 export default function ActivityCard({ activity }: ActivityCardProps) {
+  const [modal, setModal] = useState(false);
+
+  const toggleModal = () => {
+    setModal(!modal);
+  };
+
+  if (modal) {
+    document.body.classList.add("active-modal");
+  } else {
+    document.body.classList.remove("active-modal");
+  }
   return (
-    <div className="activity-card">
-      <img
-        src={activity.image}
-        alt="Activity site"
-        className="activity-image"
-      />
-      <h3>{activity.name}</h3>
-      <p>{activity.date}</p>
-      <p>
-        <i className="bx bx-location-plus"></i>
-        {activity.location}
-      </p>
-    </div>
+    <>
+      {modal && <Modal toggleModal={toggleModal}></Modal>}
+      <div onClick={toggleModal} className="activity-card">
+        <img
+          src={activity.image}
+          alt="Activity site"
+          className="activity-image"
+        />
+        <h3>{activity.name}</h3>
+        <p>{activity.date}</p>
+        <p>
+          <i className="bx bx-location-plus"></i>
+          {activity.location}
+        </p>
+      </div>
+    </>
   );
 }
