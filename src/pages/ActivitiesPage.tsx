@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 import ActivityCard from "../components/ActivityCard";
+import Modal from "../components/Modal/Modal";
 
 interface Activity {
   id: number;
@@ -58,6 +59,7 @@ export default function ActivitiesPage() {
   return (
     <>
       <h2>Popis aktivnosti</h2>
+      <Modal></Modal>
       <select id="sort" name="sort" value={sortValue} onChange={handleSort}>
         <option value={"latest"}>Najnoviji</option>
         <option value={"oldest"}>Najstariji</option>
