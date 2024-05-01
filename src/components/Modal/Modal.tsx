@@ -1,4 +1,5 @@
 import "./Modal.css";
+import { useEffect } from "react";
 
 export default function Modal({
   modal,
@@ -9,11 +10,15 @@ export default function Modal({
   toggleModal: () => void;
   children?: React.ReactNode;
 }) {
-  if (modal) {
-    document.body.classList.add("active-modal");
-  } else {
-    document.body.classList.remove("active-modal");
-  }
+  useEffect(() => {
+    if (modal) {
+      document.body.classList.add("active-modal");
+    }
+    return () => {
+      document.body.classList.remove("active-modal");
+    };
+  }, [modal]);
+
   return (
     <>
       <div className="modal">
