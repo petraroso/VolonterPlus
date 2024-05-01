@@ -1,103 +1,6 @@
 {
   "activities": [
     {
-      "id": 1,
-      "name": "Čišćenje rijeke Jadro",
-      "description": "Čišćenje rijeke Jadro Čišćenje rijeke Jadro Čišćenje rijeke Jadro",
-      "date": "2024-16-05",
-      "location": "Izvor Jadra",
-      "image": "../jadro.jpg",
-      "association": "Most",
-      "volunteers": [
-        {
-          "name": "Ivo",
-          "surname": "Ivic"
-        },
-        {
-          "name": "Ana",
-          "surname": "Anic"
-        },
-        {
-          "name": "Marko",
-          "surname": "Markovic"
-        },
-        {
-          "name": "Pero",
-          "surname": "Perić"
-        },
-        {
-          "name": "Ivan",
-          "surname": "Ivandić"
-        },
-        {
-          "name": "Pero",
-          "surname": "Pero"
-        },
-        {
-          "name": "Pero",
-          "surname": "Pero"
-        },
-        {
-          "name": "Bero",
-          "surname": "Beo"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Čišćenje rijeke Jadro",
-      "description": "Čišćenje rijeke Jadro Čišćenje rijeke Jadro Čišćenje rijeke Jadro",
-      "date": "2024-14-05",
-      "location": "Split",
-      "image": "../jadro.jpg",
-      "association": "Most",
-      "volunteers": [
-        {
-          "name": "Pero",
-          "surname": "Peric"
-        },
-        {
-          "name": "Marina",
-          "surname": "Marinic"
-        },
-        {
-          "name": "Ante",
-          "surname": "Antic"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Čišćenje rijeke Jadro",
-      "description": "Čišćenje rijeke Jadro Čišćenje rijeke Jadro Čišćenje rijeke Jadro",
-      "date": "2024-15-05",
-      "location": "Izvor Jadra",
-      "image": "../jadro.jpg",
-      "association": "Most",
-      "volunteers": [
-        {
-          "name": "Janko",
-          "surname": "Jankovic"
-        },
-        {
-          "name": "Maja",
-          "surname": "Majic"
-        },
-        {
-          "name": "Petar",
-          "surname": "Petrovic"
-        },
-        {
-          "name": "Pero",
-          "surname": "PEro"
-        },
-        {
-          "name": "Bero",
-          "surname": "Beroo"
-        }
-      ]
-    },
-    {
       "name": "Čišćenje rijeke Cetine",
       "date": "2024-06-27",
       "image": "../jadro.jpg",
@@ -130,11 +33,6 @@
   ],
   "volunteers": [
     {
-      "id": "1",
-      "ime": "Ivana",
-      "prezime": "Ivić"
-    },
-    {
       "id": "2",
       "ime": "Ana",
       "prezime": "Horvat"
@@ -147,10 +45,6 @@
     {
       "id": "4",
       "ime": "London"
-    },
-    {
-      "id": "5",
-      "ime": "Madrid"
     },
     {
       "id": "6",

@@ -16,6 +16,7 @@ interface Activity {
   volunteers: Volunteer[];
 }
 interface Volunteer {
+  id: number;
   name: string;
   surname: string;
 }
@@ -36,7 +37,6 @@ export default function ActivityCard({
 
   const handleDeleteActivity = () => {
     if (window.confirm("Jeste li sigurni da želite izbrisati aktivnost?")) {
-      //setItemDeleteId(item.id);
       axios
         .delete(`http://localhost:3001/activities/${activity.id}`)
         .then((rez) => {
