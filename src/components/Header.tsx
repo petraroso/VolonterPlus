@@ -2,9 +2,17 @@ import { NavLink } from "react-router-dom";
 //NavLink is Link that knows if it's active or not
 import logo from "../assets/logo-no-bg.png";
 import { useState } from "react";
+import { useAdminContext } from "../AdminContext";
 
 export default function Header() {
+  const adminData = useAdminContext();
   const [toggled, setToggled] = useState(false);
+
+  const handleToggle = () => {
+    setToggled(!toggled);
+    adminData.setAdmin((prev) => !prev);
+  };
+
   return (
     <header className="header">
       <NavLink to="/" className="nav-logo">
@@ -55,7 +63,7 @@ export default function Header() {
           <span>Admin</span>
           <button
             className={`toggle-btn ${toggled ? "toggled" : ""}`}
-            onClick={() => setToggled(!toggled)}
+            onClick={handleToggle}
           >
             <div className="thumb"></div>
           </button>

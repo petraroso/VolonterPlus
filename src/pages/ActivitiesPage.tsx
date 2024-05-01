@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import ActivityCard from "../components/ActivityCard";
 import PlusButton from "../components/PlusButton/PlusButton";
 import Modal from "../components/Modal/Modal";
-import ActivityForm from "../components/Forms/ActivityForm";
+import NewActivityForm from "../components/Forms/NewActivityForm";
 
 interface Activity {
   id: number;
@@ -24,6 +24,7 @@ export default function ActivitiesPage() {
   const [activities, setActivities] = useState<Activity[]>([]);
   const [sortValue, setSortValue] = useState("latest");
   const [openNewActivityForm, setOpenNewActivityForm] = useState(false);
+  const [updateActivities, setUpdateActivities] = useState(false);
 
   useEffect(() => {
     axios
@@ -32,7 +33,7 @@ export default function ActivitiesPage() {
         setActivities(sortedActivitiesAscending(res.data));
       })
       .catch((err) => console.log(err.message));
-  }, [activities]);
+  }, [updateActivities]);
 
   const handleSort = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = event.target;
@@ -74,7 +75,11 @@ export default function ActivitiesPage() {
         <option value={"oldest"}>Najstariji</option>
       </select>
       {activities.map((activity, index) => (
-        <ActivityCard key={index} activity={activity} />
+        <ActivityCard
+          key={index}
+          activity={activity}
+          setUpdateActivities={setUpdateActivities}
+        />
       ))}
       <PlusButton openModal={toggleOpenNewActivityForm} />
       {openNewActivityForm && (
@@ -82,7 +87,7 @@ export default function ActivitiesPage() {
           modal={openNewActivityForm}
           toggleModal={toggleOpenNewActivityForm}
         >
-          <ActivityForm />
+          <NewActivityForm setUpdateActivities={setUpdateActivities} />
         </Modal>
       )}
     </>

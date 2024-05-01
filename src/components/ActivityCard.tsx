@@ -1,7 +1,9 @@
 import { useState } from "react";
 import Modal from "./Modal/Modal";
 import ActivityDetails from "./ActivityDetails";
-import ActivitySignUp from "./ActivitySignUp";
+import ActivitySignUp from "./Forms/ActivitySignUp";
+import { useAdminContext } from "../AdminContext";
+import axios from "axios";
 
 interface Activity {
   id: number;
@@ -19,12 +21,29 @@ interface Volunteer {
 }
 interface ActivityCardProps {
   activity: Activity;
+  setUpdateActivities: React.Dispatch<React.SetStateAction<boolean>>;
 }
-export default function ActivityCard({ activity }: ActivityCardProps) {
+export default function ActivityCard({
+  activity,
+  setUpdateActivities,
+}: ActivityCardProps) {
+  const adminData = useAdminContext();
   const [modal, setModal] = useState(false);
 
   const toggleModal = () => {
     setModal(!modal);
+  };
+
+  const handleDeleteActivity = () => {
+    if (window.confirm("Jeste li sigurni da želite izbrisati aktivnost?")) {
+      //setItemDeleteId(item.id);
+      axios
+        .delete(`http://localhost:3001/activities/${activity.id}`)
+        .then((rez) => {
+          console.log(rez);
+          setUpdateActivities((prev) => !prev);
+        });
+    }
   };
 
   return (
@@ -38,18 +57,24 @@ export default function ActivityCard({ activity }: ActivityCardProps) {
           />
         </Modal>
       )}
-      <div onClick={toggleModal} className="activity-card">
+      <div className="activity-card">
         <img
+          onClick={toggleModal}
           src={activity.image}
           alt="Activity site"
           className="activity-image"
         />
-        <h3>{activity.name}</h3>
-        <p>{activity.date}</p>
-        <p>
+        <h3 onClick={toggleModal}>{activity.name}</h3>
+        <p onClick={toggleModal}>{activity.date}</p>
+        <p onClick={toggleModal}>
           <i className="bx bx-location-plus"></i>
           {activity.location}
         </p>
+        {adminData.admin && (
+          <button onClick={handleDeleteActivity} className="admin-delete">
+            <i className="bx bx-trash"></i>
+          </button>
+        )}
       </div>
     </>
   );

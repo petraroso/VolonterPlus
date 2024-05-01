@@ -106,6 +106,26 @@
       "association": "Cetinjani",
       "description": "fsehfshfklsnfkdsnflijseoif fnjsdkcf sfisdf sf si dis efisfi os",
       "id": 4
+    },
+    {
+      "name": "aaaaaaaaaa",
+      "date": "2024-06-21",
+      "image": "../jadro.jpg",
+      "location": "SPLIT",
+      "byAssociation": "false",
+      "association": "",
+      "description": "aaaaa",
+      "id": 7
+    },
+    {
+      "name": "bbbbbb",
+      "date": "2024-05-25",
+      "image": "../jadro.jpg",
+      "location": "bbbbbbbbbbbb",
+      "byAssociation": "true",
+      "association": "Cetinjani",
+      "description": "bbbbbbbb",
+      "id": 8
     }
   ],
   "volunteers": [

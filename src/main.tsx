@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
@@ -30,12 +30,20 @@ const router = createBrowserRouter(
   )
 );
 
-const initialAdminState = { admin: false, setAdmin: () => {} };
+const App = () => {
+  const [admin, setAdmin] = useState(false);
+  const initialAdminState = {
+    admin: admin,
+    setAdmin: setAdmin,
+  };
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <AdminContext.Provider value={initialAdminState}>
-      <RouterProvider router={router} />
-    </AdminContext.Provider>
-  </React.StrictMode>
-);
+  return (
+    <React.StrictMode>
+      <AdminContext.Provider value={initialAdminState}>
+        <RouterProvider router={router} />
+      </AdminContext.Provider>
+    </React.StrictMode>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById("root")!).render(<App />);

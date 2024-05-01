@@ -1,8 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
 
-export default function ActivityForm() {
-  const [formData, setFormData] = useState({
+export default function NewActivityForm({
+  setUpdateActivities,
+}: {
+  setUpdateActivities: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
+  const initialFormData = {
     name: "",
     date: "",
     image: "",
@@ -10,7 +14,8 @@ export default function ActivityForm() {
     byAssociation: false,
     association: "",
     description: "",
-  });
+  };
+  const [formData, setFormData] = useState(initialFormData);
 
   const handleFormData = (
     event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
@@ -33,7 +38,11 @@ export default function ActivityForm() {
         setFormData({ ...formData, association: "Građani" });
       axios
         .post("http://localhost:3001/activities", formData)
-        .then((result) => console.log(result))
+        .then((result) => {
+          console.log(result);
+          setUpdateActivities((prev) => !prev);
+          setFormData(initialFormData);
+        })
         .catch((err) => console.log(err.message));
     }
   };
@@ -117,7 +126,8 @@ export default function ActivityForm() {
           type="text"
           id="description"
           name="description"
-          placeholder="Opis aktivnosti"
+          placeholder="Opis aktivnosti (max 300 znakova)"
+          maxLength={300}
           value={formData.description}
           onChange={handleFormData}
         />
