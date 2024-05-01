@@ -23,8 +23,8 @@ export default function ActivityDetails({ activity }: ActivityCardProps) {
   const adminData = useAdminContext();
 
   const handleDeleteVolunteer = (volunteerId: number) => {
-    console.log(volunteerId)
-    console.log(activity.id)
+    //console.log(volunteerId)
+    //console.log(activity.id)
     if (window.confirm("Jeste li sigurni da želite izbrisati volontera?")) {
       axios
         .delete(
@@ -55,15 +55,16 @@ export default function ActivityDetails({ activity }: ActivityCardProps) {
               <p>
                 {volunteer.name} {volunteer.surname}
               </p>
-              {adminData.admin && (<>
-                {console.log(volunteer.id)}
-                <button
-                  onClick={() => handleDeleteVolunteer(volunteer.id)}
-                  className="admin-delete"
-                >
-                  <i className="bx bx-trash"></i>
-                </button>
-              </>)}
+              {adminData.admin && (
+                <>
+                  <button
+                    onClick={() => handleDeleteVolunteer(volunteer.id)}
+                    className="admin-delete"
+                  >
+                    <i className="bx bx-trash"></i>
+                  </button>
+                </>
+              )}
             </div>
           ))}
         </>
