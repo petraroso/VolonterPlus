@@ -78,13 +78,22 @@ export default function VolunteersPage() {
         setActivityFilter={setActivityFilter}
       />
 
-      {volunteers.map((volunteer, index) => (
-        <VolunteerCard
-          key={index}
-          volunteer={volunteer}
-          setUpdateVolunteers={setUpdateVolunteers}
-        />
-      ))}
+      {volunteers.map((volunteer) =>
+        (cityFilter === "Svi" && activityFilter === "Sve") ||
+        (activityFilter === "Sve" && cityFilter === volunteer.city) ||
+        (cityFilter === "Svi" &&
+          volunteer.activities.includes(activityFilter)) ||
+        (cityFilter === volunteer.city &&
+          volunteer.activities.includes(activityFilter)) ? (
+          <VolunteerCard
+            key={volunteer.id}
+            volunteer={volunteer}
+            setUpdateVolunteers={setUpdateVolunteers}
+          />
+        ) : (
+          <></>
+        )
+      )}
       <PlusButton openModal={toggleOpenNewVolunteerForm} />
       {openNewVolunteerForm && (
         <Modal

@@ -38,6 +38,9 @@ const VolunteersFilter: React.FC<FilterTypes> = ({
           value={cityFilter}
           onChange={handleCityFilter}
         >
+          <option  value="Svi">
+              Svi
+            </option>
           {cities.map((city, index) => (
             <option key={index} value={city.name}>
               {city.name}
@@ -46,6 +49,17 @@ const VolunteersFilter: React.FC<FilterTypes> = ({
         </select>
       </label>
 
+      <label>
+      <input
+          type="radio"
+          //id="ecology"
+          name="activities"
+          checked={activityFilter === "Sve"}
+          value="Sve"
+          onChange={handleActivityFilter}
+        ></input>
+        Sve
+      </label>
       <label>
         <input
           type="radio"
