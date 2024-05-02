@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useAdminContext } from "../AdminContext";
 
 import VolunteerCard from "../components/VolunteerCard";
 import PlusButton from "../components/PlusButton/PlusButton";
@@ -21,6 +22,7 @@ interface City {
   name: string;
 }
 export default function VolunteersPage() {
+  const adminData = useAdminContext();
   const [volunteers, setVolunteers] = useState<Volunteer[]>([]);
   const [cities, setCities] = useState<City[]>([]);
   const [openNewVolunteerForm, setOpenNewVolunteerForm] = useState(false);
@@ -94,7 +96,8 @@ export default function VolunteersPage() {
           <></>
         )
       )}
-      <PlusButton openModal={toggleOpenNewVolunteerForm} />
+      {adminData.admin && <PlusButton openModal={toggleOpenNewVolunteerForm} />}
+
       {openNewVolunteerForm && (
         <Modal
           modal={openNewVolunteerForm}
