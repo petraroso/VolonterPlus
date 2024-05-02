@@ -1,4 +1,4 @@
-//import { useAdminContext } from "../AdminContext";
+import { useAdminContext } from "../AdminContext";
 interface Volunteer {
   id: number;
   name: string;
@@ -11,11 +11,15 @@ interface Volunteer {
 
 interface VolunteerCardProps {
   volunteer: Volunteer;
-  //setUpdateVolunteers: React.Dispatch<React.SetStateAction<boolean>>;
+  toggleEdit: () => void;
+  //setEditing: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function VolunteerDetails({ volunteer }: VolunteerCardProps) {
-  //const adminData = useAdminContext();
+export default function VolunteerDetails({
+  volunteer,
+  toggleEdit,
+}: VolunteerCardProps) {
+  const adminData = useAdminContext();
 
   return (
     <>
@@ -41,6 +45,11 @@ export default function VolunteerDetails({ volunteer }: VolunteerCardProps) {
             </div>
           ))}
         </>
+      )}
+      {adminData.admin && (
+        <button onClick={toggleEdit}>
+          <i className="bx bx-edit-alt"></i>
+        </button>
       )}
     </>
   );

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Modal from "./Modal/Modal";
 import VolunteerDetails from "./VolunteerDetails";
+import VolunteerDetailsEdit from "./VolunteerDetailsEdit";
 import { useAdminContext } from "../AdminContext";
 import axios from "axios";
 
@@ -24,10 +25,15 @@ export default function VolunteerCard({
 }: VolunteerCardProps) {
   const adminData = useAdminContext();
   const [modal, setModal] = useState(false);
+  const [editing, setEditing] = useState(false);
 
   const toggleModal = () => {
     setModal(!modal);
   };
+  function toggleEdit() {
+    setEditing(!editing);
+    setModal(!modal);
+  }
 
   const handleDeleteVolunteer = () => {
     if (window.confirm("Jeste li sigurni da želite izbrisati volontera?")) {
@@ -44,7 +50,15 @@ export default function VolunteerCard({
     <>
       {modal && (
         <Modal modal={modal} toggleModal={toggleModal}>
-          <VolunteerDetails volunteer={volunteer} />
+          {adminData.admin && editing ? (
+            <VolunteerDetailsEdit
+              volunteer={volunteer}
+              toggleEdit={toggleEdit}
+              setUpdateVolunteers={setUpdateVolunteers}
+            />
+          ) : (
+            <VolunteerDetails volunteer={volunteer} toggleEdit={toggleEdit} />
+          )}
         </Modal>
       )}
       <div className="volunteer-card">
@@ -64,9 +78,14 @@ export default function VolunteerCard({
           {volunteer.city}
         </p>
         {adminData.admin && (
-          <button onClick={handleDeleteVolunteer} className="admin-delete">
-            <i className="bx bx-trash"></i>
-          </button>
+          <>
+            <button onClick={handleDeleteVolunteer} className="admin-delete">
+              <i className="bx bx-trash"></i>
+            </button>
+            <button onClick={toggleEdit}>
+              <i className="bx bx-edit-alt"></i>
+            </button>
+          </>
         )}
       </div>
     </>

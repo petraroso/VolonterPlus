@@ -142,14 +142,16 @@
   "signedVolunteers": [
     {
       "id": 1,
-      "name": "Ana",
-      "surname": "Anić",
-      "contact": "ana@gmail.com",
-      "city": "Split",
+      "name": "Anaiasdhdskv",
+      "surname": "Anićf",
+      "contact": "ansssa@gmail.com",
+      "city": "Dubrovnik",
       "image": "../jadro.jpg",
       "activities": [
         "Ekologija",
-        "Prijevoz"
+        "Prijevoz",
+        "Edukacija",
+        "Razno"
       ]
     },
     {
@@ -213,25 +215,16 @@
       ]
     },
     {
-      "name": "John",
+      "name": "Johng",
       "surname": "Beroo",
       "contact": "bero@gmail.com",
       "city": "Zadar",
       "image": "../jadro.jpg",
-      "activities": "",
-      "id": 7
-    },
-    {
-      "name": "John",
-      "surname": "aaaab",
-      "contact": "jsd@bhd.c",
-      "city": "Split",
-      "image": "../jadro.png",
       "activities": [
-        "Ekologija",
-        "Prijevoz"
+        "Prijevoz",
+        "Razno"
       ],
-      "id": 8
+      "id": 7
     }
   ],
   "cities": [
