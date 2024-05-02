@@ -10,17 +10,23 @@ interface Volunteer {
   image: string;
   activities: string[];
 }
+interface City {
+  id: Number;
+  name: string;
+}
 
 interface VolunteerCardProps {
   volunteer: Volunteer;
   toggleEdit: () => void;
   setUpdateVolunteers: React.Dispatch<React.SetStateAction<boolean>>;
+  cities: City[];
 }
 
 export default function VolunteerDetailsEdit({
   volunteer,
   toggleEdit,
-  setUpdateVolunteers
+  setUpdateVolunteers,
+  cities,
 }: VolunteerCardProps) {
   //const adminData = useAdminContext();
   const [newData, setNewData] = useState<Volunteer>({
@@ -133,17 +139,20 @@ export default function VolunteerDetailsEdit({
         <span className="errorMessage">Unesite ispravan e-mail</span>
       )}
 
-      <p>
-        <i className="bx bx-location-plus"></i>
-        <input
-          type="text"
-          id="city"
-          name="city"
-          placeholder="Grad"
-          value={newData.city}
-          onChange={handleFormData}
-        ></input>
-      </p>
+      <i className="bx bx-location-plus"></i>
+      <select
+        id="city"
+        name="city"
+        value={newData.city}
+        onChange={handleFormData}
+        required
+      >
+        {cities.map((city) => (
+          <option key={city.name} value={city.name}>
+            {city.name}
+          </option>
+        ))}
+      </select>
 
       <label>
         Aktivnosti:

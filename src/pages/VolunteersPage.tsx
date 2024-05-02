@@ -91,6 +91,7 @@ export default function VolunteersPage() {
             key={volunteer.id}
             volunteer={volunteer}
             setUpdateVolunteers={setUpdateVolunteers}
+            cities={cities}
           />
         ) : (
           <></>

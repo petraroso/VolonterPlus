@@ -14,14 +14,20 @@ interface Volunteer {
   image: string;
   activities: string[];
 }
+interface City {
+  id: Number;
+  name: string;
+}
 
 interface VolunteerCardProps {
   volunteer: Volunteer;
   setUpdateVolunteers: React.Dispatch<React.SetStateAction<boolean>>;
+  cities: City[];
 }
 export default function VolunteerCard({
   volunteer,
   setUpdateVolunteers,
+  cities
 }: VolunteerCardProps) {
   const adminData = useAdminContext();
   const [modal, setModal] = useState(false);
@@ -31,6 +37,9 @@ export default function VolunteerCard({
     setModal(!modal);
   };
   function toggleEdit() {
+    setEditing(!editing);
+  }
+  function toggleEditAndModal() {
     setEditing(!editing);
     setModal(!modal);
   }
@@ -55,6 +64,7 @@ export default function VolunteerCard({
               volunteer={volunteer}
               toggleEdit={toggleEdit}
               setUpdateVolunteers={setUpdateVolunteers}
+              cities={cities}
             />
           ) : (
             <VolunteerDetails volunteer={volunteer} toggleEdit={toggleEdit} />
@@ -82,7 +92,7 @@ export default function VolunteerCard({
             <button onClick={handleDeleteVolunteer} className="admin-delete">
               <i className="bx bx-trash"></i>
             </button>
-            <button onClick={toggleEdit}>
+            <button onClick={toggleEditAndModal}>
               <i className="bx bx-edit-alt"></i>
             </button>
           </>
