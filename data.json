@@ -1,6 +1,114 @@
 {
   "activities": [
     {
+      "id": 1,
+      "name": "Čišćenje rijeke Jadro",
+      "description": "Čišćenje rijeke Jadro Čišćenje rijeke Jadro Čišćenje rijeke Jadro",
+      "date": "2024-16-05",
+      "location": "Izvor Jadra",
+      "image": "../jadro.jpg",
+      "association": "Most",
+      "volunteers": [
+        {
+          "id": 1,
+          "name": "Ivo",
+          "surname": "Ivic"
+        },
+        {
+          "id": 2,
+          "name": "Ana",
+          "surname": "Anic"
+        },
+        {
+          "id": 3,
+          "name": "Marko",
+          "surname": "Markovic"
+        },
+        {
+          "id": 4,
+          "name": "Pero",
+          "surname": "Perić"
+        },
+        {
+          "id": 5,
+          "name": "Ivan",
+          "surname": "Ivandić"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Čišćenje rijeke Jadro",
+      "description": "Čišćenje rijeke Jadro Čišćenje rijeke Jadro Čišćenje rijeke Jadro",
+      "date": "2024-14-05",
+      "location": "Split",
+      "image": "../jadro.jpg",
+      "association": "Most",
+      "volunteers": [
+        {
+          "id": 1,
+          "name": "Ivo",
+          "surname": "Ivic"
+        },
+        {
+          "id": 2,
+          "name": "Ana",
+          "surname": "Anic"
+        },
+        {
+          "id": 3,
+          "name": "Marko",
+          "surname": "Markovic"
+        },
+        {
+          "id": 4,
+          "name": "Pero",
+          "surname": "Perić"
+        },
+        {
+          "id": 5,
+          "name": "Ivan",
+          "surname": "Ivandić"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Čišćenje rijeke Jadro",
+      "description": "Čišćenje rijeke Jadro Čišćenje rijeke Jadro Čišćenje rijeke Jadro",
+      "date": "2024-15-05",
+      "location": "Izvor Jadra",
+      "image": "../jadro.jpg",
+      "association": "Most",
+      "volunteers": [
+        {
+          "id": 1,
+          "name": "Ivo",
+          "surname": "Ivic"
+        },
+        {
+          "id": 2,
+          "name": "Ana",
+          "surname": "Anic"
+        },
+        {
+          "id": 3,
+          "name": "Marko",
+          "surname": "Markovic"
+        },
+        {
+          "id": 4,
+          "name": "Pero",
+          "surname": "Perić"
+        },
+        {
+          "id": 5,
+          "name": "Ivan",
+          "surname": "Ivandić"
+        }
+      ]
+    },
+    {
       "name": "Čišćenje rijeke Cetine",
       "date": "2024-06-27",
       "image": "../jadro.jpg",
@@ -31,38 +139,117 @@
       "id": 8
     }
   ],
-  "volunteers": [
+  "signedVolunteers": [
     {
-      "id": "2",
-      "ime": "Ana",
-      "prezime": "Horvat"
+      "id": 1,
+      "name": "Ana",
+      "surname": "Anić",
+      "contact": "ana@gmail.com",
+      "city": "Split",
+      "image": "../jadro.jpg",
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
-      "id": "3",
-      "ime": "John",
-      "prezime": "Smith"
+      "id": 2,
+      "name": "Ana",
+      "surname": "Ivić",
+      "contact": "ana@gmail.com",
+      "city": "Split",
+      "image": "../jadro.jpg",
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
-      "id": "4",
-      "ime": "London"
+      "id": 3,
+      "name": "Ana",
+      "surname": "Malik",
+      "contact": "ana@gmail.com",
+      "city": "Split",
+      "image": "../jadro.jpg",
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
-      "id": "6",
-      "ime": "Berlin"
+      "id": 4,
+      "name": "Ana",
+      "surname": "Anić",
+      "contact": "ana@gmail.com",
+      "city": "Split",
+      "image": "../jadro.jpg",
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
-      "id": "7",
-      "ime": "Rim"
+      "id": 5,
+      "name": "Ana",
+      "surname": "Horvat",
+      "contact": "ana@gmail.com",
+      "city": "Split",
+      "image": "../jadro.jpg",
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Ana",
+      "surname": "Horvat",
+      "contact": "ana@gmail.com",
+      "city": "Split",
+      "image": "../jadro.jpg",
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
+    },
+    {
+      "name": "John",
+      "surname": "Beroo",
+      "contact": "bero@gmail.com",
+      "city": "Zadar",
+      "image": "../jadro.jpg",
+      "activities": "",
+      "id": 7
+    },
+    {
+      "name": "John",
+      "surname": "aaaab",
+      "contact": "jsd@bhd.c",
+      "city": "Split",
+      "image": "../jadro.png",
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ],
+      "id": 8
     }
   ],
-  "klase": [
+  "cities": [
     {
-      "ime": "Ekonomska",
-      "oznaka": "E"
+      "id": 1,
+      "name": "Split"
     },
     {
-      "ime": "Poslovna",
-      "oznaka": "B"
+      "id": 21,
+      "name": "Zagreb"
+    },
+    {
+      "id": 3,
+      "name": "Zadar"
+    },
+    {
+      "id": 4,
+      "name": "Dubrovnik"
     }
   ]
 }

@@ -17,6 +17,7 @@ interface Activity {
   volunteers: Volunteer[];
 }
 interface Volunteer {
+  id:number;
   name: string;
   surname: string;
 }
