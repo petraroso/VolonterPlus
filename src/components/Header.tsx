@@ -60,7 +60,7 @@ export default function Header() {
           Udruge
         </NavLink>
         <div className="admin-toggle">
-          <span>Admin</span>
+          <span>Admin:</span>
           <button
             className={`toggle-btn ${toggled ? "toggled" : ""}`}
             onClick={handleToggle}
