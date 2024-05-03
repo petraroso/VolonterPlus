@@ -244,5 +244,49 @@
       "id": 4,
       "name": "Dubrovnik"
     }
+  ],
+  "associations": [
+    {
+      "id": 1,
+      "name": "Cetinjani",
+      "address": "Put mosta 36",
+      "city": "Dubrovnik",
+      "approved": true
+    },
+    {
+      "id": 3,
+      "name": "PlusV",
+      "address": "Put mosta 36",
+      "city": "Dubrovnik",
+      "approved": true
+    },
+    {
+      "id": 4,
+      "name": "PlusV",
+      "address": "Put mosta 36",
+      "city": "Dubrovnik",
+      "approved": true
+    },
+    {
+      "id": 5,
+      "name": "PlusV",
+      "address": "Put mosta 31",
+      "city": "Dubrovnik",
+      "approved": false
+    },
+    {
+      "id": 6,
+      "name": "PlusV",
+      "address": "Put mosta 32",
+      "city": "Dubrovnik",
+      "approved": false
+    },
+    {
+      "name": "Nova udruga",
+      "address": "Zrinjska 54",
+      "city": "Zagreb",
+      "approved": false,
+      "id": 7
+    }
   ]
 }
