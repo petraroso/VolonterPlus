@@ -157,9 +157,10 @@
   letter-spacing: 0.7px;
   font-weight: 500;
 }
+
 /*Homepage*/
 .banner-image {
-  width: 70%;
+  width: 90%;
   display: block;
   margin: auto;
 }
@@ -172,6 +173,9 @@
 .author-image {
   width: 40%;
   object-fit: cover;
+}
+.author-image {
+  border-radius: 50%;
 }
 .section div {
   display: flex;
@@ -191,6 +195,10 @@
 }
 .section .social-icons {
   flex-direction: row;
+  margin-right: 2rem;
+}
+.section .social-icons a i {
+  font-size: 2rem;
 }
 
 .parallax-image {
@@ -246,15 +254,21 @@
   .navbar a:hover::before {
     width: 100%;
   }
+  .banner-image {
+    width: 75%;
+  }
+  .section {
+    margin: 4rem 10%;
+  }
 }
 
-@media (max-width: 1045px) {
+@media (max-width: 1070px) {
   .header {
     padding: 1.3rem 5%;
   }
 }
 
-@media (max-width: 930px) {
+@media (max-width: 950px) {
   .icons {
     display: inline-flex;
   }
