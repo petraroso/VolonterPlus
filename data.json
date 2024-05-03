@@ -264,6 +264,20 @@
       "city": "Zagreb",
       "approved": false,
       "id": 7
+    },
+    {
+      "name": "KUD",
+      "address": "Vukovarska 143",
+      "city": "Split",
+      "approved": false,
+      "id": 8
+    },
+    {
+      "name": "Boba udurga",
+      "address": "Mostarska 67",
+      "city": "Zadar",
+      "approved": false,
+      "id": 9
     }
   ]
 }

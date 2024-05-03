@@ -18,6 +18,7 @@ export default function NewAssociationForm({
     approved: false,
   };
   const [formData, setFormData] = useState(initialFormData);
+  const [userMessage, setUserMessage] = useState(false);
 
   const handleFormData = (
     event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
@@ -40,6 +41,7 @@ export default function NewAssociationForm({
           console.log(result);
           setUpdateAssociations((prev) => !prev);
           setFormData(initialFormData);
+          setUserMessage(true);
         })
         .catch((err) => console.log(err.message));
     }
@@ -88,6 +90,7 @@ export default function NewAssociationForm({
       </label>
 
       <button onClick={sendData}>Spremi ✔️</button>
+      {userMessage && <span className="successMessage">Zahtjev poslan!</span>}
     </>
   );
 }
