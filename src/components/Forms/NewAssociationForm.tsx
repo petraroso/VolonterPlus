@@ -90,7 +90,11 @@ export default function NewAssociationForm({
       </label>
 
       <button onClick={sendData}>Spremi ✔️</button>
-      {userMessage && <span className="successMessage">Zahtjev poslan!</span>}
+      {userMessage && (
+        <span className="successMessage">
+          Zahtjev poslan! Udruga će biti dodana nakon odobrenja!
+        </span>
+      )}
     </>
   );
 }
