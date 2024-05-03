@@ -27,7 +27,7 @@ interface VolunteerCardProps {
 export default function VolunteerCard({
   volunteer,
   setUpdateVolunteers,
-  cities
+  cities,
 }: VolunteerCardProps) {
   const adminData = useAdminContext();
   const [modal, setModal] = useState(false);
@@ -88,14 +88,14 @@ export default function VolunteerCard({
           {volunteer.city}
         </p>
         {adminData.admin && (
-          <>
+          <div className="admin-buttons">
             <button onClick={handleDeleteVolunteer} className="admin-delete">
               <i className="bx bx-trash"></i>
             </button>
             <button onClick={toggleEditAndModal}>
               <i className="bx bx-edit-alt"></i>
             </button>
-          </>
+          </div>
         )}
       </div>
     </>

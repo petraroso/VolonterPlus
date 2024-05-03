@@ -71,12 +71,12 @@ export default function ActivityCard({
             <i className="bx bx-location-plus"></i>
             {activity.location}
           </p>
-          {adminData.admin && (
-            <button onClick={handleDeleteActivity} className="admin-delete">
-              <i className="bx bx-trash"></i>
-            </button>
-          )}
         </div>
+        {adminData.admin && (
+          <button onClick={handleDeleteActivity} className="admin-delete">
+            <i className="bx bx-trash"></i>
+          </button>
+        )}
       </div>
     </>
   );

@@ -248,9 +248,31 @@
 }
 
 /*Volunteers page*/
+.volunteer-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  margin: 2rem 0;
+}
+
+.volunteer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin: 1rem 0;
+}
+.volunteer-card:nth-child(3n + 0) {
+  justify-self: flex-end;
+}
+.volunteer-card:nth-child(3n-2) {
+  justify-self: flex-start;
+}
 .volunteer-image {
-  height: 100px;
-  width: 200px;
+  height: 130px;
+  width: 130px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 @media (min-width: 1045px) {

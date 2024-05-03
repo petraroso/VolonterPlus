@@ -146,7 +146,7 @@
       "surname": "Anićf",
       "contact": "ansssa@gmail.com",
       "city": "Dubrovnik",
-      "image": "../jadro.jpg",
+      "image": "../1.jpg",
       "activities": ["Ekologija", "Prijevoz", "Edukacija", "Razno"]
     },
     {
@@ -155,7 +155,7 @@
       "surname": "Ivić",
       "contact": "ana@gmail.com",
       "city": "Split",
-      "image": "../jadro.jpg",
+      "image": "../2.jpg",
       "activities": ["Ekologija", "Prijevoz"]
     },
     {
@@ -164,7 +164,7 @@
       "surname": "Malik",
       "contact": "ana@gmail.com",
       "city": "Split",
-      "image": "../jadro.jpg",
+      "image": "../3.jpg",
       "activities": ["Ekologija", "Prijevoz"]
     },
     {
@@ -173,7 +173,7 @@
       "surname": "Anić",
       "contact": "ana@gmail.com",
       "city": "Dubrovnik",
-      "image": "../jadro.jpg",
+      "image": "../4.jpg",
       "activities": ["Ekologija", "Prijevoz"]
     },
     {
@@ -182,7 +182,7 @@
       "surname": "Horvat",
       "contact": "ana@gmail.com",
       "city": "Split",
-      "image": "../jadro.jpg",
+      "image": "../5.jpg",
       "activities": ["Ekologija", "Prijevoz"]
     },
     {
@@ -191,7 +191,7 @@
       "surname": "Horvat",
       "contact": "ana@gmail.com",
       "city": "Split",
-      "image": "../jadro.jpg",
+      "image": "../6.jpg",
       "activities": ["Ekologija", "Prijevoz"]
     },
     {
@@ -199,7 +199,7 @@
       "surname": "Beroo",
       "contact": "bero@gmail.com",
       "city": "Zadar",
-      "image": "../jadro.jpg",
+      "image": "../7.jpg",
       "activities": ["Prijevoz", "Razno"],
       "id": 7
     }

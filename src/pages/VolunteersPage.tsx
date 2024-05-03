@@ -70,7 +70,7 @@ export default function VolunteersPage() {
   }
 
   return (
-    <>
+    <div className="page-container">
       <h2>Popis volontera</h2>
       <VolunteersFilter
         cities={cities}
@@ -79,24 +79,25 @@ export default function VolunteersPage() {
         activityFilter={activityFilter}
         setActivityFilter={setActivityFilter}
       />
-
-      {volunteers.map((volunteer) =>
-        (cityFilter === "Svi" && activityFilter === "Sve") ||
-        (activityFilter === "Sve" && cityFilter === volunteer.city) ||
-        (cityFilter === "Svi" &&
-          volunteer.activities.includes(activityFilter)) ||
-        (cityFilter === volunteer.city &&
-          volunteer.activities.includes(activityFilter)) ? (
-          <VolunteerCard
-            key={volunteer.id}
-            volunteer={volunteer}
-            setUpdateVolunteers={setUpdateVolunteers}
-            cities={cities}
-          />
-        ) : (
-          <></>
-        )
-      )}
+      <div className="volunteer-list">
+        {volunteers.map((volunteer) =>
+          (cityFilter === "Svi" && activityFilter === "Sve") ||
+          (activityFilter === "Sve" && cityFilter === volunteer.city) ||
+          (cityFilter === "Svi" &&
+            volunteer.activities.includes(activityFilter)) ||
+          (cityFilter === volunteer.city &&
+            volunteer.activities.includes(activityFilter)) ? (
+            <VolunteerCard
+              key={volunteer.id}
+              volunteer={volunteer}
+              setUpdateVolunteers={setUpdateVolunteers}
+              cities={cities}
+            />
+          ) : (
+            <></>
+          )
+        )}
+      </div>
       {adminData.admin && <PlusButton openModal={toggleOpenNewVolunteerForm} />}
 
       {openNewVolunteerForm && (
@@ -110,6 +111,6 @@ export default function VolunteersPage() {
           />
         </Modal>
       )}
-    </>
+    </div>
   );
 }
