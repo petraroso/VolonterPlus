@@ -157,6 +157,68 @@
   letter-spacing: 0.7px;
   font-weight: 500;
 }
+/*Homepage*/
+.banner-image {
+  width: 70%;
+  display: block;
+  margin: auto;
+}
+.section {
+  display: flex;
+  padding: 2rem;
+  margin: 4rem 0;
+}
+.homepage-image,
+.author-image {
+  width: 40%;
+  object-fit: cover;
+}
+.section div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section p {
+  padding: 2rem 2rem 2rem 0;
+}
+.section a {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.section a i {
+  font-size: 1.5rem;
+  vertical-align: text-bottom;
+}
+.section .social-icons {
+  flex-direction: row;
+}
+
+.parallax-image {
+  width: 100%;
+  display: flex;
+
+  background-image: url("./assets/volunteering2.jpg");
+  height: 400px;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parallax-image div {
+  width: 50%;
+  margin: auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 1.15rem;
+}
+.parallax-image a {
+  font-weight: 500;
+}
+.parallax-image a i {
+  font-size: 1.5rem;
+  vertical-align: text-bottom;
+}
 
 /*Activities page*/
 .activity-image {
