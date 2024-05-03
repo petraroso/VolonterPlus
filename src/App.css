@@ -32,7 +32,10 @@
 }
 .navbar a {
   margin-left: 2.5rem;
+
+  position: relative;
 }
+
 .nav-link-active {
   color: var(--clr-orange);
 }
@@ -140,6 +143,7 @@
 .footer-nav ul li a:hover {
   opacity: 1;
 }
+
 .footer-copyright {
   background-color: var(--clr-dark);
   padding: 1.3rem;
@@ -164,6 +168,22 @@
 .volunteer-image {
   height: 100px;
   width: 200px;
+}
+
+@media (min-width: 1045px) {
+  .navbar a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: 0.3s;
+  }
+  .navbar a:hover::before {
+    width: 100%;
+  }
 }
 
 @media (max-width: 1045px) {
