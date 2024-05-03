@@ -147,12 +147,7 @@
       "contact": "ansssa@gmail.com",
       "city": "Dubrovnik",
       "image": "../jadro.jpg",
-      "activities": [
-        "Ekologija",
-        "Prijevoz",
-        "Edukacija",
-        "Razno"
-      ]
+      "activities": ["Ekologija", "Prijevoz", "Edukacija", "Razno"]
     },
     {
       "id": 2,
@@ -161,10 +156,7 @@
       "contact": "ana@gmail.com",
       "city": "Split",
       "image": "../jadro.jpg",
-      "activities": [
-        "Ekologija",
-        "Prijevoz"
-      ]
+      "activities": ["Ekologija", "Prijevoz"]
     },
     {
       "id": 3,
@@ -173,10 +165,7 @@
       "contact": "ana@gmail.com",
       "city": "Split",
       "image": "../jadro.jpg",
-      "activities": [
-        "Ekologija",
-        "Prijevoz"
-      ]
+      "activities": ["Ekologija", "Prijevoz"]
     },
     {
       "id": 4,
@@ -185,10 +174,7 @@
       "contact": "ana@gmail.com",
       "city": "Dubrovnik",
       "image": "../jadro.jpg",
-      "activities": [
-        "Ekologija",
-        "Prijevoz"
-      ]
+      "activities": ["Ekologija", "Prijevoz"]
     },
     {
       "id": 5,
@@ -197,10 +183,7 @@
       "contact": "ana@gmail.com",
       "city": "Split",
       "image": "../jadro.jpg",
-      "activities": [
-        "Ekologija",
-        "Prijevoz"
-      ]
+      "activities": ["Ekologija", "Prijevoz"]
     },
     {
       "id": 6,
@@ -209,10 +192,7 @@
       "contact": "ana@gmail.com",
       "city": "Split",
       "image": "../jadro.jpg",
-      "activities": [
-        "Ekologija",
-        "Prijevoz"
-      ]
+      "activities": ["Ekologija", "Prijevoz"]
     },
     {
       "name": "Johng",
@@ -220,10 +200,7 @@
       "contact": "bero@gmail.com",
       "city": "Zadar",
       "image": "../jadro.jpg",
-      "activities": [
-        "Prijevoz",
-        "Razno"
-      ],
+      "activities": ["Prijevoz", "Razno"],
       "id": 7
     }
   ],
@@ -249,29 +226,29 @@
     {
       "id": 1,
       "name": "Cetinjani",
-      "address": "Put mosta 36",
+      "address": "aPut mosta 36",
       "city": "Dubrovnik",
       "approved": true
     },
     {
       "id": 3,
-      "name": "PlusV",
+      "name": "APlusV",
       "address": "Put mosta 36",
-      "city": "Dubrovnik",
+      "city": "Split",
       "approved": true
     },
     {
       "id": 4,
       "name": "PlusV",
-      "address": "Put mosta 36",
-      "city": "Dubrovnik",
+      "address": "zPut mosta 36",
+      "city": "Zadar",
       "approved": true
     },
     {
       "id": 5,
       "name": "PlusV",
-      "address": "Put mosta 31",
-      "city": "Dubrovnik",
+      "address": "hPut mosta 31",
+      "city": "Split",
       "approved": false
     },
     {

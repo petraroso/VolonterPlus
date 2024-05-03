@@ -31,7 +31,7 @@ export default function AssociationsPage() {
     axios
       .get("http://localhost:3001/associations")
       .then((res) => {
-        setAssociations(sortAssociations(res.data));
+        setAssociations(sortAssociations(res.data, "name"));
       })
       .catch((err) => console.log(err.message));
     axios
@@ -42,15 +42,27 @@ export default function AssociationsPage() {
       .catch((err) => console.log(err.message));
   }, [updateAssociations]);
 
-  //handlesort
+  const handleSort = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const { value } = event.target;
+    setSortValue(() => value);
+    setAssociations(sortAssociations([...associations], value));
+  };
 
-  function sortAssociations(associations: Association[]): Association[] {
+  function sortAssociations(
+    associations: Association[],
+    sortBy: string
+  ): Association[] {
     return associations.slice().sort((a, b) => {
-      const lastNameA = a.name.toLowerCase();
-      const lastNameB = b.name.toLowerCase();
-      if (lastNameA < lastNameB) return -1;
-      if (lastNameA > lastNameB) return 1;
-      return 0;
+      switch (sortBy) {
+        case "name":
+          return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+        case "address":
+          return a.address.toLowerCase().localeCompare(b.address.toLowerCase());
+        case "city":
+          return a.city.toLowerCase().localeCompare(b.city.toLowerCase());
+        default:
+          return 0;
+      }
     });
   }
   function sortCitiesAscending(cities: City[]): City[] {
@@ -69,13 +81,33 @@ export default function AssociationsPage() {
 
   return (
     <>
-      <h2>Popis udruga:</h2><hr></hr>
-      <AssociationList associations={associations} approved={true} setUpdateAssociations={setUpdateAssociations}/>
+      <div>
+        <label>
+          Sortirajte po:
+          <select id="sort" name="sort" value={sortValue} onChange={handleSort}>
+            <option value={"name"}>Ime</option>
+            <option value={"address"}>Adresa</option>
+            <option value={"city"}>Grad</option>
+          </select>
+        </label>
+      </div>
+      <h2>Popis udruga:</h2>
+      <hr></hr>
+      <AssociationList
+        associations={associations}
+        approved={true}
+        setUpdateAssociations={setUpdateAssociations}
+      />
 
       {adminData.admin && (
         <>
-          <h2>Zahtjevi za odobrenje:</h2><hr></hr>
-          <AssociationList associations={associations} approved={false} setUpdateAssociations={setUpdateAssociations}/>
+          <h2>Zahtjevi za odobrenje:</h2>
+          <hr></hr>
+          <AssociationList
+            associations={associations}
+            approved={false}
+            setUpdateAssociations={setUpdateAssociations}
+          />
         </>
       )}
 
