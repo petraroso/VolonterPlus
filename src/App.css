@@ -229,9 +229,22 @@
 }
 
 /*Activities page*/
+.page-container {
+  margin: 2rem 10%;
+}
+.page-container h2 {
+  width: fit-content;
+  margin: auto;
+}
+.activity-card {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
 .activity-image {
   height: 100px;
   width: 200px;
+  margin-right: 2rem;
 }
 
 /*Volunteers page*/
@@ -265,6 +278,9 @@
 @media (max-width: 1070px) {
   .header {
     padding: 1.3rem 5%;
+  }
+  .page-container {
+    margin: 2rem 5%;
   }
 }
 

@@ -48,6 +48,13 @@ a {
 footer {
   background-color: var(--clr-dark-gray);
 }
+#sort {
+  margin: 2rem 0;
+  display: block;
+  width: 200px;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
 
 /*
 button {

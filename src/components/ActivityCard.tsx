@@ -64,17 +64,19 @@ export default function ActivityCard({
           alt="Activity site"
           className="activity-image"
         />
-        <h3 onClick={toggleModal}>{activity.name}</h3>
-        <p onClick={toggleModal}>{activity.date}</p>
-        <p onClick={toggleModal}>
-          <i className="bx bx-location-plus"></i>
-          {activity.location}
-        </p>
-        {adminData.admin && (
-          <button onClick={handleDeleteActivity} className="admin-delete">
-            <i className="bx bx-trash"></i>
-          </button>
-        )}
+        <div>
+          <h3 onClick={toggleModal}>{activity.name}</h3>
+          <p onClick={toggleModal}>{activity.date}</p>
+          <p onClick={toggleModal}>
+            <i className="bx bx-location-plus"></i>
+            {activity.location}
+          </p>
+          {adminData.admin && (
+            <button onClick={handleDeleteActivity} className="admin-delete">
+              <i className="bx bx-trash"></i>
+            </button>
+          )}
+        </div>
       </div>
     </>
   );

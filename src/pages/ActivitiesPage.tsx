@@ -17,7 +17,7 @@ interface Activity {
   volunteers: Volunteer[];
 }
 interface Volunteer {
-  id:number;
+  id: number;
   name: string;
   surname: string;
 }
@@ -69,11 +69,11 @@ export default function ActivitiesPage() {
   };
 
   return (
-    <>
-      <h2>Popis aktivnosti</h2>
+    <div className="page-container">
+      <h2>Popis svih aktivnosti</h2>
       <select id="sort" name="sort" value={sortValue} onChange={handleSort}>
-        <option value={"latest"}>Najnoviji</option>
-        <option value={"oldest"}>Najstariji</option>
+        <option value={"latest"}>Najnovije</option>
+        <option value={"oldest"}>Najstarije</option>
       </select>
       {activities.map((activity, index) => (
         <ActivityCard
@@ -91,6 +91,6 @@ export default function ActivitiesPage() {
           <NewActivityForm setUpdateActivities={setUpdateActivities} />
         </Modal>
       )}
-    </>
+    </div>
   );
 }
