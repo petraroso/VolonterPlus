@@ -9,6 +9,21 @@
 .form button {
   margin-top: 1rem;
 }
-.form input[type="radio"]{
-    margin-left: 1rem;
+.form input[type="radio"] {
+  margin-left: 1rem;
+}
+
+.activity-container {
+  display: flex;
+}
+
+.activity-checkboxes {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+.activity-checkboxes label {
+  margin-top: 0;
 }

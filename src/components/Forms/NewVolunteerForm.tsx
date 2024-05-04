@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import "./Form.css";
 
 interface City {
   id: Number;
@@ -40,7 +41,6 @@ export default function NewVolunteerForm({
         );
       }
       setFormData({ ...formData, activities: updatedActivities });
-      
     } else {
       if (name === "contact") {
         setDisplayEmail(value);
@@ -80,31 +80,29 @@ export default function NewVolunteerForm({
   };
 
   return (
-    <>
+    <div className="form">
       <h2>Novi volonter</h2>
-      <label>
-        Ime:
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Vaše ime"
-          value={formData.name}
-          onChange={handleFormData}
-        />
-      </label>
-      <label>
-        Prezime:
-        <input
-          type="text"
-          id="surname"
-          name="surname"
-          placeholder="Vaše prezime"
-          value={formData.surname}
-          onChange={handleFormData}
-        />
-      </label>
-      <label htmlFor="email">Kontakt:</label>
+      <label htmlFor="name">Ime:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Vaše ime"
+        value={formData.name}
+        onChange={handleFormData}
+      />
+
+      <label htmlFor="surname">Prezime:</label>
+      <input
+        type="text"
+        id="surname"
+        name="surname"
+        placeholder="Vaše prezime"
+        value={formData.surname}
+        onChange={handleFormData}
+      />
+
+      <label htmlFor="contact">Kontakt:</label>
       <input
         type="text"
         id="contact"
@@ -118,79 +116,77 @@ export default function NewVolunteerForm({
         <span className="errorMessage">Unesite ispravan e-mail</span>
       )}
 
-      <label>
-        Grad:
-        <select
-          id="city"
-          name="city"
-          value={formData.city}
-          onChange={handleFormData}
-          required
-        >
-          {cities.map((city) => (
-            <option key={city.name} value={city.name}>
-              {city.name}
-            </option>
-          ))}
-        </select>
-      </label>
+      <label htmlFor="city">Grad:</label>
+      <select
+        id="city"
+        name="city"
+        value={formData.city}
+        onChange={handleFormData}
+        required
+      >
+        {cities.map((city) => (
+          <option key={city.name} value={city.name}>
+            {city.name}
+          </option>
+        ))}
+      </select>
 
-      <label>
-        Slika:
-        <input
-          type="text"
-          id="image"
-          name="image"
-          placeholder="../jadro.jpg"
-          value={formData.image}
-          onChange={handleFormData}
-        />
-      </label>
+      <label htmlFor="image">Slika:</label>
+      <input
+        type="text"
+        id="image"
+        name="image"
+        placeholder="../jadro.jpg"
+        value={formData.image}
+        onChange={handleFormData}
+      />
 
-      <label>
-        Aktivnosti:
-        <label>
-          <input
-            type="checkbox"
-            name="activities"
-            checked={formData.activities.includes("Ekologija")}
-            value="Ekologija"
-            onChange={handleFormData}
-          ></input>
-          Ekologija
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            name="activities"
-            value="Edukacija"
-            checked={formData.activities.includes("Edukacija")}
-            onChange={handleFormData}
-          ></input>
-          Edukacija
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            name="activities"
-            checked={formData.activities.includes("Prijevoz")}
-            value="Prijevoz"
-            onChange={handleFormData}
-          ></input>
-          Prijevoz
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            name="activities"
-            checked={formData.activities.includes("Razno")}
-            value="Razno"
-            onChange={handleFormData}
-          ></input>
-          Razno
-        </label>
-      </label>
+      <div className="activity-container">
+        <label htmlFor="activities">Aktivnosti:</label>
+        <div className="activity-checkboxes">
+          <label>
+            <input
+              type="checkbox"
+              name="activities"
+              checked={formData.activities.includes("Ekologija")}
+              value="Ekologija"
+              onChange={handleFormData}
+            ></input>
+            Ekologija
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="activities"
+              value="Edukacija"
+              checked={formData.activities.includes("Edukacija")}
+              onChange={handleFormData}
+            ></input>
+            Edukacija
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="activities"
+              checked={formData.activities.includes("Prijevoz")}
+              value="Prijevoz"
+              onChange={handleFormData}
+            ></input>
+            Prijevoz
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="activities"
+              checked={formData.activities.includes("Razno")}
+              value="Razno"
+              onChange={handleFormData}
+            ></input>
+            Razno
+          </label>
+        </div>
+      </div>
       <button onClick={sendData}>Dodaj ✔️</button>
-    </>
+    </div>
   );
 }
