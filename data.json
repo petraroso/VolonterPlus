@@ -2,7 +2,7 @@
   "activities": [
     {
       "id": 1,
-      "name": "Čišćenje rijeke Jadro",
+      "name": "Čišćenje rijeke Jadro; Okupljanje",
       "description": "Čišćenje rijeke Jadro Čišćenje rijeke Jadro Čišćenje rijeke Jadro",
       "date": "2024-16-05",
       "location": "Izvor Jadra",
@@ -299,7 +299,7 @@
       "name": "Boba udurga",
       "address": "Mostarska 67",
       "city": "Zadar",
-      "approved": false,
+      "approved": true,
       "id": 9
     },
     {

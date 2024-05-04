@@ -242,6 +242,9 @@
   width: 200px;
   margin-right: 2rem;
 }
+.activity-card .admin-delete {
+  margin-left: auto;
+}
 
 /*Volunteers page*/
 .volunteer-list {
@@ -270,6 +273,12 @@
   object-fit: cover;
   border-radius: 50%;
 }
+.volunteer-card .admin-buttons {
+  margin-top: 0.5rem;
+}
+.volunteer-card .admin-buttons button:last-child {
+  margin-left: 0.5rem;
+}
 
 .filter-container {
   margin: 2rem 0;
@@ -294,7 +303,7 @@
   list-style-type: none;
 }
 .association-list li {
-  height: 2rem;
+  min-height: 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
@@ -305,6 +314,12 @@
 }
 .association-list li div:last-child {
   justify-self: center;
+}
+.association-list button {
+  padding: 0.2em;
+}
+.association-list .admin-buttons button:last-child {
+  margin-left: 0.5rem;
 }
 
 @media (min-width: 1045px) {

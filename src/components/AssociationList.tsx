@@ -47,8 +47,8 @@ const AssociationList: React.FC<ListProps> = ({
         if (item.approved === approved) {
           return (
             <li key={index}>
-              <strong>{item.name}</strong>&nbsp;&nbsp; {item.address}{" "}
-              <>{item.city}</>
+              <strong>{item.name}</strong>&nbsp;&nbsp;{item.address},{" "}
+              {item.city}
               {approved && adminData.admin ? (
                 <div>
                   <button onClick={() => handleDelete(item.id)}>
@@ -56,7 +56,7 @@ const AssociationList: React.FC<ListProps> = ({
                   </button>
                 </div>
               ) : adminData.admin ? (
-                <div>
+                <div className="admin-buttons">
                   <button onClick={() => handleDelete(item.id)}>
                     <i className="bx bx-trash"></i>
                   </button>
