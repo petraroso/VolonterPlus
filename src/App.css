@@ -301,7 +301,7 @@
   padding: 0 1rem;
 }
 .association-list li:nth-child(odd) {
-  background-color: rgba(128, 128, 128, 0.3);
+  background-color: rgba(128, 128, 128, 0.2);
 }
 .association-list li div:last-child {
   justify-self: center;

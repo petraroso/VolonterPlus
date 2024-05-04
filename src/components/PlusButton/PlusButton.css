@@ -5,7 +5,7 @@
   z-index: 100;
 }
 .open-modal {
-  background-color: green;
+  background-color: var(--clr-dark-blue);
   color: white;
   border: none;
   border-radius: 50%;
@@ -16,11 +16,9 @@
   align-items: center;
   cursor: pointer;
 }
-
 .open-modal:hover {
-  background-color: darkgreen;
+  background-color: var(--clr-light-blue);
 }
-
 .open-modal:focus {
   outline: none;
 }

@@ -58,6 +58,17 @@ select {
   font-size: 1rem;
   cursor: pointer;
 }
+input[type="text"],
+input[type="date"],
+textarea {
+  display: block;
+
+  height: fit-content;
+  padding: 0.5rem;
+  font-size: 1rem;
+  resize: none;
+  /*border: solid 1px;*/
+}
 .page-container {
   margin: 2rem 10%;
 }

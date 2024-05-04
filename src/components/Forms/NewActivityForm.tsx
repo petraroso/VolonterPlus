@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import "./Form.css";
 
 export default function NewActivityForm({
   setUpdateActivities,
@@ -18,7 +19,9 @@ export default function NewActivityForm({
   const [formData, setFormData] = useState(initialFormData);
 
   const handleFormData = (
-    event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
+    event: React.ChangeEvent<
+      HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
@@ -48,40 +51,36 @@ export default function NewActivityForm({
   };
 
   return (
-    <>
+    <div className="form">
       <h2>Nova aktivnost</h2>
-      <label>
-        Naziv:
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Naziv aktivnosti"
-          value={formData.name}
-          onChange={handleFormData}
-        />
-      </label>
-      <label>
-        Datum:
-        <input
-          type="date"
-          id="date"
-          name="date"
-          value={formData.date}
-          onChange={handleFormData}
-        />
-      </label>
-      <label>
-        Lokacija:
-        <input
-          type="text"
-          id="location"
-          name="location"
-          placeholder="Mjesto održavanja"
-          value={formData.location}
-          onChange={handleFormData}
-        />
-      </label>
+      <label htmlFor="name">Naziv:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Naziv aktivnosti"
+        value={formData.name}
+        onChange={handleFormData}
+      />
+
+      <label htmlFor="date">Datum:</label>
+      <input
+        type="date"
+        id="date"
+        name="date"
+        value={formData.date}
+        onChange={handleFormData}
+      />
+
+      <label htmlFor="location">Lokacija: </label>
+      <input
+        type="text"
+        id="location"
+        name="location"
+        placeholder="Mjesto održavanja"
+        value={formData.location}
+        onChange={handleFormData}
+      />
 
       <label>
         Udruga:
@@ -120,30 +119,28 @@ export default function NewActivityForm({
         />
       )}
 
-      <label>
-        Opis:
-        <input
-          type="text"
-          id="description"
-          name="description"
-          placeholder="Opis aktivnosti (max 300 znakova)"
-          maxLength={300}
-          value={formData.description}
-          onChange={handleFormData}
-        />
-      </label>
-      <label>
-        Slika:
-        <input
-          type="text"
-          id="image"
-          name="image"
-          placeholder="../jadro.jpg"
-          value={formData.image}
-          onChange={handleFormData}
-        />
-      </label>
+      <label htmlFor="description">Opis:</label>
+      <textarea
+        id="description"
+        name="description"
+        placeholder="Opis (max 300 znakova)"
+        maxLength={300}
+        rows={4}
+        value={formData.description}
+        onChange={handleFormData}
+      />
+
+      <label htmlFor="image">Slika:</label>
+      <input
+        type="text"
+        id="image"
+        name="image"
+        placeholder="../jadro.jpg"
+        value={formData.image}
+        onChange={handleFormData}
+      />
+
       <button onClick={sendData}>Spremi ✔️</button>
-    </>
+    </div>
   );
 }
