@@ -40,7 +40,7 @@ export default function ActivitySignUp({
   };
 
   return (
-    <>
+    <div className="form">
       <label htmlFor="name">Ime:</label>
       <input
         type="text"
@@ -63,6 +63,6 @@ export default function ActivitySignUp({
       ></input>
 
       <button onClick={sendData}>Prijava ✔️</button>
-    </>
+    </div>
   );
 }
