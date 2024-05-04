@@ -1,42 +1,6 @@
 {
   "activities": [
     {
-      "id": 1,
-      "name": "Čišćenje rijeke Jadro; Okupljanje",
-      "description": "Čišćenje rijeke Jadro Čišćenje rijeke Jadro Čišćenje rijeke Jadro",
-      "date": "2024-16-05",
-      "location": "Izvor Jadra",
-      "image": "../jadro.jpg",
-      "association": "Most",
-      "volunteers": [
-        {
-          "id": 1,
-          "name": "Ivo",
-          "surname": "Ivic"
-        },
-        {
-          "id": 2,
-          "name": "Ana",
-          "surname": "Anic"
-        },
-        {
-          "id": 3,
-          "name": "Marko",
-          "surname": "Markovic"
-        },
-        {
-          "id": 4,
-          "name": "Pero",
-          "surname": "Perić"
-        },
-        {
-          "id": 5,
-          "name": "Ivan",
-          "surname": "Ivandić"
-        }
-      ]
-    },
-    {
       "id": 2,
       "name": "Čišćenje rijeke Jadro",
       "description": "Čišćenje rijeke Jadro Čišćenje rijeke Jadro Čišćenje rijeke Jadro",

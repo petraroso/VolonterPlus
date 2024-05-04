@@ -29,6 +29,8 @@ body.active-modal {
   max-width: 700px;
   min-width: 330px;
   z-index: 102;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
 }
 
 .close-modal {
