@@ -28,83 +28,82 @@ const VolunteersFilter: React.FC<FilterTypes> = ({
   };
 
   return (
-    <>
+    <div className="filter-container">
       <h3>Filter</h3>
-      <label>
-        Grad
+      <div className="all-filters">
         <select
           id="cityFilter"
           name="cityFilter"
           value={cityFilter}
           onChange={handleCityFilter}
         >
-          <option  value="Svi">
-              Svi
-            </option>
+          <option value="Svi">Svi gradovi</option>
           {cities.map((city, index) => (
             <option key={index} value={city.name}>
               {city.name}
             </option>
           ))}
         </select>
-      </label>
 
-      <label>
-      <input
-          type="radio"
-          //id="ecology"
-          name="activities"
-          checked={activityFilter === "Sve"}
-          value="Sve"
-          onChange={handleActivityFilter}
-        ></input>
-        Sve
-      </label>
-      <label>
-        <input
-          type="radio"
-          //id="ecology"
-          name="activities"
-          checked={activityFilter === "Ekologija"}
-          value="Ekologija"
-          onChange={handleActivityFilter}
-        ></input>
-        Ekologija
-      </label>
-      <label>
-        <input
-          type="radio"
-          //id="byAssociation"
-          name="activities"
-          checked={activityFilter === "Edukacija"}
-          value="Edukacija"
-          onChange={handleActivityFilter}
-        ></input>
-        Edukacija
-      </label>
-      <label>
-        <input
-          type="radio"
-          //id="notByAssociation"
-          name="activities"
-          checked={activityFilter === "Prijevoz"}
-          value="Prijevoz"
-          onChange={handleActivityFilter}
-        ></input>
-        Prijevoz
-      </label>
-      <label>
-        <input
-          type="radio"
-          //id="byAssociation"
-          name="activities"
-          checked={activityFilter === "Razno"}
-          value="Razno"
-          onChange={handleActivityFilter}
-        ></input>
-        Razno
-      </label>
-    </>
+        <div className="filter-activities">
+          <label>
+            <input
+              type="radio"
+              //id="ecology"
+              name="activities"
+              checked={activityFilter === "Sve"}
+              value="Sve"
+              onChange={handleActivityFilter}
+            ></input>
+            Sve aktivnosti
+          </label>
+          <label>
+            <input
+              type="radio"
+              //id="ecology"
+              name="activities"
+              checked={activityFilter === "Ekologija"}
+              value="Ekologija"
+              onChange={handleActivityFilter}
+            ></input>
+            Ekologija
+          </label>
+          <label>
+            <input
+              type="radio"
+              //id="byAssociation"
+              name="activities"
+              checked={activityFilter === "Edukacija"}
+              value="Edukacija"
+              onChange={handleActivityFilter}
+            ></input>
+            Edukacija
+          </label>
+          <label>
+            <input
+              type="radio"
+              //id="notByAssociation"
+              name="activities"
+              checked={activityFilter === "Prijevoz"}
+              value="Prijevoz"
+              onChange={handleActivityFilter}
+            ></input>
+            Prijevoz
+          </label>
+          <label>
+            <input
+              type="radio"
+              //id="byAssociation"
+              name="activities"
+              checked={activityFilter === "Razno"}
+              value="Razno"
+              onChange={handleActivityFilter}
+            ></input>
+            Razno
+          </label>
+        </div>
+      </div>
+    </div>
   );
 };
 

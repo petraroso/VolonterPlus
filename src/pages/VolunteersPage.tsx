@@ -72,31 +72,35 @@ export default function VolunteersPage() {
   return (
     <div className="page-container">
       <h2>Popis volontera</h2>
-      <VolunteersFilter
-        cities={cities}
-        cityFilter={cityFilter}
-        setCityFilter={setCityFilter}
-        activityFilter={activityFilter}
-        setActivityFilter={setActivityFilter}
-      />
-      <div className="volunteer-list">
-        {volunteers.map((volunteer) =>
-          (cityFilter === "Svi" && activityFilter === "Sve") ||
-          (activityFilter === "Sve" && cityFilter === volunteer.city) ||
-          (cityFilter === "Svi" &&
-            volunteer.activities.includes(activityFilter)) ||
-          (cityFilter === volunteer.city &&
-            volunteer.activities.includes(activityFilter)) ? (
-            <VolunteerCard
-              key={volunteer.id}
-              volunteer={volunteer}
-              setUpdateVolunteers={setUpdateVolunteers}
-              cities={cities}
-            />
-          ) : (
-            <></>
-          )
-        )}
+      <div className="volunteers-layout">
+        <div>
+          <VolunteersFilter
+            cities={cities}
+            cityFilter={cityFilter}
+            setCityFilter={setCityFilter}
+            activityFilter={activityFilter}
+            setActivityFilter={setActivityFilter}
+          />
+        </div>
+        <div className="volunteer-list">
+          {volunteers.map((volunteer) =>
+            (cityFilter === "Svi" && activityFilter === "Sve") ||
+            (activityFilter === "Sve" && cityFilter === volunteer.city) ||
+            (cityFilter === "Svi" &&
+              volunteer.activities.includes(activityFilter)) ||
+            (cityFilter === volunteer.city &&
+              volunteer.activities.includes(activityFilter)) ? (
+              <VolunteerCard
+                key={volunteer.id}
+                volunteer={volunteer}
+                setUpdateVolunteers={setUpdateVolunteers}
+                cities={cities}
+              />
+            ) : (
+              <></>
+            )
+          )}
+        </div>
       </div>
       {adminData.admin && <PlusButton openModal={toggleOpenNewVolunteerForm} />}
 
