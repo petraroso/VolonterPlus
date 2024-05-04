@@ -100,7 +100,9 @@ export default function VolunteerDetailsEdit({
   };
 
   return (
-    <>
+    <div className="form">
+      <h3>Uredite podatke</h3>
+      <label htmlFor="name">Ime</label>
       <input
         type="text"
         id="name"
@@ -109,6 +111,7 @@ export default function VolunteerDetailsEdit({
         value={newData.name}
         onChange={handleFormData}
       ></input>
+      <label htmlFor="surname">Prezime</label>
       <input
         type="text"
         id="surname"
@@ -118,6 +121,7 @@ export default function VolunteerDetailsEdit({
         onChange={handleFormData}
       ></input>
 
+      <label htmlFor="image">Slika</label>
       <input
         type="text"
         id="image"
@@ -126,6 +130,7 @@ export default function VolunteerDetailsEdit({
         value={newData.image}
         onChange={handleFormData}
       ></input>
+      <label htmlFor="contact">Kontakt</label>
       <input
         type="text"
         id="contact"
@@ -139,7 +144,7 @@ export default function VolunteerDetailsEdit({
         <span className="errorMessage">Unesite ispravan e-mail</span>
       )}
 
-      <i className="bx bx-location-plus"></i>
+      <label htmlFor="city">Grad</label>
       <select
         id="city"
         name="city"
@@ -154,55 +159,53 @@ export default function VolunteerDetailsEdit({
         ))}
       </select>
 
-      <label>
-        Aktivnosti:
-        <label>
-          <input
-            type="checkbox"
-            name="activities"
-            checked={newData.activities.includes("Ekologija")}
-            value="Ekologija"
-            onChange={handleFormData}
-          ></input>
-          Ekologija
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            name="activities"
-            value="Edukacija"
-            checked={newData.activities.includes("Edukacija")}
-            onChange={handleFormData}
-          ></input>
-          Edukacija
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            name="activities"
-            checked={newData.activities.includes("Prijevoz")}
-            value="Prijevoz"
-            onChange={handleFormData}
-          ></input>
-          Prijevoz
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            name="activities"
-            checked={newData.activities.includes("Razno")}
-            value="Razno"
-            onChange={handleFormData}
-          ></input>
-          Razno
-        </label>
-      </label>
-      <button onClick={toggleEdit}>
-        <i className="bx bx-x"></i>
-      </button>
-      <button onClick={sendData}>
-        <i className="bx bx-check"></i>
-      </button>
-    </>
+      <div className="activity-container">
+        <label htmlFor="activities">Aktivnosti:</label>
+        <div className="activity-checkboxes">
+          <label>
+            <input
+              type="checkbox"
+              name="activities"
+              checked={newData.activities.includes("Ekologija")}
+              value="Ekologija"
+              onChange={handleFormData}
+            ></input>
+            Ekologija
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="activities"
+              value="Edukacija"
+              checked={newData.activities.includes("Edukacija")}
+              onChange={handleFormData}
+            ></input>
+            Edukacija
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="activities"
+              checked={newData.activities.includes("Prijevoz")}
+              value="Prijevoz"
+              onChange={handleFormData}
+            ></input>
+            Prijevoz
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="activities"
+              checked={newData.activities.includes("Razno")}
+              value="Razno"
+              onChange={handleFormData}
+            ></input>
+            Razno
+          </label>
+        </div>
+      </div>
+      <button onClick={sendData}>Spremi ✔️</button>
+      <button onClick={toggleEdit}>Odbaci ❌</button>
+    </div>
   );
 }

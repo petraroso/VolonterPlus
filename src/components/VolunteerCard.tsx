@@ -35,6 +35,7 @@ export default function VolunteerCard({
 
   const toggleModal = () => {
     setModal(!modal);
+    if (modal === true && editing === true) setEditing(false);
   };
   function toggleEdit() {
     setEditing(!editing);

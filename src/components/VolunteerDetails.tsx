@@ -22,7 +22,7 @@ export default function VolunteerDetails({
   const adminData = useAdminContext();
 
   return (
-    <>
+    <div className="form">
       <img
         src={volunteer.image}
         alt="Volunteer avatar"
@@ -51,6 +51,6 @@ export default function VolunteerDetails({
           <i className="bx bx-edit-alt"></i>
         </button>
       )}
-    </>
+    </div>
   );
 }
