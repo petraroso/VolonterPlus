@@ -147,7 +147,12 @@
       "contact": "ansssa@gmail.com",
       "city": "Dubrovnik",
       "image": "../1.jpg",
-      "activities": ["Ekologija", "Prijevoz", "Edukacija", "Razno"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz",
+        "Edukacija",
+        "Razno"
+      ]
     },
     {
       "id": 2,
@@ -156,7 +161,10 @@
       "contact": "ana@gmail.com",
       "city": "Split",
       "image": "../2.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "id": 3,
@@ -165,7 +173,10 @@
       "contact": "ana@gmail.com",
       "city": "Split",
       "image": "../3.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "id": 4,
@@ -174,7 +185,10 @@
       "contact": "ana@gmail.com",
       "city": "Dubrovnik",
       "image": "../4.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "id": 5,
@@ -183,7 +197,10 @@
       "contact": "ana@gmail.com",
       "city": "Split",
       "image": "../5.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "id": 6,
@@ -192,7 +209,10 @@
       "contact": "ana@gmail.com",
       "city": "Split",
       "image": "../6.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "name": "Johng",
@@ -200,7 +220,10 @@
       "contact": "bero@gmail.com",
       "city": "Zadar",
       "image": "../7.jpg",
-      "activities": ["Prijevoz", "Razno"],
+      "activities": [
+        "Prijevoz",
+        "Razno"
+      ],
       "id": 7
     }
   ],
@@ -278,6 +301,20 @@
       "city": "Zadar",
       "approved": false,
       "id": 9
+    },
+    {
+      "name": "Volonterska Udruga Rijeka",
+      "address": "Riječki put 7",
+      "city": "Zadar",
+      "approved": false,
+      "id": 10
+    },
+    {
+      "name": "List",
+      "address": "Kropni puut 3",
+      "city": "Zagreb",
+      "approved": false,
+      "id": 11
     }
   ]
 }

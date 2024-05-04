@@ -27,3 +27,11 @@
 .activity-checkboxes label {
   margin-top: 0;
 }
+
+.successMessage {
+  margin-top: 1rem;
+  padding:1rem;
+  text-align: center;
+  background-color: var(--clr-dark-blue);
+  color: var(--clr-light);
+}
