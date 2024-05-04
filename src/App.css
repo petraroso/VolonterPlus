@@ -229,12 +229,8 @@
 }
 
 /*Activities page*/
-.page-container {
-  margin: 2rem 10%;
-}
-.page-container h2 {
-  width: fit-content;
-  margin: auto;
+.activity-sort {
+  margin: 2rem 0;
 }
 .activity-card {
   display: flex;
@@ -290,6 +286,27 @@
   margin: 0 2rem;
 }
 
+/*Associations Page*/
+.table-title {
+  margin-top: 2rem;
+}
+.association-list {
+  list-style-type: none;
+}
+.association-list li {
+  height: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 0 1rem;
+}
+.association-list li:nth-child(odd) {
+  background-color: rgba(128, 128, 128, 0.3);
+}
+.association-list li div:last-child {
+  justify-self: center;
+}
+
 @media (min-width: 1045px) {
   .navbar a::before {
     content: "";
@@ -329,9 +346,6 @@
 @media (max-width: 1070px) {
   .header {
     padding: 1.3rem 5%;
-  }
-  .page-container {
-    margin: 2rem 5%;
   }
 }
 

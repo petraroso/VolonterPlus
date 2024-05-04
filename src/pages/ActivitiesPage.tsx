@@ -71,7 +71,13 @@ export default function ActivitiesPage() {
   return (
     <div className="page-container">
       <h2>Popis svih aktivnosti</h2>
-      <select id="sort" name="sort" value={sortValue} onChange={handleSort}>
+      <select
+        id="sort"
+        name="sort"
+        value={sortValue}
+        onChange={handleSort}
+        className="activity-sort"
+      >
         <option value={"latest"}>Najnovije</option>
         <option value={"oldest"}>Najstarije</option>
       </select>

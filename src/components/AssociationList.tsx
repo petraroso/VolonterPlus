@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useAdminContext } from "../AdminContext";
 
 interface Association {
   id: number;
@@ -18,6 +19,7 @@ const AssociationList: React.FC<ListProps> = ({
   approved,
   setUpdateAssociations,
 }) => {
+  const adminData = useAdminContext();
   const handleDelete = (id: number) => {
     if (window.confirm("Jeste li sigurni da želite izbrisati udrugu?")) {
       axios.delete(`http://localhost:3001/associations/${id}`).then((rez) => {
@@ -45,20 +47,25 @@ const AssociationList: React.FC<ListProps> = ({
         if (item.approved === approved) {
           return (
             <li key={index}>
-              {item.name} {item.address} {item.city}
-              {approved ? (
-                <button onClick={() => handleDelete(item.id)}>
-                  <i className="bx bx-trash"></i>
-                </button>
-              ) : (
-                <>
+              <strong>{item.name}</strong>&nbsp;&nbsp; {item.address}{" "}
+              <>{item.city}</>
+              {approved && adminData.admin ? (
+                <div>
+                  <button onClick={() => handleDelete(item.id)}>
+                    <i className="bx bx-trash"></i>
+                  </button>
+                </div>
+              ) : adminData.admin ? (
+                <div>
                   <button onClick={() => handleDelete(item.id)}>
                     <i className="bx bx-trash"></i>
                   </button>
                   <button onClick={() => handleApproval(item.id)}>
                     <i className="bx bxs-up-arrow-square"></i>
                   </button>
-                </>
+                </div>
+              ) : (
+                <></>
               )}
             </li>
           );
