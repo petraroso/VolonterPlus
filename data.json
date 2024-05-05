@@ -2,39 +2,12 @@
   "activities": [
     {
       "id": 2,
-      "name": "Čišćenje rijeke Jadro",
+      "name": "1111Čišćenje rijeke Jadro",
       "description": "Čišćenje rijeke Jadro Čišćenje rijeke Jadro Čišćenje rijeke Jadro",
       "date": "2024-14-05",
       "location": "Split",
       "image": "../jadro.jpg",
-      "association": "Most",
-      "volunteers": [
-        {
-          "id": 1,
-          "name": "Ivo",
-          "surname": "Ivic"
-        },
-        {
-          "id": 2,
-          "name": "Ana",
-          "surname": "Anic"
-        },
-        {
-          "id": 3,
-          "name": "Marko",
-          "surname": "Markovic"
-        },
-        {
-          "id": 4,
-          "name": "Pero",
-          "surname": "Perić"
-        },
-        {
-          "id": 5,
-          "name": "Ivan",
-          "surname": "Ivandić"
-        }
-      ]
+      "association": "Most"
     },
     {
       "id": 3,
@@ -43,34 +16,7 @@
       "date": "2024-15-05",
       "location": "Izvor Jadra",
       "image": "../jadro.jpg",
-      "association": "Most",
-      "volunteers": [
-        {
-          "id": 1,
-          "name": "Ivo",
-          "surname": "Ivic"
-        },
-        {
-          "id": 2,
-          "name": "Ana",
-          "surname": "Anic"
-        },
-        {
-          "id": 3,
-          "name": "Marko",
-          "surname": "Markovic"
-        },
-        {
-          "id": 4,
-          "name": "Pero",
-          "surname": "Perić"
-        },
-        {
-          "id": 5,
-          "name": "Ivan",
-          "surname": "Ivandić"
-        }
-      ]
+      "association": "Most"
     },
     {
       "name": "Čišćenje rijeke Cetine",
@@ -103,6 +49,28 @@
       "id": 8
     }
   ],
+  "activityVolunteers": [
+    {
+      "id": 1,
+      "activityId": 2,
+      "list": ["Ivo Ivić", "Ivo Ivanić", "John Beroo", "John Malik"]
+    },
+    {
+      "id": 3,
+      "activityId": 4,
+      "list": ["Ivo Ivić", "Ivo Ivanić"]
+    },
+    {
+      "id": 4,
+      "activityId": 8,
+      "list": ["Ivo Ivić", "Ivana Ivanić"]
+    },
+    {
+      "activityId": 3,
+      "list": ["John Anićf"],
+      "id": 5
+    }
+  ],
   "signedVolunteers": [
     {
       "id": 1,
@@ -111,12 +79,7 @@
       "contact": "ansssa@gmail.com",
       "city": "Dubrovnik",
       "image": "../1.jpg",
-      "activities": [
-        "Ekologija",
-        "Prijevoz",
-        "Edukacija",
-        "Razno"
-      ]
+      "activities": ["Ekologija", "Prijevoz", "Edukacija", "Razno"]
     },
     {
       "id": 2,
@@ -125,10 +88,7 @@
       "contact": "ana@gmail.com",
       "city": "Split",
       "image": "../2.jpg",
-      "activities": [
-        "Ekologija",
-        "Prijevoz"
-      ]
+      "activities": ["Ekologija", "Prijevoz"]
     },
     {
       "id": 3,
@@ -137,10 +97,7 @@
       "contact": "ana@gmail.com",
       "city": "Split",
       "image": "../3.jpg",
-      "activities": [
-        "Ekologija",
-        "Prijevoz"
-      ]
+      "activities": ["Ekologija", "Prijevoz"]
     },
     {
       "id": 4,
@@ -149,10 +106,7 @@
       "contact": "ana@gmail.com",
       "city": "Dubrovnik",
       "image": "../4.jpg",
-      "activities": [
-        "Ekologija",
-        "Prijevoz"
-      ]
+      "activities": ["Ekologija", "Prijevoz"]
     },
     {
       "id": 5,
@@ -161,10 +115,7 @@
       "contact": "ana@gmail.com",
       "city": "Split",
       "image": "../5.jpg",
-      "activities": [
-        "Ekologija",
-        "Prijevoz"
-      ]
+      "activities": ["Ekologija", "Prijevoz"]
     },
     {
       "id": 6,
@@ -173,10 +124,7 @@
       "contact": "ana@gmail.com",
       "city": "Split",
       "image": "../6.jpg",
-      "activities": [
-        "Ekologija",
-        "Prijevoz"
-      ]
+      "activities": ["Ekologija", "Prijevoz"]
     },
     {
       "name": "Johng",
@@ -184,10 +132,7 @@
       "contact": "bero@gmail.com",
       "city": "Zadar",
       "image": "../7.jpg",
-      "activities": [
-        "Prijevoz",
-        "Razno"
-      ],
+      "activities": ["Prijevoz", "Razno"],
       "id": 7
     }
   ],

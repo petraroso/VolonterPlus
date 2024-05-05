@@ -13,23 +13,28 @@ interface Activity {
   location: string;
   image: string;
   association: string;
-  volunteers: Volunteer[];
 }
-interface Volunteer {
+interface Volunteers {
   id: number;
-  name: string;
-  surname: string;
+  activityId: number;
+  list: string[];
 }
 interface ActivityCardProps {
   activity: Activity;
+  activityVolunteers: Volunteers[];
   setUpdateActivities: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export default function ActivityCard({
   activity,
+  activityVolunteers,
   setUpdateActivities,
 }: ActivityCardProps) {
   const adminData = useAdminContext();
   const [modal, setModal] = useState(false);
+
+  const filteredVolonteers = activityVolunteers.filter((vol) => {
+    return vol.activityId === activity.id;
+  });
 
   const toggleModal = () => {
     setModal(!modal);
@@ -46,14 +51,21 @@ export default function ActivityCard({
     }
   };
 
+  console.log(typeof filteredVolonteers[0], filteredVolonteers[0]);
+
   return (
     <>
       {modal && (
         <Modal modal={modal} toggleModal={toggleModal}>
-          <ActivityDetails activity={activity} />
+          <ActivityDetails
+            activity={activity}
+            volunteers={filteredVolonteers[0]}
+            setUpdateActivities={setUpdateActivities}
+          />
           <ActivitySignUp
             activityId={activity.id}
-            existingVolunteers={activity.volunteers}
+            existingVolunteers={filteredVolonteers[0]}
+            setUpdateActivities={setUpdateActivities}
           />
         </Modal>
       )}

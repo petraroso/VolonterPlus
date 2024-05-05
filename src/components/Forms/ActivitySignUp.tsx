@@ -3,15 +3,18 @@ import axios from "axios";
 
 interface ActivitySignUpProps {
   activityId: number;
-  existingVolunteers: Volunteer[];
+  existingVolunteers: Volunteers;
+  setUpdateActivities: React.Dispatch<React.SetStateAction<boolean>>;
 }
-interface Volunteer {
-  name: string;
-  surname: string;
+interface Volunteers {
+  id: number;
+  activityId: number;
+  list: string[];
 }
 export default function ActivitySignUp({
   activityId,
   existingVolunteers,
+  setUpdateActivities,
 }: ActivitySignUpProps) {
   const [username, setUsername] = useState({
     name: "",
@@ -27,15 +30,38 @@ export default function ActivitySignUp({
     if (username.name === "" || username.surname === "") {
       window.alert("Unesite ime i prezime.");
     } else {
-      axios
-        .patch(`http://localhost:3001/activities/${activityId}`, {
-          volunteers: [...existingVolunteers, username],
-        })
-        .then((result) => {
-          console.log(result);
-          setUsername({ ...username, name: "", surname: "" });
-        })
-        .catch((err) => console.log(err.message));
+      const updatedList = username.name + " " + username.surname;
+      if (
+        existingVolunteers &&
+        Array.isArray(existingVolunteers.list) &&
+        existingVolunteers.list.length > 0
+      ) {
+        axios
+          .patch(
+            `http://localhost:3001/activityVolunteers/${existingVolunteers.id}`,
+            {
+              list: [...existingVolunteers.list, updatedList],
+            }
+          )
+          .then((result) => {
+            console.log(result);
+            setUsername({ ...username, name: "", surname: "" });
+            setUpdateActivities((prev) => !prev);
+          })
+          .catch((err) => console.log(err.message));
+      } else {
+        axios
+          .post(`http://localhost:3001/activityVolunteers/`, {
+            activityId: activityId,
+            list: [updatedList],
+          })
+          .then((result) => {
+            console.log(result);
+            setUsername({ ...username, name: "", surname: "" });
+            setUpdateActivities((prev) => !prev);
+          })
+          .catch((err) => console.log(err.message));
+      }
     }
   };
 

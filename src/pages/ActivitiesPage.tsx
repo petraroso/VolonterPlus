@@ -14,15 +14,18 @@ interface Activity {
   location: string;
   image: string;
   association: string;
-  volunteers: Volunteer[];
 }
-interface Volunteer {
+interface Volunteers {
   id: number;
-  name: string;
-  surname: string;
+  activityId: number;
+  list: string[];
 }
+
 export default function ActivitiesPage() {
   const [activities, setActivities] = useState<Activity[]>([]);
+  const [activityVolunteers, setActivityVolunteers] = useState<Volunteers[]>(
+    []
+  );
   const [sortValue, setSortValue] = useState("latest");
   const [openNewActivityForm, setOpenNewActivityForm] = useState(false);
   const [updateActivities, setUpdateActivities] = useState(false);
@@ -32,6 +35,12 @@ export default function ActivitiesPage() {
       .get("http://localhost:3001/activities")
       .then((res) => {
         setActivities(sortedActivitiesAscending(res.data));
+      })
+      .catch((err) => console.log(err.message));
+    axios
+      .get("http://localhost:3001/activityVolunteers")
+      .then((res) => {
+        setActivityVolunteers(res.data);
       })
       .catch((err) => console.log(err.message));
   }, [updateActivities]);
@@ -85,6 +94,7 @@ export default function ActivitiesPage() {
         <ActivityCard
           key={index}
           activity={activity}
+          activityVolunteers={activityVolunteers}
           setUpdateActivities={setUpdateActivities}
         />
       ))}

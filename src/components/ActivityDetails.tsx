@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useAdminContext } from "../AdminContext";
+
 interface Activity {
   id: number;
   name: string;
@@ -8,34 +9,54 @@ interface Activity {
   location: string;
   image: string;
   association: string;
-  volunteers: Volunteer[];
 }
-interface Volunteer {
+interface Volunteers {
   id: number;
-  name: string;
-  surname: string;
+  activityId: number;
+  list: string[];
 }
 interface ActivityCardProps {
   activity: Activity;
+  volunteers: Volunteers;
+  setUpdateActivities: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function ActivityDetails({ activity }: ActivityCardProps) {
+export default function ActivityDetails({
+  activity,
+  volunteers,
+  setUpdateActivities,
+}: ActivityCardProps) {
   const adminData = useAdminContext();
 
-  const handleDeleteVolunteer = (volunteerId: number) => {
-    //console.log(volunteerId)
-    //console.log(activity.id)
+  const handleDeleteVolunteer = (volunteerIndex: number) => {
     if (window.confirm("Jeste li sigurni da želite izbrisati volontera?")) {
-      axios
-        .delete(
-          `http://localhost:3001/activities/${activity.id}/volunteers/${volunteerId}`
-        )
-        .then((response) => {
-          console.log(response);
-          //setUpdateActivities((prev) => !prev);
-        });
+      if (
+        volunteers &&
+        Array.isArray(volunteers.list) &&
+        volunteers.list.length > 0
+      ) {
+        const updatedList = volunteers.list.filter(
+          (volunteer, index) => index !== volunteerIndex
+        );
+        axios
+          .patch(`http://localhost:3001/activityVolunteers/${volunteers.id}`, {
+            list: updatedList,
+          })
+          .then((response) => {
+            console.log(response);
+            setUpdateActivities((prev) => !prev);
+          });
+      } else {
+        axios
+          .delete(`http://localhost:3001/activityVolunteers/${volunteers.id}`)
+          .then((response) => {
+            console.log(response);
+            setUpdateActivities((prev) => !prev);
+          });
+      }
     }
   };
+
 
   return (
     <div className="form details-form">
@@ -49,28 +70,26 @@ export default function ActivityDetails({ activity }: ActivityCardProps) {
         {activity.location}
       </p>
       <br></br>
-      {activity.volunteers && (
-        <>
-          <h4>Volonteri:</h4>
-          {activity.volunteers.map((volunteer, index) => (
-            <div className="volunteer-display" key={index}>
-              <p>
-                {volunteer.name} {volunteer.surname}
-              </p>
-              {adminData.admin && (
-                <>
+      {volunteers &&
+        Array.isArray(volunteers.list) &&
+        volunteers.list.length > 0 && (
+          <>
+            <h4>Volonteri:</h4>
+            {volunteers.list.map((volunteer, index) => (
+              <div className="volunteer-display" key={index}>
+                <p>{volunteer}</p>
+                {adminData.admin && (
                   <button
-                    onClick={() => handleDeleteVolunteer(volunteer.id)}
+                    onClick={() => handleDeleteVolunteer(index)}
                     className="admin-delete"
                   >
                     <i className="bx bx-trash"></i>
                   </button>
-                </>
-              )}
-            </div>
-          ))}
-        </>
-      )}
+                )}
+              </div>
+            ))}
+          </>
+        )}
     </div>
   );
 }
