@@ -38,20 +38,22 @@ export default function ActivityDetails({ activity }: ActivityCardProps) {
   };
 
   return (
-    <>
+    <div className="form details-form">
       <h3>{activity.name}</h3>
       <p>{activity.description}</p>
-      <p>{activity.association}</p>
+      <br></br>
+      <p>Udruga: {activity.association}</p>
       <p>{activity.date}</p>
       <p>
         <i className="bx bx-location-plus"></i>
         {activity.location}
       </p>
+      <br></br>
       {activity.volunteers && (
         <>
           <h4>Volonteri:</h4>
           {activity.volunteers.map((volunteer, index) => (
-            <div key={index}>
+            <div className="volunteer-display" key={index}>
               <p>
                 {volunteer.name} {volunteer.surname}
               </p>
@@ -69,6 +71,6 @@ export default function ActivityDetails({ activity }: ActivityCardProps) {
           ))}
         </>
       )}
-    </>
+    </div>
   );
 }

@@ -112,6 +112,16 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
 }
+.details-form .volunteer-display {
+  display: flex;
+  align-items: center;
+}
+.details-form .volunteer-display button {
+  margin-left: auto;
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  padding: 0.2em;
+}
 .details-form img,
 h3 {
   align-self: center;
