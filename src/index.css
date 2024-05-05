@@ -26,7 +26,7 @@
   --clr-dark: #000000;
   --clr-dark-gray: #111;
   --clr-gray: #888;
-  --clr-green:#1add27;
+  --clr-green: #1add27;
 }
 * {
   margin: 0;
@@ -99,14 +99,25 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-.bx-trash{
+.bx-trash {
   color: var(--clr-orange);
 }
-.bxs-up-arrow-square{
+.bxs-up-arrow-square {
   color: var(--clr-green);
 }
-.bx-edit-alt{
+.bx-edit-alt {
   color: var(--clr-dark-blue);
+}
+.details-form {
+  display: flex;
+  flex-direction: column;
+}
+.details-form img,
+h3 {
+  align-self: center;
+}
+.details-form h3 {
+  margin-bottom: 1rem;
 }
 @media (max-width: 1070px) {
   .page-container {

@@ -22,7 +22,7 @@ export default function VolunteerDetails({
   const adminData = useAdminContext();
 
   return (
-    <div className="form">
+    <div className="form details-form">
       <img
         src={volunteer.image}
         alt="Volunteer avatar"
@@ -31,20 +31,24 @@ export default function VolunteerDetails({
       <h3>
         {volunteer.name} {volunteer.surname}
       </h3>
-      <p>{volunteer.contact}</p>
       <p>
         <i className="bx bx-location-plus"></i>
         {volunteer.city}
       </p>
+
+      <p>{volunteer.contact}</p>
+
       {volunteer.activities && (
-        <>
+        <div className="activity-container">
           <h4>Aktivnosti:</h4>
-          {volunteer.activities.map((activity, index) => (
-            <div key={index}>
-              <p>{activity}</p>
-            </div>
-          ))}
-        </>
+          <div className="activity-checkboxes">
+            {volunteer.activities.map((activity, index) => (
+              <div key={index}>
+                <p>{activity}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       )}
       {adminData.admin && (
         <button onClick={toggleEdit}>

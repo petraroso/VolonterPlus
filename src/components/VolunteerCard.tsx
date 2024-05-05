@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Modal from "./Modal/Modal";
 import VolunteerDetails from "./VolunteerDetails";
-import VolunteerDetailsEdit from "./VolunteerDetailsEdit";
+import VolunteerDetailsEdit from "./Forms/VolunteerDetailsEdit";
 import { useAdminContext } from "../AdminContext";
 import axios from "axios";
 
