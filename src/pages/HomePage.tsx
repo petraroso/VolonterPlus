@@ -48,15 +48,10 @@ export default function HomePage() {
 
       <div className="section">
         <div>
-          <h1>Autor stranice</h1>
+          <h1>Autor stranice - Petra</h1>
           <p>
-            Opis autora. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Eius praesentium ipsam quaerat itaque. Dolorem mollitia
-            repellat architecto pariatur eos possimus illum assumenda neque,
-            ipsa praesentium, ex consequatur, velit numquam et corporis.
-            Tempore, delectus excepturi! Officiis repudiandae alias dolores
-            distinctio quod quis repellat iusto, quam illum provident nulla ut
-            tenetur corporis.
+            Magistra računarstva na FESB-u s interesom za web development i web
+            dizajn.
           </p>
           <div className="social-icons">
             <a href="https://www.linkedin.com/in/petra-roso/">

@@ -51,8 +51,6 @@ export default function ActivityCard({
     }
   };
 
-  console.log(typeof filteredVolonteers[0], filteredVolonteers[0]);
-
   return (
     <>
       {modal && (
@@ -70,12 +68,14 @@ export default function ActivityCard({
         </Modal>
       )}
       <div className="activity-card">
-        <img
-          onClick={toggleModal}
-          src={activity.image}
-          alt="Activity site"
-          className="activity-image"
-        />
+        <div>
+          <img
+            onClick={toggleModal}
+            src={activity.image}
+            alt="Activity site"
+            className="activity-image"
+          />
+        </div>
         <div>
           <h3 onClick={toggleModal}>{activity.name}</h3>
           <p onClick={toggleModal}>{activity.date}</p>

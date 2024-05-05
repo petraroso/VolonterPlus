@@ -171,11 +171,14 @@
 }
 .homepage-image,
 .author-image {
-  width: 40%;
+  border-radius: 8px;
+  width: 40vw;
   object-fit: cover;
+  margin-left: auto;
 }
 .author-image {
   border-radius: 50%;
+  height: 40vw;
 }
 .section div {
   display: flex;
@@ -219,6 +222,7 @@
   padding: 2rem;
   background: rgba(255, 255, 255, 0.8);
   font-size: 1.15rem;
+  border-radius: 8px;
 }
 .parallax-image a {
   font-weight: 500;
@@ -240,7 +244,9 @@
 .activity-image {
   height: 100px;
   width: 200px;
+  object-fit: cover;
   margin-right: 2rem;
+  border-radius: 8px;
 }
 .activity-card .admin-delete {
   margin-left: auto;
@@ -342,6 +348,10 @@
   .section {
     margin: 4rem 10%;
   }
+  .author-image {
+    border-radius: 50%;
+    height: 30vw;
+  }
 
   .volunteers-layout {
     display: flex;
@@ -431,5 +441,30 @@
   }
   .volunteer-card:nth-child(3n-2) {
     justify-self: center;
+  }
+  .activity-image {
+    width: 150px;
+    margin-right: 0;
+  }
+  .section {
+    flex-direction: column;
+  }
+  .section h1 {
+    margin-top: 2rem;
+  }
+  .section p {
+    padding-right: 0;
+  }
+  .homepage-image {
+    order: -1;
+    width: 100%;
+    margin-left: 0;
+  }
+  .author-image {
+    order: -1;
+    margin: auto;
+  }
+  .section .social-icons {
+    margin-right: 0;
   }
 }
