@@ -2,81 +2,178 @@
   "activities": [
     {
       "id": 2,
-      "name": "1111Čišćenje rijeke Jadro",
-      "description": "Čišćenje rijeke Jadro Čišćenje rijeke Jadro Čišćenje rijeke Jadro",
+      "name": "Čišćenje rijeke Jadro",
+      "description": "Čišćenje rijeke Jadro: Pridružite nam se u očuvanju čiste vode i okoliša kroz akciju čišćenja obale.",
       "date": "2024-14-05",
       "location": "Split",
       "image": "../jadro.jpg",
-      "association": "Most"
+      "association": "Ruka Pomoći"
     },
     {
       "id": 3,
-      "name": "Čišćenje rijeke Jadro",
-      "description": "Čišćenje rijeke Jadro Čišćenje rijeke Jadro Čišćenje rijeke Jadro",
+      "name": "Sadnja stabala u Parku Maksimir",
+      "description": "Sadnja stabala u Parku Maksimir: Pridružite nam se u obnovi zelenih površina i stvaranju zdravijeg okoliša.",
+      "location": "Zagreb",
+      "image": "../maksimir.jpg",
       "date": "2024-15-05",
-      "location": "Izvor Jadra",
-      "image": "../jadro.jpg",
-      "association": "Most"
+      "association": "Snaga Zajednice"
     },
     {
-      "name": "Čišćenje rijeke Cetine",
+      "name": "Čišćenje plaže Bačvice",
+      "description": "Čišćenje plaže Bačvice: Pridružite nam se u očuvanju čiste obale i borbi protiv onečišćenja mora.",
+      "location": "Split",
       "date": "2024-06-27",
       "image": "../jadro.jpg",
-      "location": "Omiš",
       "byAssociation": "true",
-      "association": "Cetinjani",
-      "description": "fsehfshfklsnfkdsnflijseoif fnjsdkcf sfisdf sf si dis efisfi os",
+      "association": "Novi Horizonti",
       "id": 4
     },
     {
-      "name": "aaaaaaaaaa",
+      "name": "Uređenje dječjeg igrališta u parku",
+      "description": "Uređenje dječjeg igrališta u parku: Pridružite se u obnovi igrališta i stvaranju sigurnog prostora za djecu.",
+      "location": "Rijeka",
       "date": "2024-06-21",
-      "image": "../jadro.jpg",
-      "location": "SPLIT",
+      "image": "../volunteering4.jpg",
       "byAssociation": "false",
       "association": "",
-      "description": "aaaaa",
       "id": 7
     },
     {
-      "name": "bbbbbb",
+      "name": "Sadnja cvijeća u gradskim parkovima",
+      "description": "Sadnja cvijeća u gradskim parkovima: Pridružite nam se u uređenju gradskih površina i promicanju biodiverziteta.",
+      "location": "Zadar",
       "date": "2024-05-25",
-      "image": "../jadro.jpg",
-      "location": "bbbbbbbbbbbb",
+      "image": "../maksimir.jpg",
       "byAssociation": "true",
-      "association": "Cetinjani",
-      "description": "bbbbbbbb",
+      "association": "Zelena Zemlja",
       "id": 8
+    },
+    {
+      "id": 5,
+      "name": "Čišćenje parka Maksimir",
+      "description": "Čišćenje parka Maksimir: Pridružite se u očuvanju prirode i stvaranju čistijeg i ljepšeg okoliša za sve posjetitelje.",
+      "location": "Zagreb",
+      "date": "2024-07-10",
+      "image": "../volunteering4.jpg",
+      "association": "Zeleni Zbor"
+    },
+    {
+      "id": 6,
+      "name": "Sadnja voćaka na obiteljskim gospodarstvima",
+      "description": "Sadnja voćaka na obiteljskim gospodarstvima: Pridružite se u promicanju održive poljoprivrede i podršci lokalnim proizvođačima.",
+      "location": "Osijek",
+      "date": "2024-07-20",
+      "image": "../maksimir.jpg",
+      "association": "Savez"
+    },
+    {
+      "id": 9,
+      "name": "Čišćenje potoka Sutle",
+      "description": "Čišćenje potoka Sutle: Pridružite nam se u očuvanju čiste vode i staništa rijetkih vrsta riba.",
+      "location": "Krapina",
+      "date": "2024-08-05",
+      "image": "../volunteering1.jpg",
+      "association": "Čuvari oceana"
+    },
+    {
+      "id": 10,
+      "name": "Uređenje javnih površina u centru grada",
+      "description": "Uređenje javnih površina u centru grada: Pridružite se u stvaranju ugodnog i estetskog okruženja za sve građane.",
+      "location": "Varaždin",
+      "date": "2024-08-15",
+      "image": "../jadro.jpg",
+      "association": "Ruka Pomoći"
+    },
+    {
+      "id": 11,
+      "name": "Sadnja biljaka na koridorima autocesta",
+      "description": "Sadnja biljaka na koridorima autocesta: Pridružite se u poboljšanju vizualnog identiteta autocesta i smanjenju onečišćenja zraka.",
+      "location": "Karlovac",
+      "date": "2024-09-02",
+      "image": "../volunteering1.jpg",
+      "association": "Novi Horizonti"
+    },
+    {
+      "id": 12,
+      "name": "Čišćenje parka prirode Lonjsko polje",
+      "description": "Čišćenje parka prirode Lonjsko polje: Pridružite se u očuvanju jedinstvenog močvarnog ekosustava i njegovih stanovnika.",
+      "location": "Sisak",
+      "date": "2024-09-20",
+      "image": "../volunteering3.jpg",
+      "association": "Zelena Baština"
+    },
+    {
+      "id": 13,
+      "name": "Sadnja voćaka na obiteljskim gospodarstvima",
+      "description": "Sadnja voćaka na obiteljskim gospodarstvima: Pridružite se u promicanju održive poljoprivrede i podršci lokalnim proizvođačima.",
+      "location": "Split",
+      "date": "2024-10-05",
+      "image": "../jadro.jpg",
+      "association": "Male Ruke"
+    },
+    {
+      "id": 14,
+      "name": "Čišćenje parka prirode Biokovo",
+      "description": "Čišćenje parka prirode Biokovo: Pridružite se u očuvanju bogatstva biljnog i životinjskog svijeta ovog prekrasnog parka.",
+      "location": "Makarska",
+      "date": "2024-10-20",
+      "image": "../volunteering1.jpg",
+      "association": "Sunčana Snaga"
+    },
+    {
+      "id": 15,
+      "name": "Uređenje šetnice uz rijeku Dravu",
+      "description": "Uređenje šetnice uz rijeku Dravu: Pridružite se u stvaranju atraktivnih rekreativnih prostora za sve posjetitelje ovog prekrasnog područja.",
+      "location": "Osijek",
+      "date": "2024-11-10",
+      "image": "../volunteering3.jpg",
+      "association": "Zajedno Naprijed"
+    },
+    {
+      "id": 16,
+      "name": "Čišćenje obale otoka Korčule",
+      "description": "Čišćenje obale otoka Korčule: Pridružite se u očuvanju čistih plaža i morskog okoliša ovog prekrasnog jadranskog otoka.",
+      "location": "Korčula",
+      "date": "2024-11-25",
+      "image": "../jadro.jpg",
+      "association": "Čista Voda"
     }
   ],
   "activityVolunteers": [
     {
       "id": 1,
       "activityId": 2,
-      "list": ["Ivo Ivić", "Ivo Ivanić", "John Beroo", "John Malik"]
+      "list": ["Ivan Petrović", "Ivo Ivanić", "John Bero", "John Malik"]
     },
     {
       "id": 3,
       "activityId": 4,
-      "list": ["Ivo Ivić", "Ivo Ivanić"]
+      "list": [
+        "Ivo Ivić",
+        "Ivo Ivanić",
+        "Tomislav Babić",
+        "Marko Horvat",
+        "Ivo Ivanić",
+        "John Bero"
+      ]
     },
     {
       "id": 4,
       "activityId": 8,
-      "list": ["Ivo Ivić", "Ivana Ivanić"]
+      "list": ["Petra Matić", "Ivana Ivanić", "Filip Jurić"]
     },
     {
       "activityId": 3,
-      "list": ["John Anićf"],
+      "list": ["John Anićf", "Ivana Knežević"],
       "id": 5
     }
   ],
   "signedVolunteers": [
     {
       "id": 1,
-      "name": "Anaiasdhdskv",
-      "surname": "Anićf",
-      "contact": "ansssa@gmail.com",
+      "name": "Marko",
+      "surname": "Horvat",
+      "contact": "marko.horvat@email.com",
       "city": "Dubrovnik",
       "image": "../1.jpg",
       "activities": ["Ekologija", "Prijevoz", "Edukacija", "Razno"]
@@ -92,48 +189,138 @@
     },
     {
       "id": 3,
-      "name": "Ana",
+      "name": "Luka",
       "surname": "Malik",
-      "contact": "ana@gmail.com",
-      "city": "Split",
-      "image": "../3.jpg",
+      "contact": "luka.novak@email.com",
+      "city": "Vukovar",
+      "image": "../8.jpg",
       "activities": ["Ekologija", "Prijevoz"]
     },
     {
       "id": 4,
-      "name": "Ana",
-      "surname": "Anić",
-      "contact": "ana@gmail.com",
-      "city": "Dubrovnik",
+      "name": "Petra",
+      "surname": "Matić",
+      "contact": "petra.matic@email.com",
+      "city": "Pag",
       "image": "../4.jpg",
       "activities": ["Ekologija", "Prijevoz"]
     },
     {
       "id": 5,
-      "name": "Ana",
-      "surname": "Horvat",
-      "contact": "ana@gmail.com",
-      "city": "Split",
+      "name": "Tomislav",
+      "surname": "Babić",
+      "contact": "tomislav.babic@email.com",
+      "city": "Opatija",
       "image": "../5.jpg",
       "activities": ["Ekologija", "Prijevoz"]
     },
     {
       "id": 6,
-      "name": "Ana",
+      "name": "Filip",
+      "surname": "Jurić",
+      "contact": "filip.juric@email.com",
+      "city": "Osijek",
+      "image": "../6.jpg",
+      "activities": ["Ekologija", "Prijevoz"]
+    },
+    {
+      "name": "Mia",
+      "surname": "Kralj",
+      "contact": "mia.kralj@email.com",
+      "city": "Zadar",
+      "image": "../7.jpg",
+      "activities": ["Prijevoz", "Razno"],
+      "id": 7
+    },
+    {
+      "id": 8,
+      "name": "Ivan",
+      "surname": "Petrović",
+      "contact": "ivan.petrovic@email.com",
+      "city": "Dubrovnik",
+      "image": "../8.jpg",
+      "activities": ["Ekologija", "Prijevoz"]
+    },
+    {
+      "id": 9,
+      "name": "Marta",
+      "surname": "Kovačević",
+      "contact": "marta.kovacevic@email.com",
+      "city": "Zagreb",
+      "image": "../9.jpg",
+      "activities": ["Ekologija", "Prijevoz"]
+    },
+    {
+      "id": 10,
+      "name": "Josip",
       "surname": "Horvat",
-      "contact": "ana@gmail.com",
+      "contact": "josip.horvat@email.com",
+      "city": "Split",
+      "image": "../10.jpg",
+      "activities": ["Ekologija", "Prijevoz"]
+    },
+    {
+      "id": 11,
+      "name": "Ivana",
+      "surname": "Knežević",
+      "contact": "ivana.knezevic@email.com",
+      "city": "Zadar",
+      "image": "../10.jpg",
+      "activities": ["Ekologija", "Prijevoz"]
+    },
+    {
+      "id": 12,
+      "name": "Ante",
+      "surname": "Marković",
+      "contact": "ante.markovic@email.com",
       "city": "Split",
       "image": "../6.jpg",
       "activities": ["Ekologija", "Prijevoz"]
     },
     {
-      "name": "Johng",
-      "surname": "Beroo",
-      "contact": "bero@gmail.com",
-      "city": "Zadar",
+      "id": 13,
+      "name": "Marina",
+      "surname": "Barić",
+      "contact": "marina.baric@email.com",
+      "city": "Rijeka",
       "image": "../7.jpg",
-      "activities": ["Prijevoz", "Razno"],
-      "id": 7
+      "activities": ["Ekologija", "Prijevoz"]
+    },
+    {
+      "id": 14,
+      "name": "Ivan",
+      "surname": "Kovač",
+      "contact": "ivan.kovac@email.com",
+      "city": "Osijek",
+      "image": "../3.jpg",
+      "activities": ["Ekologija", "Prijevoz"]
+    },
+    {
+      "id": 15,
+      "name": "Marija",
+      "surname": "Šimić",
+      "contact": "marija.simic@email.com",
+      "city": "Varaždin",
+      "image": "../3.jpg",
+      "activities": ["Ekologija", "Prijevoz"]
+    },
+    {
+      "id": 16,
+      "name": "Mateo",
+      "surname": "Maras",
+      "contact": "mateo.maras@email.com",
+      "city": "Šibenik",
+      "image": "../4.jpg",
+      "activities": ["Ekologija", "Prijevoz"]
+    },
+    {
+      "id": 17,
+      "name": "Ana",
+      "surname": "Novak",
+      "contact": "ana.novak@email.com",
+      "city": "Zagreb",
+      "image": "../9.jpg",
+      "activities": ["Ekologija", "Prijevoz"]
     }
   ],
   "cities": [
@@ -142,8 +329,8 @@
       "name": "Split"
     },
     {
-      "id": 21,
-      "name": "Zagreb"
+      "id": 2,
+      "name": "Rijeka"
     },
     {
       "id": 3,
@@ -152,60 +339,104 @@
     {
       "id": 4,
       "name": "Dubrovnik"
+    },
+    {
+      "id": 5,
+      "name": "Osijek"
+    },
+    {
+      "id": 6,
+      "name": "Pula"
+    },
+    {
+      "id": 7,
+      "name": "Šibenik"
+    },
+    {
+      "id": 8,
+      "name": "Karlovac"
+    },
+    {
+      "id": 9,
+      "name": "Sisak"
+    },
+    {
+      "id": 10,
+      "name": "Slavonski Brod"
+    },
+    {
+      "id": 11,
+      "name": "Varaždin"
+    },
+    {
+      "id": 12,
+      "name": "Pag"
+    },
+    {
+      "id": 13,
+      "name": "Vukovar"
+    },
+    {
+      "id": 14,
+      "name": "Opatija"
+    },
+    {
+      "id": 15,
+      "name": "Makarska"
     }
   ],
   "associations": [
     {
       "id": 1,
-      "name": "Cetinjani",
-      "address": "aPut mosta 36",
+      "name": "Čuvari oceana",
+      "address": "Strossmayerova ulica 6",
       "city": "Dubrovnik",
       "approved": true
     },
     {
       "id": 3,
-      "name": "APlusV",
-      "address": "Put mosta 36",
-      "city": "Split",
+      "name": "Zelena Zemlja",
+      "address": "Franje Tuđmana 5",
+      "city": "Varaždin",
       "approved": true
     },
     {
       "id": 4,
-      "name": "PlusV",
-      "address": "zPut mosta 36",
-      "city": "Zadar",
+      "name": "Savez",
+      "address": "Nikole Tesle 8",
+      "city": "Pag",
       "approved": true
     },
     {
       "id": 5,
-      "name": "PlusV",
-      "address": "hPut mosta 31",
-      "city": "Split",
+      "name": "Zeleni Zbor",
+      "address": "Petra Preradovića 4",
+      "city": "Šibenik",
       "approved": false
     },
     {
       "id": 6,
-      "name": "PlusV",
+      "name": "Kreativna Udruga",
       "address": "Put mosta 32",
       "city": "Dubrovnik",
       "approved": false
     },
     {
-      "name": "Nova udruga",
+      "name": "Novi Horizonti",
       "address": "Zrinjska 54",
-      "city": "Zagreb",
+      "city": "Vukovar",
       "approved": false,
       "id": 7
     },
     {
-      "name": "KUD",
+      "name": "Sunčana Snaga",
       "address": "Vukovarska 143",
-      "city": "Split",
+      "city": "Opatija",
       "approved": false,
       "id": 8
     },
     {
-      "name": "Boba udurga",
+      "name": "Ruka Pomoći",
       "address": "Mostarska 67",
       "city": "Zadar",
       "approved": true,
@@ -214,16 +445,100 @@
     {
       "name": "Volonterska Udruga Rijeka",
       "address": "Riječki put 7",
-      "city": "Zadar",
+      "city": "Rijeka",
       "approved": false,
       "id": 10
     },
     {
       "name": "List",
-      "address": "Kropni puut 3",
+      "address": "Trg bana Josipa Jelačića 1",
       "city": "Zagreb",
       "approved": false,
       "id": 11
+    },
+    {
+      "name": "Snaga Malih Ruku",
+      "address": "Vukovarska 3",
+      "city": "Makarska",
+      "approved": false,
+      "id": 12
+    },
+    {
+      "name": "Male Ruke",
+      "address": "Mostarska 67",
+      "city": "Split",
+      "approved": true,
+      "id": 13
+    },
+    {
+      "id": 14,
+      "name": "Zelena Baština",
+      "address": "Trg Stjepana Radića 2",
+      "city": "Sisak",
+      "approved": true
+    },
+    {
+      "id": 15,
+      "name": "Čista Voda",
+      "address": "Kolodvorska ulica 10",
+      "city": "Karlovac",
+      "approved": true
+    },
+    {
+      "id": 16,
+      "name": "Zajedno Naprijed",
+      "address": "Antuna Gustava Matoša 7",
+      "city": "Varaždinske Toplice",
+      "approved": true
+    },
+    {
+      "id": 17,
+      "name": "Zelena Oaza",
+      "address": "Trg Ante Starčevića 3",
+      "city": "Slavonski Brod",
+      "approved": false
+    },
+    {
+      "id": 18,
+      "name": "Sunčana Zora",
+      "address": "Kralja Tomislava 14",
+      "city": "Makarska",
+      "approved": false
+    },
+    {
+      "id": 19,
+      "name": "Dobro Srce",
+      "address": "Miroslava Krleže 5",
+      "city": "Zagreb",
+      "approved": true
+    },
+    {
+      "id": 20,
+      "name": "Zaštitimo Okoliš",
+      "address": "Josipa Broza Tita 23",
+      "city": "Opatija",
+      "approved": true
+    },
+    {
+      "id": 21,
+      "name": "Budućnost Zajednice",
+      "address": "Stjepana Radića 9",
+      "city": "Rijeka",
+      "approved": false
+    },
+    {
+      "id": 22,
+      "name": "Zelene Ruke",
+      "address": "Gundulićeva ulica 17",
+      "city": "Dubrovnik",
+      "approved": false
+    },
+    {
+      "id": 23,
+      "name": "Očuvajmo Prirodu",
+      "address": "Vladimira Nazora 6",
+      "city": "Split",
+      "approved": true
     }
   ]
 }
