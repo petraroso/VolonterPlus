@@ -169,16 +169,11 @@
   padding: 2rem;
   margin: 4rem 0;
 }
-.homepage-image,
-.author-image {
+.homepage-image {
   border-radius: 8px;
   width: 40vw;
   object-fit: cover;
   margin-left: auto;
-}
-.author-image {
-  border-radius: 50%;
-  height: 40vw;
 }
 .section div {
   display: flex;
@@ -378,10 +373,6 @@
   .section {
     margin: 4rem 10%;
   }
-  .author-image {
-    border-radius: 50%;
-    height: 30vw;
-  }
 
   .volunteers-layout {
     display: flex;
@@ -489,12 +480,5 @@
     order: -1;
     width: 100%;
     margin-left: 0;
-  }
-  .author-image {
-    order: -1;
-    margin: auto;
-  }
-  .section .social-icons {
-    margin-right: 0;
   }
 }
