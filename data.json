@@ -4,19 +4,21 @@
       "id": 2,
       "name": "Čišćenje rijeke Jadro",
       "description": "Čišćenje rijeke Jadro: Pridružite nam se u očuvanju čiste vode i okoliša kroz akciju čišćenja obale.",
-      "date": "2024-14-05",
+      "date": "2024-09-05",
       "location": "Split",
       "image": "../jadro.jpg",
+      "byAssociation": "true",
       "association": "Ruka Pomoći"
     },
     {
       "id": 3,
       "name": "Sadnja stabala u Parku Maksimir",
-      "description": "Sadnja stabala u Parku Maksimir: Pridružite nam se u obnovi zelenih površina i stvaranju zdravijeg okoliša.",
+      "description": "Novi opis: Sadnja stabala u Parku Maksimir: Pridružite nam se u obnovi zelenih površina i stvaranju zdravijeg okoliša.",
       "location": "Zagreb",
       "image": "../maksimir.jpg",
-      "date": "2024-15-05",
-      "association": "Snaga Zajednice"
+      "date": "2024-09-05",
+      "byAssociation": "true",
+      "association": "Šum"
     },
     {
       "name": "Čišćenje plaže Bačvice",
@@ -55,6 +57,7 @@
       "location": "Zagreb",
       "date": "2024-07-10",
       "image": "../volunteering4.jpg",
+      "byAssociation": "true",
       "association": "Zeleni Zbor"
     },
     {
@@ -64,6 +67,7 @@
       "location": "Osijek",
       "date": "2024-07-20",
       "image": "../maksimir.jpg",
+      "byAssociation": "true",
       "association": "Savez"
     },
     {
@@ -73,6 +77,7 @@
       "location": "Krapina",
       "date": "2024-08-05",
       "image": "../volunteering1.jpg",
+      "byAssociation": "true",
       "association": "Čuvari oceana"
     },
     {
@@ -82,6 +87,7 @@
       "location": "Varaždin",
       "date": "2024-08-15",
       "image": "../jadro.jpg",
+      "byAssociation": "true",
       "association": "Ruka Pomoći"
     },
     {
@@ -91,6 +97,7 @@
       "location": "Karlovac",
       "date": "2024-09-02",
       "image": "../volunteering1.jpg",
+      "byAssociation": "true",
       "association": "Novi Horizonti"
     },
     {
@@ -100,6 +107,7 @@
       "location": "Sisak",
       "date": "2024-09-20",
       "image": "../volunteering3.jpg",
+      "byAssociation": "true",
       "association": "Zelena Baština"
     },
     {
@@ -109,6 +117,7 @@
       "location": "Split",
       "date": "2024-10-05",
       "image": "../jadro.jpg",
+      "byAssociation": "true",
       "association": "Male Ruke"
     },
     {
@@ -118,6 +127,7 @@
       "location": "Makarska",
       "date": "2024-10-20",
       "image": "../volunteering1.jpg",
+      "byAssociation": "true",
       "association": "Sunčana Snaga"
     },
     {
@@ -127,6 +137,7 @@
       "location": "Osijek",
       "date": "2024-11-10",
       "image": "../volunteering3.jpg",
+      "byAssociation": "true",
       "association": "Zajedno Naprijed"
     },
     {
@@ -136,6 +147,7 @@
       "location": "Korčula",
       "date": "2024-11-25",
       "image": "../jadro.jpg",
+      "byAssociation": "true",
       "association": "Čista Voda"
     }
   ],
@@ -143,7 +155,12 @@
     {
       "id": 1,
       "activityId": 2,
-      "list": ["Ivan Petrović", "Ivo Ivanić", "John Bero", "John Malik"]
+      "list": [
+        "Ivan Petrović",
+        "Ivo Ivanić",
+        "John Bero",
+        "John Malik"
+      ]
     },
     {
       "id": 3,
@@ -160,11 +177,18 @@
     {
       "id": 4,
       "activityId": 8,
-      "list": ["Petra Matić", "Ivana Ivanić", "Filip Jurić"]
+      "list": [
+        "Petra Matić",
+        "Ivana Ivanić",
+        "Filip Jurić"
+      ]
     },
     {
       "activityId": 3,
-      "list": ["John Anićf", "Ivana Knežević"],
+      "list": [
+        "John Anićf",
+        "Ivana Knežević"
+      ],
       "id": 5
     }
   ],
@@ -176,7 +200,12 @@
       "contact": "marko.horvat@email.com",
       "city": "Dubrovnik",
       "image": "../1.jpg",
-      "activities": ["Ekologija", "Prijevoz", "Edukacija", "Razno"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz",
+        "Edukacija",
+        "Razno"
+      ]
     },
     {
       "id": 2,
@@ -185,7 +214,10 @@
       "contact": "ana@gmail.com",
       "city": "Split",
       "image": "../2.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "id": 3,
@@ -194,7 +226,10 @@
       "contact": "luka.novak@email.com",
       "city": "Vukovar",
       "image": "../8.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "id": 4,
@@ -203,7 +238,10 @@
       "contact": "petra.matic@email.com",
       "city": "Pag",
       "image": "../4.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "id": 5,
@@ -212,7 +250,10 @@
       "contact": "tomislav.babic@email.com",
       "city": "Opatija",
       "image": "../5.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "id": 6,
@@ -221,7 +262,10 @@
       "contact": "filip.juric@email.com",
       "city": "Osijek",
       "image": "../6.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "name": "Mia",
@@ -229,7 +273,10 @@
       "contact": "mia.kralj@email.com",
       "city": "Zadar",
       "image": "../7.jpg",
-      "activities": ["Prijevoz", "Razno"],
+      "activities": [
+        "Prijevoz",
+        "Razno"
+      ],
       "id": 7
     },
     {
@@ -239,7 +286,10 @@
       "contact": "ivan.petrovic@email.com",
       "city": "Dubrovnik",
       "image": "../8.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "id": 9,
@@ -248,7 +298,10 @@
       "contact": "marta.kovacevic@email.com",
       "city": "Zagreb",
       "image": "../9.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "id": 10,
@@ -257,7 +310,10 @@
       "contact": "josip.horvat@email.com",
       "city": "Split",
       "image": "../10.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "id": 11,
@@ -266,7 +322,10 @@
       "contact": "ivana.knezevic@email.com",
       "city": "Zadar",
       "image": "../10.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "id": 12,
@@ -275,7 +334,10 @@
       "contact": "ante.markovic@email.com",
       "city": "Split",
       "image": "../6.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "id": 13,
@@ -284,7 +346,10 @@
       "contact": "marina.baric@email.com",
       "city": "Rijeka",
       "image": "../7.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "id": 14,
@@ -293,7 +358,10 @@
       "contact": "ivan.kovac@email.com",
       "city": "Osijek",
       "image": "../3.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "id": 15,
@@ -302,7 +370,10 @@
       "contact": "marija.simic@email.com",
       "city": "Varaždin",
       "image": "../3.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "id": 16,
@@ -311,7 +382,10 @@
       "contact": "mateo.maras@email.com",
       "city": "Šibenik",
       "image": "../4.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     },
     {
       "id": 17,
@@ -320,7 +394,10 @@
       "contact": "ana.novak@email.com",
       "city": "Zagreb",
       "image": "../9.jpg",
-      "activities": ["Ekologija", "Prijevoz"]
+      "activities": [
+        "Ekologija",
+        "Prijevoz"
+      ]
     }
   ],
   "cities": [

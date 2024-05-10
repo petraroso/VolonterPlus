@@ -12,7 +12,7 @@ export default function NewActivityForm({
     date: "",
     image: "",
     location: "",
-    byAssociation: false,
+    byAssociation: false, //fix
     association: "",
     description: "",
   };
@@ -83,13 +83,13 @@ export default function NewActivityForm({
       />
 
       <label>
-        Udruga:
+        Organizator:
         <label>
           <input
             type="radio"
             id="notByAssociation"
             name="byAssociation"
-            //checked={filter === "Sve"}
+            checked={String(formData.byAssociation) === "false"}
             value="false"
             onChange={handleFormData}
           ></input>
@@ -100,7 +100,7 @@ export default function NewActivityForm({
             type="radio"
             id="byAssociation"
             name="byAssociation"
-            //checked={filter === "Sve"}
+            checked={String(formData.byAssociation) === "true"}
             value="true"
             onChange={handleFormData}
           ></input>
@@ -108,7 +108,7 @@ export default function NewActivityForm({
         </label>
       </label>
 
-      {formData.byAssociation && (
+      {String(formData.byAssociation) === "true" && (
         <input
           type="text"
           id="association"

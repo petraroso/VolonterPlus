@@ -14,6 +14,7 @@ interface Activity {
   location: string;
   image: string;
   association: string;
+  byAssociation: boolean;
 }
 interface Volunteers {
   id: number;
