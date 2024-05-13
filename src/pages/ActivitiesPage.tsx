@@ -15,6 +15,7 @@ interface Activity {
   image: string;
   association: string;
   byAssociation: boolean;
+  dateAdded: Date;
 }
 interface Volunteers {
   id: number;
@@ -52,25 +53,39 @@ export default function ActivitiesPage() {
 
     if (value === "latest") {
       setActivities(sortedActivitiesAscending([...activities]));
-    } else {
+    } else if (value === "oldest") {
       setActivities(sortedActivitiesDescending([...activities]));
+    } else {
+      setActivities(sortedActivitiesByDate([...activities]));
     }
   };
 
   const sortedActivitiesAscending = (activities: Activity[]) => {
     return activities.sort((a: Activity, b: Activity) => {
-      return parseDate(b.date).getTime() - parseDate(a.date).getTime();
+      return (
+        parseDate(b.dateAdded.toString()).getTime() -
+        parseDate(a.dateAdded.toString()).getTime()
+      );
     });
   };
 
   const sortedActivitiesDescending = (activities: Activity[]) => {
     return activities.sort((a: Activity, b: Activity) => {
-      return parseDate(a.date).getTime() - parseDate(b.date).getTime();
+      return (
+        parseDate(a.dateAdded.toString()).getTime() -
+        parseDate(b.dateAdded.toString()).getTime()
+      );
+    });
+  };
+
+  const sortedActivitiesByDate = (activities: Activity[]) => {
+    return activities.sort((a: Activity, b: Activity) => {
+      return parseDate(b.date).getTime() - parseDate(a.date).getTime();
     });
   };
 
   const parseDate = (dateString: string): Date => {
-    const [year, day, month] = dateString.split("-");
+    const [year, month, day] = dateString.split("-");
     return new Date(`${year}-${month}-${day}`);
   };
 
@@ -81,6 +96,7 @@ export default function ActivitiesPage() {
   return (
     <div className="page-container">
       <h2>Popis svih aktivnosti</h2>
+      <h3>Sortirajte</h3>
       <select
         id="sort"
         name="sort"
@@ -88,8 +104,9 @@ export default function ActivitiesPage() {
         onChange={handleSort}
         className="activity-sort"
       >
-        <option value={"latest"}>Najnovije</option>
-        <option value={"oldest"}>Najstarije</option>
+        <option value={"latest"}>Najnovije dodano</option>
+        <option value={"oldest"}>Najstarije dodano</option>
+        <option value={"chronological"}>Po datumu odvijanja</option>
       </select>
       {activities.map((activity, index) => (
         <ActivityCard

@@ -15,6 +15,7 @@ export default function NewActivityForm({
     byAssociation: false,
     association: "",
     description: "",
+    dateAdded: new Date,
   };
   const [formData, setFormData] = useState(initialFormData);
 
@@ -30,10 +31,11 @@ export default function NewActivityForm({
         setFormData({
           ...formData,
           [name]: boolValue,
-          ["association"]: "Građani",
+          association: "Građani",
+          dateAdded: new Date(),
         });
-      else setFormData({ ...formData, [name]: boolValue });
-    } else setFormData({ ...formData, [name]: value });
+      else setFormData({ ...formData, [name]: boolValue, dateAdded: new Date() });
+    } else setFormData({ ...formData, [name]: value, dateAdded: new Date() });
   };
 
   const sendData = () => {

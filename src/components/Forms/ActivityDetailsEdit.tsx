@@ -9,6 +9,7 @@ interface Activity {
   image: string;
   association: string;
   byAssociation: boolean;
+  dateAdded: Date;
 }
 interface Volunteers {
   id: number;
@@ -40,6 +41,7 @@ ActivityCardProps) {
     image: "",
     association: "",
     byAssociation: false,
+    dateAdded: new Date(),
   });
 
   useEffect(() => {
@@ -57,10 +59,12 @@ ActivityCardProps) {
         setFormData({
           ...formData,
           [name]: boolValue,
-          ["association"]: "Građani",
+          association: "Građani",
+          dateAdded: new Date(),
         });
-      else setFormData({ ...formData, [name]: boolValue });
-    } else setFormData({ ...formData, [name]: value });
+      else
+        setFormData({ ...formData, [name]: boolValue, dateAdded: new Date() });
+    } else setFormData({ ...formData, [name]: value, dateAdded: new Date() });
   };
 
   const sendData = () => {
