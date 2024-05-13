@@ -40,7 +40,7 @@ export default function ActivityDetails({
         volunteers.list.length > 0
       ) {
         const updatedList = volunteers.list.filter(
-          (volunteer, index) => index !== volunteerIndex
+          (_volunteer, index) => index !== volunteerIndex
         );
         axios
           .patch(`http://localhost:3001/activityVolunteers/${volunteers.id}`, {
