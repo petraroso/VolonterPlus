@@ -228,9 +228,6 @@
 }
 
 /*Activities page*/
-.activity-sort {
-  margin: 2rem 0;
-}
 .activity-card {
   display: flex;
   align-items: center;
