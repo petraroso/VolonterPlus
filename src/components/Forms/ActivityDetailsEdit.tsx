@@ -8,7 +8,7 @@ interface Activity {
   location: string;
   image: string;
   association: string;
-  byAssociation: boolean; //fix
+  byAssociation: boolean;
 }
 interface Volunteers {
   id: number;
@@ -51,12 +51,15 @@ ActivityCardProps) {
   ) => {
     const { name, value } = event.target;
 
-    if (name === "byAssociation" && value === "false") {
-      setFormData({
-        ...formData,
-        association: "Građani",
-        byAssociation: false,
-      });
+    if (name === "byAssociation") {
+      const boolValue: boolean = value === "true";
+      if (boolValue === false)
+        setFormData({
+          ...formData,
+          [name]: boolValue,
+          ["association"]: "Građani",
+        });
+      else setFormData({ ...formData, [name]: boolValue });
     } else setFormData({ ...formData, [name]: value });
   };
 
@@ -67,13 +70,11 @@ ActivityCardProps) {
       formData.location === "" ||
       formData.description === "" ||
       formData.image === "" ||
-      (String(formData.byAssociation) === "true" &&
-        formData.association === "Građani")
+      (formData.byAssociation === true && formData.association === "") ||
+      (formData.byAssociation === true && formData.association === "Građani")
     ) {
       window.alert("Unesite sve podatke.");
     } else {
-      // if (String(formData.byAssociation) === "false")
-      //  setFormData({ ...formData, association: "Građani" });
       axios
         .patch(`http://localhost:3001/activities/${formData.id}`, formData)
         .then((result) => {
@@ -117,10 +118,9 @@ ActivityCardProps) {
               type="radio"
               id="notByAssociation"
               name="byAssociation"
-              checked={String(formData.byAssociation) === "false"}
-              value={"false"}
+              checked={formData.byAssociation === false}
+              value="false"
               onChange={handleFormData}
-              //  onClick={handleDisplay}
             ></input>
             Ne
           </label>
@@ -129,16 +129,15 @@ ActivityCardProps) {
               type="radio"
               id="byAssociation"
               name="byAssociation"
-              checked={String(formData.byAssociation) === "true"}
-              value={"true"}
+              checked={formData.byAssociation === true}
+              value="true"
               onChange={handleFormData}
-              // onClick={handleDisplay}
             ></input>
             Da
           </label>
         </label>
 
-        {String(formData.byAssociation) === "true" && (
+        {formData.byAssociation === true && (
           <input
             type="text"
             id="association"
