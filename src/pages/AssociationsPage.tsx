@@ -31,7 +31,7 @@ export default function AssociationsPage() {
     axios
       .get("http://localhost:3001/associations")
       .then((res) => {
-        setAssociations(sortAssociations(res.data, "name"));
+        setAssociations(sortAssociations(res.data, sortValue));
       })
       .catch((err) => console.log(err.message));
     axios
