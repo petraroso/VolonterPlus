@@ -114,11 +114,11 @@ export default function ActivityCard({
         </div>
         {adminData.admin && (
           <div className="admin-buttons">
-            <button onClick={handleDeleteActivity} className="admin-delete">
-              <i className="bx bx-trash"></i>
-            </button>
             <button onClick={toggleEditAndModal}>
               <i className="bx bx-edit-alt"></i>
+            </button>
+            <button onClick={handleDeleteActivity} className="admin-delete">
+              <i className="bx bx-trash"></i>
             </button>
           </div>
         )}
