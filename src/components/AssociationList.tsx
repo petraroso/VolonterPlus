@@ -1,5 +1,8 @@
 import axios from "axios";
-import { useAdminContext } from "../AdminContext";
+//import { useAdminContext } from "../AdminContext";
+import { useState } from "react";
+import AssociationListMember from "./AssociationListMember";
+import AssociationLMEdit from "./Forms/AssociationLMEdit";
 
 interface Association {
   id: number;
@@ -8,18 +11,31 @@ interface Association {
   city: string;
   approved: boolean;
 }
+interface City {
+  id: Number;
+  name: string;
+}
+
 interface ListProps {
   associations: Association[];
   approved: boolean;
   setUpdateAssociations: React.Dispatch<React.SetStateAction<boolean>>;
+  cities: City[];
 }
 
 const AssociationList: React.FC<ListProps> = ({
   associations,
   approved,
   setUpdateAssociations,
+  cities,
+
 }) => {
-  const adminData = useAdminContext();
+  //const adminData = useAdminContext();
+ // const [editing, setEditing] = useState(false);
+ const [associationEditId, setAssociationEditId] = useState<number | null>(
+  null
+);
+
   const handleDelete = (id: number) => {
     if (window.confirm("Jeste li sigurni da želite izbrisati udrugu?")) {
       axios.delete(`http://localhost:3001/associations/${id}`).then((rez) => {
@@ -41,36 +57,41 @@ const AssociationList: React.FC<ListProps> = ({
       .catch((err) => console.log(err.message));
   };
 
+//  function toggleEdit() {
+  //  setEditing(!editing);
+ // }
+
   return (
     <ul className="association-list">
-      {associations.map((item, index) => {
-        if (item.approved === approved) {
-          return (
-            <li key={index}>
-              <strong>{item.name}</strong>&nbsp;&nbsp;{item.address},{" "}
-              {item.city}
-              {approved && adminData.admin ? (
-                <div>
-                  <button onClick={() => handleDelete(item.id)}>
-                    <i className="bx bx-trash"></i>
-                  </button>
-                </div>
-              ) : adminData.admin ? (
-                <div className="admin-buttons">
-                  <button onClick={() => handleDelete(item.id)}>
-                    <i className="bx bx-trash"></i>
-                  </button>
-                  <button onClick={() => handleApproval(item.id)}>
-                    <i className="bx bxs-up-arrow-square"></i>
-                  </button>
-                </div>
-              ) : (
-                <></>
-              )}
-            </li>
-          );
-        }
-      })}
+      {associations.map((item, index) =>
+        associationEditId === item.id && item.approved === approved ? (
+          <AssociationLMEdit
+            key={index}
+            index={index}
+            item={item}
+            // approved={approved}
+            //handleDelete={handleDelete}
+            //handleApproval={handleApproval}
+            //toggleEdit={toggleEdit}
+            cities={cities}
+            setUpdateAssociations={setUpdateAssociations}
+            setAssociationEditId={setAssociationEditId}
+          />
+        ) : item.approved === approved ? (
+          <AssociationListMember
+            key={index}
+            index={index}
+            item={item}
+            approved={approved}
+            handleDelete={handleDelete}
+            handleApproval={handleApproval}
+           // toggleEdit={toggleEdit}
+            setAssociationEditId={setAssociationEditId}
+          />
+        ) : (
+          <></>
+        )
+      )}
     </ul>
   );
 };

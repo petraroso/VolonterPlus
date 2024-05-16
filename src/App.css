@@ -303,9 +303,20 @@
 .association-list li {
   min-height: 2rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
   align-items: center;
   padding: 0 1rem;
+}
+.association-list-nonedit {
+  grid-template-columns: repeat(4, 1fr); 
+}
+.association-list-edit {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.association-list-edit input,
+select {
+  width: 150px;/*fix*/
 }
 .association-list li:nth-child(odd) {
   background-color: rgba(128, 128, 128, 0.2);

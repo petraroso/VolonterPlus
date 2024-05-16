@@ -567,7 +567,7 @@
     },
     {
       "id": 5,
-      "name": "Zeleni Zbor",
+      "name": "Zeleni Zborić",
       "address": "Petra Preradovića 4",
       "city": "Šibenik",
       "approved": false
@@ -617,7 +617,7 @@
     {
       "name": "Snaga Malih Ruku",
       "address": "Vukovarska 3",
-      "city": "Makarska",
+      "city": "Split",
       "approved": false,
       "id": 12
     },
@@ -682,7 +682,7 @@
       "name": "Budućnost Zajednice",
       "address": "Stjepana Radića 9",
       "city": "Rijeka",
-      "approved": false
+      "approved": true
     },
     {
       "id": 22,

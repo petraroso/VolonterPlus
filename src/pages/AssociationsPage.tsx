@@ -95,6 +95,7 @@ export default function AssociationsPage() {
         associations={associations}
         approved={true}
         setUpdateAssociations={setUpdateAssociations}
+        cities={cities}
       />
 
       {adminData.admin && (
@@ -105,6 +106,8 @@ export default function AssociationsPage() {
             associations={associations}
             approved={false}
             setUpdateAssociations={setUpdateAssociations}
+            cities={cities}
+
           />
         </>
       )}
