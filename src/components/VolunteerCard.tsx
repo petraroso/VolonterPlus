@@ -90,11 +90,11 @@ export default function VolunteerCard({
         </p>
         {adminData.admin && (
           <div className="admin-buttons">
-            <button onClick={handleDeleteVolunteer} className="admin-delete">
-              <i className="bx bx-trash"></i>
-            </button>
             <button onClick={toggleEditAndModal}>
               <i className="bx bx-edit-alt"></i>
+            </button>
+            <button onClick={handleDeleteVolunteer} className="admin-delete">
+              <i className="bx bx-trash"></i>
             </button>
           </div>
         )}

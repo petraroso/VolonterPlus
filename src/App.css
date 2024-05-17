@@ -169,16 +169,11 @@
   padding: 2rem;
   margin: 4rem 0;
 }
-.homepage-image,
-.author-image {
+.homepage-image {
   border-radius: 8px;
   width: 40vw;
   object-fit: cover;
   margin-left: auto;
-}
-.author-image {
-  border-radius: 50%;
-  height: 40vw;
 }
 .section div {
   display: flex;
@@ -233,9 +228,6 @@
 }
 
 /*Activities page*/
-.activity-sort {
-  margin: 2rem 0;
-}
 .activity-card {
   display: flex;
   align-items: center;
@@ -311,9 +303,20 @@
 .association-list li {
   min-height: 2rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
   align-items: center;
   padding: 0 1rem;
+}
+.association-list-nonedit {
+  grid-template-columns: repeat(4, 1fr); 
+}
+.association-list-edit {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.association-list-edit input,
+select {
+  width: 150px;/*fix*/
 }
 .association-list li:nth-child(odd) {
   background-color: rgba(128, 128, 128, 0.2);
@@ -377,10 +380,6 @@
   }
   .section {
     margin: 4rem 10%;
-  }
-  .author-image {
-    border-radius: 50%;
-    height: 30vw;
   }
 
   .volunteers-layout {
@@ -489,12 +488,5 @@
     order: -1;
     width: 100%;
     margin-left: 0;
-  }
-  .author-image {
-    order: -1;
-    margin: auto;
-  }
-  .section .social-icons {
-    margin-right: 0;
   }
 }

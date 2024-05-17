@@ -1,7 +1,6 @@
 //import bigLogo from "../assets/big-logo.png";
 import wordCloud from "../assets/word-cloud.png";
 import volunteeringImage1 from "../assets/volunteering1.jpg";
-import authorImage from "../assets/author.jpg";
 
 import { NavLink } from "react-router-dom";
 
@@ -44,25 +43,6 @@ export default function HomePage() {
             Prijavite se i Vi! <i className="bx bxs-chevrons-right"></i>
           </NavLink>
         </div>
-      </div>
-
-      <div className="section">
-        <div>
-          <h1>Autor stranice - Petra</h1>
-          <p>
-            Magistra računarstva na FESB-u s interesom za web development i web
-            dizajn.
-          </p>
-          <div className="social-icons">
-            <a href="https://www.linkedin.com/in/petra-roso/">
-              <i className="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/petraroso">
-              <i className="fa-brands fa-github"></i>
-            </a>
-          </div>
-        </div>
-        <img src={authorImage} alt="Autor" className="author-image"></img>
       </div>
     </>
   );

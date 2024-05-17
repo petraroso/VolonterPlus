@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Modal from "./Modal/Modal";
 import ActivityDetails from "./ActivityDetails";
+import ActivityDetailsEdit from "./Forms/ActivityDetailsEdit";
 import ActivitySignUp from "./Forms/ActivitySignUp";
 import { useAdminContext } from "../AdminContext";
 import axios from "axios";
@@ -13,6 +14,8 @@ interface Activity {
   location: string;
   image: string;
   association: string;
+  byAssociation: boolean;
+  dateAdded: Date;
 }
 interface Volunteers {
   id: number;
@@ -31,6 +34,7 @@ export default function ActivityCard({
 }: ActivityCardProps) {
   const adminData = useAdminContext();
   const [modal, setModal] = useState(false);
+  const [editing, setEditing] = useState(false);
 
   const filteredVolonteers = activityVolunteers.filter((vol) => {
     return vol.activityId === activity.id;
@@ -38,7 +42,15 @@ export default function ActivityCard({
 
   const toggleModal = () => {
     setModal(!modal);
+    if (modal === true && editing === true) setEditing(false);
   };
+  function toggleEdit() {
+    setEditing(!editing);
+  }
+  function toggleEditAndModal() {
+    setEditing(!editing);
+    setModal(!modal);
+  }
 
   const handleDeleteActivity = () => {
     if (window.confirm("Jeste li sigurni da želite izbrisati aktivnost?")) {
@@ -55,16 +67,32 @@ export default function ActivityCard({
     <>
       {modal && (
         <Modal modal={modal} toggleModal={toggleModal}>
-          <ActivityDetails
-            activity={activity}
-            volunteers={filteredVolonteers[0]}
-            setUpdateActivities={setUpdateActivities}
-          />
-          <ActivitySignUp
-            activityId={activity.id}
-            existingVolunteers={filteredVolonteers[0]}
-            setUpdateActivities={setUpdateActivities}
-          />
+          {adminData.admin && editing ? (
+            <>
+              <ActivityDetailsEdit
+                activity={activity}
+                volunteers={filteredVolonteers[0]}
+                setUpdateActivities={setUpdateActivities}
+                toggleEdit={toggleEdit}
+              />
+            </>
+          ) : (
+            <>
+              <ActivityDetails
+                activity={activity}
+                volunteers={filteredVolonteers[0]}
+                setUpdateActivities={setUpdateActivities}
+                toggleEdit={toggleEdit}
+              />
+              {!adminData.admin && (
+                <ActivitySignUp
+                  activityId={activity.id}
+                  existingVolunteers={filteredVolonteers[0]}
+                  setUpdateActivities={setUpdateActivities}
+                />
+              )}
+            </>
+          )}
         </Modal>
       )}
       <div className="activity-card">
@@ -85,9 +113,14 @@ export default function ActivityCard({
           </p>
         </div>
         {adminData.admin && (
-          <button onClick={handleDeleteActivity} className="admin-delete">
-            <i className="bx bx-trash"></i>
-          </button>
+          <div className="admin-buttons">
+            <button onClick={toggleEditAndModal}>
+              <i className="bx bx-edit-alt"></i>
+            </button>
+            <button onClick={handleDeleteActivity} className="admin-delete">
+              <i className="bx bx-trash"></i>
+            </button>
+          </div>
         )}
       </div>
     </>

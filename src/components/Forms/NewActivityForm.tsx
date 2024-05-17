@@ -15,6 +15,7 @@ export default function NewActivityForm({
     byAssociation: false,
     association: "",
     description: "",
+    dateAdded: new Date,
   };
   const [formData, setFormData] = useState(initialFormData);
 
@@ -24,7 +25,17 @@ export default function NewActivityForm({
     >
   ) => {
     const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
+    if (name === "byAssociation") {
+      const boolValue: boolean = value === "true";
+      if (boolValue === false)
+        setFormData({
+          ...formData,
+          [name]: boolValue,
+          association: "Građani",
+          dateAdded: new Date(),
+        });
+      else setFormData({ ...formData, [name]: boolValue, dateAdded: new Date() });
+    } else setFormData({ ...formData, [name]: value, dateAdded: new Date() });
   };
 
   const sendData = () => {
@@ -33,12 +44,11 @@ export default function NewActivityForm({
       formData.date === "" ||
       formData.location === "" ||
       formData.description === "" ||
-      formData.image === ""
+      formData.image === "" ||
+      (formData.byAssociation === true && formData.association === "")
     ) {
       window.alert("Unesite sve podatke.");
     } else {
-      if (formData.association === "")
-        setFormData({ ...formData, association: "Građani" });
       axios
         .post("http://localhost:3001/activities", formData)
         .then((result) => {
@@ -81,7 +91,7 @@ export default function NewActivityForm({
         value={formData.location}
         onChange={handleFormData}
       />
-
+      <p>Organizator:</p>
       <label>
         Udruga:
         <label>
@@ -89,7 +99,7 @@ export default function NewActivityForm({
             type="radio"
             id="notByAssociation"
             name="byAssociation"
-            //checked={filter === "Sve"}
+            checked={formData.byAssociation === false}
             value="false"
             onChange={handleFormData}
           ></input>
@@ -100,7 +110,7 @@ export default function NewActivityForm({
             type="radio"
             id="byAssociation"
             name="byAssociation"
-            //checked={filter === "Sve"}
+            checked={formData.byAssociation === true}
             value="true"
             onChange={handleFormData}
           ></input>
@@ -108,7 +118,7 @@ export default function NewActivityForm({
         </label>
       </label>
 
-      {formData.byAssociation && (
+      {formData.byAssociation === true && (
         <input
           type="text"
           id="association"

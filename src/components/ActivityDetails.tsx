@@ -9,6 +9,8 @@ interface Activity {
   location: string;
   image: string;
   association: string;
+  byAssociation: Boolean;
+  dateAdded: Date;
 }
 interface Volunteers {
   id: number;
@@ -18,12 +20,14 @@ interface Volunteers {
 interface ActivityCardProps {
   activity: Activity;
   volunteers: Volunteers;
+  toggleEdit: () => void;
   setUpdateActivities: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export default function ActivityDetails({
   activity,
   volunteers,
+  toggleEdit,
   setUpdateActivities,
 }: ActivityCardProps) {
   const adminData = useAdminContext();
@@ -36,7 +40,7 @@ export default function ActivityDetails({
         volunteers.list.length > 0
       ) {
         const updatedList = volunteers.list.filter(
-          (volunteer, index) => index !== volunteerIndex
+          (_volunteer, index) => index !== volunteerIndex
         );
         axios
           .patch(`http://localhost:3001/activityVolunteers/${volunteers.id}`, {
@@ -57,19 +61,23 @@ export default function ActivityDetails({
     }
   };
 
-
   return (
     <div className="form details-form">
       <h3>{activity.name}</h3>
       <p>{activity.description}</p>
       <br></br>
-      <p>Udruga: {activity.association}</p>
+      <p>Organizator: {activity.association}</p>
       <p>{activity.date}</p>
       <p>
         <i className="bx bx-location-plus"></i>
         {activity.location}
       </p>
       <br></br>
+      {adminData.admin && (
+        <button onClick={toggleEdit}>
+          <i className="bx bx-edit-alt"></i>
+        </button>
+      )}
       {volunteers &&
         Array.isArray(volunteers.list) &&
         volunteers.list.length > 0 && (
