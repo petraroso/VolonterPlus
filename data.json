@@ -334,7 +334,8 @@
       "activities": [
         "Ekologija",
         "Prijevoz"
-      ]
+      ],
+      "description": "Volim volontirati"
     },
     {
       "id": 6,
@@ -479,6 +480,20 @@
         "Ekologija",
         "Prijevoz"
       ]
+    },
+    {
+      "name": "Ana",
+      "surname": "Malik",
+      "contact": "anica@gmail.com",
+      "city": "Pula",
+      "image": "../jadro.jpg",
+      "activities": [
+        "Edukacija",
+        "Prijevoz",
+        "Razno"
+      ],
+      "description": "Jako sam zainteresirana za sve ",
+      "id": 18
     }
   ],
   "cities": [

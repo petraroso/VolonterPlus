@@ -21,13 +21,16 @@ export default function NewVolunteerForm({
     city: "Dubrovnik",
     image: "",
     activities: [] as string[],
+    description: "",
   };
   const [formData, setFormData] = useState(initialFormData);
   const [displayEmail, setDisplayEmail] = useState("");
   const [displayContactError, setDisplayContactError] = useState(false);
 
   const handleFormData = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    event: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value, type } = event.target;
 
@@ -186,6 +189,16 @@ export default function NewVolunteerForm({
           </label>
         </div>
       </div>
+      <label htmlFor="description">Opis:</label>
+      <textarea
+        id="description"
+        name="description"
+        placeholder="Vaš opis - opcionalan (max 300 znakova)"
+        maxLength={300}
+        rows={4}
+        value={formData.description}
+        onChange={handleFormData}
+      />
       <button onClick={sendData}>Dodaj ✔️</button>
     </div>
   );

@@ -16,6 +16,7 @@ interface Volunteer {
   city: string;
   image: string;
   activities: string[];
+  description: string;
 }
 interface City {
   id: number;

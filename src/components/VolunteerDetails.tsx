@@ -7,6 +7,7 @@ interface Volunteer {
   city: string;
   image: string;
   activities: string[];
+  description: string;
 }
 
 interface VolunteerCardProps {
@@ -50,6 +51,13 @@ export default function VolunteerDetails({
           </div>
         </div>
       )}
+      {volunteer.description && volunteer.description !== "" && (
+        <>
+          <hr />
+          <p>{volunteer.description}</p>
+        </>
+      )}
+
       {adminData.admin && (
         <button onClick={toggleEdit}>
           <i className="bx bx-edit-alt"></i>
