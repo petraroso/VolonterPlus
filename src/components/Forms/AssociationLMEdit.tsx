@@ -1,4 +1,3 @@
-//import { useAdminContext } from "../../AdminContext";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -16,10 +15,6 @@ interface City {
 interface ListProps {
   index: number;
   item: Association;
-  //approved: boolean;
-  // handleDelete: (arg0: number) => void;
-  //handleApproval: (arg0: number) => void;
-  //toggleEdit: () => void;
   cities: City[];
   setUpdateAssociations: React.Dispatch<React.SetStateAction<boolean>>;
   setAssociationEditId: React.Dispatch<React.SetStateAction<number | null>>;
@@ -28,15 +23,10 @@ interface ListProps {
 const AssociationLMEdit: React.FC<ListProps> = ({
   index,
   item,
-  //approved,
-  // handleDelete,
-  //handleApproval,
-  //toggleEdit,
   cities,
   setUpdateAssociations,
   setAssociationEditId,
 }) => {
-  //const adminData = useAdminContext();
   const [formData, setFormData] = useState<Association>({
     id: 0,
     name: "",

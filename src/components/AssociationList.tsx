@@ -1,5 +1,4 @@
 import axios from "axios";
-//import { useAdminContext } from "../AdminContext";
 import { useState } from "react";
 import AssociationListMember from "./AssociationListMember";
 import AssociationLMEdit from "./Forms/AssociationLMEdit";
@@ -28,13 +27,10 @@ const AssociationList: React.FC<ListProps> = ({
   approved,
   setUpdateAssociations,
   cities,
-
 }) => {
-  //const adminData = useAdminContext();
- // const [editing, setEditing] = useState(false);
- const [associationEditId, setAssociationEditId] = useState<number | null>(
-  null
-);
+  const [associationEditId, setAssociationEditId] = useState<number | null>(
+    null
+  );
 
   const handleDelete = (id: number) => {
     if (window.confirm("Jeste li sigurni da želite izbrisati udrugu?")) {
@@ -57,10 +53,6 @@ const AssociationList: React.FC<ListProps> = ({
       .catch((err) => console.log(err.message));
   };
 
-//  function toggleEdit() {
-  //  setEditing(!editing);
- // }
-
   return (
     <ul className="association-list">
       {associations.map((item, index) =>
@@ -69,10 +61,6 @@ const AssociationList: React.FC<ListProps> = ({
             key={index}
             index={index}
             item={item}
-            // approved={approved}
-            //handleDelete={handleDelete}
-            //handleApproval={handleApproval}
-            //toggleEdit={toggleEdit}
             cities={cities}
             setUpdateAssociations={setUpdateAssociations}
             setAssociationEditId={setAssociationEditId}
@@ -85,7 +73,6 @@ const AssociationList: React.FC<ListProps> = ({
             approved={approved}
             handleDelete={handleDelete}
             handleApproval={handleApproval}
-           // toggleEdit={toggleEdit}
             setAssociationEditId={setAssociationEditId}
           />
         ) : (

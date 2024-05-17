@@ -13,7 +13,6 @@ interface ListProps {
   approved: boolean;
   handleDelete: (arg0: number) => void;
   handleApproval: (arg0: number) => void;
-  //toggleEdit: () => void;
   setAssociationEditId: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
@@ -23,7 +22,6 @@ const AssociationListMember: React.FC<ListProps> = ({
   approved,
   handleDelete,
   handleApproval,
-  //toggleEdit,
   setAssociationEditId,
 }) => {
   const adminData = useAdminContext();
