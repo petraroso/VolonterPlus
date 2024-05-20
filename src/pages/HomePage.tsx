@@ -1,6 +1,7 @@
 //import bigLogo from "../assets/big-logo.png";
 import wordCloud from "../assets/word-cloud.png";
 import volunteeringImage1 from "../assets/volunteering1.jpg";
+import volunteeringImage2 from "../assets/group-people-hands.jpg";
 
 import { NavLink } from "react-router-dom";
 
@@ -41,6 +42,31 @@ export default function HomePage() {
           </p>
           <NavLink to="/volunteers">
             Prijavite se i Vi! <i className="bx bxs-chevrons-right"></i>
+          </NavLink>
+        </div>
+      </div>
+
+      <div className="section">
+        <img
+          src={volunteeringImage2}
+          alt="Udruge"
+          className="homepage-image-left"
+        ></img>
+        <div className="righthand-text">
+          <h1>Brojne udruge</h1>
+          <p>
+            VolonterPlus okuplja raznolike udruge koje dijele našu strast prema
+            volontiranju i zajedničkom djelovanju za dobrobit društva. Svaka
+            udruga unutar naše organizacije posvećena je specifičnom području i
+            donosi jedinstvene projekte i inicijative koje obogaćuju zajednicu.
+            EkoPrijatelji se bavi ekološkim projektima i zaštitom okoliša,
+            organiziraju akcije čišćenja, sadnje drveća i edukativne radionice o
+            održivom razvoju i reciklaži. Njihova misija je očuvati prirodu i
+            educirati građane o važnosti ekološke osviještenosti.
+          </p>
+          <NavLink to="/associations">
+            Otkrijte udruge!
+            <i className="bx bxs-chevrons-right"></i>
           </NavLink>
         </div>
       </div>

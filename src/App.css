@@ -175,13 +175,25 @@
   object-fit: cover;
   margin-left: auto;
 }
+
+.homepage-image-left {
+  border-radius: 8px;
+  width: 40vw;
+  object-fit: cover;
+  margin-right: auto;
+}
 .section div {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-right: 2rem;
+}
+.section .righthand-text {
+  padding-right: 0;
+  padding-left: 2rem;
 }
 .section p {
-  padding: 2rem 2rem 2rem 0;
+  padding: 2rem 0;
 }
 .section a {
   font-size: 1.15rem;
@@ -308,7 +320,7 @@
   padding: 0 1rem;
 }
 .association-list-nonedit {
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(4, 1fr);
 }
 .association-list-edit {
   display: grid;
@@ -316,7 +328,7 @@
 }
 .association-list-edit input,
 select {
-  width: 150px;/*fix*/
+  width: 150px; /*fix*/
 }
 .association-list li:nth-child(odd) {
   background-color: rgba(128, 128, 128, 0.2);
@@ -484,9 +496,22 @@ select {
   .section p {
     padding-right: 0;
   }
-  .homepage-image {
+  .section div {
+    padding-left: 0;
+  }
+  .section .righthand-text {
+    padding-left: 0;
+  }
+  .homepage-image,
+  .homepage-image-left {
     order: -1;
     width: 100%;
     margin-left: 0;
+  }
+
+  .parallax-image div {
+    width: 100%;
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
 }
