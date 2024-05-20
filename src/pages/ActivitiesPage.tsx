@@ -5,6 +5,7 @@ import ActivityCard from "../components/ActivityCard";
 import PlusButton from "../components/PlusButton/PlusButton";
 import Modal from "../components/Modal/Modal";
 import NewActivityForm from "../components/Forms/NewActivityForm";
+import Filter from "../components/Filter";
 
 interface Activity {
   id: number;
@@ -22,21 +23,29 @@ interface Volunteers {
   activityId: number;
   list: string[];
 }
+interface City {
+  id: number;
+  name: string;
+}
+type SortOrder = "asc" | "desc";
+type DateKey = "dateAdded" | "date";
 
 export default function ActivitiesPage() {
   const [activities, setActivities] = useState<Activity[]>([]);
   const [activityVolunteers, setActivityVolunteers] = useState<Volunteers[]>(
     []
   );
+  const [cities, setCities] = useState<City[]>([]);
   const [sortValue, setSortValue] = useState("latest");
   const [openNewActivityForm, setOpenNewActivityForm] = useState(false);
   const [updateActivities, setUpdateActivities] = useState(false);
+  const [cityFilter, setCityFilter] = useState("Svi");
 
   useEffect(() => {
     axios
       .get("http://localhost:3001/activities")
       .then((res) => {
-        setActivities(sortedActivitiesAscending(res.data));
+        setActivities(sortActivities(res.data, "asc", "dateAdded"));
       })
       .catch((err) => console.log(err.message));
     axios
@@ -45,42 +54,50 @@ export default function ActivitiesPage() {
         setActivityVolunteers(res.data);
       })
       .catch((err) => console.log(err.message));
+    axios
+      .get("http://localhost:3001/cities")
+      .then((res) => {
+        setCities(sortAscending(res.data, "name"));
+      })
+      .catch((err) => console.log(err.message));
   }, [updateActivities]);
+
+  function sortAscending<T>(items: T[], key: keyof T): T[] {
+    return items.slice().sort((a, b) => {
+      const valueA = String(a[key]).toLowerCase();
+      const valueB = String(b[key]).toLowerCase();
+      if (valueA < valueB) return -1;
+      if (valueA > valueB) return 1;
+      return 0;
+    });
+  }
 
   const handleSort = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = event.target;
     setSortValue(() => value);
 
     if (value === "latest") {
-      setActivities(sortedActivitiesAscending([...activities]));
+      setActivities(sortActivities([...activities], "asc", "dateAdded"));
     } else if (value === "oldest") {
-      setActivities(sortedActivitiesDescending([...activities]));
+      setActivities(sortActivities([...activities], "desc", "dateAdded"));
     } else {
-      setActivities(sortedActivitiesByDate([...activities]));
+      setActivities(sortActivities([...activities], "asc", "date"));
     }
   };
 
-  const sortedActivitiesAscending = (activities: Activity[]) => {
-    return activities.sort((a: Activity, b: Activity) => {
-      return (
-        parseDate(b.dateAdded.toString()).getTime() -
-        parseDate(a.dateAdded.toString()).getTime()
-      );
-    });
-  };
-
-  const sortedActivitiesDescending = (activities: Activity[]) => {
-    return activities.sort((a: Activity, b: Activity) => {
-      return (
-        parseDate(a.dateAdded.toString()).getTime() -
-        parseDate(b.dateAdded.toString()).getTime()
-      );
-    });
-  };
-
-  const sortedActivitiesByDate = (activities: Activity[]) => {
-    return activities.sort((a: Activity, b: Activity) => {
-      return parseDate(b.date).getTime() - parseDate(a.date).getTime();
+  const sortActivities = (
+    activities: Activity[],
+    order: SortOrder,
+    dateKey: DateKey
+  ): Activity[] => {
+    return activities.slice().sort((a, b) => {
+      const dateA = parseDate(a[dateKey].toString()).getTime();
+      const dateB = parseDate(b[dateKey].toString()).getTime();
+      if (order === "asc") {
+        return dateA - dateB;
+      } else {
+        return dateB - dateA;
+      }
     });
   };
 
@@ -102,14 +119,27 @@ export default function ActivitiesPage() {
         <option value={"oldest"}>Najstarije dodano</option>
         <option value={"chronological"}>Po datumu odvijanja</option>
       </select>
-      {activities.map((activity, index) => (
-        <ActivityCard
-          key={index}
-          activity={activity}
-          activityVolunteers={activityVolunteers}
-          setUpdateActivities={setUpdateActivities}
+      <div>
+        <Filter
+          cities={cities}
+          cityFilter={cityFilter}
+          setCityFilter={setCityFilter}
+          //activityFilter={activityFilter}
+          //setActivityFilter={setActivityFilter}
         />
-      ))}
+      </div>
+      {activities.map((activity, index) =>
+        cityFilter === "Svi" || cityFilter === activity.location ? (
+          <ActivityCard
+            key={index}
+            activity={activity}
+            activityVolunteers={activityVolunteers}
+            setUpdateActivities={setUpdateActivities}
+          />
+        ) : (
+          <></>
+        )
+      )}
       <PlusButton openModal={toggleOpenNewActivityForm} />
       {openNewActivityForm && (
         <Modal

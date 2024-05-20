@@ -6,7 +6,7 @@ import VolunteerCard from "../components/VolunteerCard";
 import PlusButton from "../components/PlusButton/PlusButton";
 import Modal from "../components/Modal/Modal";
 import NewVolunteerForm from "../components/Forms/NewVolunteerForm";
-import VolunteersFilter from "../components/VolunteersFilter";
+import Filter from "../components/Filter";
 
 interface Volunteer {
   id: number;
@@ -35,13 +35,13 @@ export default function VolunteersPage() {
     axios
       .get("http://localhost:3001/signedVolunteers")
       .then((res) => {
-        setVolunteers(sortVolunteersAscending(res.data));
+        setVolunteers(sortAscending(res.data, "surname"));
       })
       .catch((err) => console.log(err.message));
     axios
       .get("http://localhost:3001/cities")
       .then((res) => {
-        setCities(sortCitiesAscending(res.data));
+        setCities(sortAscending(res.data, "name"));
       })
       .catch((err) => console.log(err.message));
   }, [updateVolunteers]);
@@ -50,22 +50,12 @@ export default function VolunteersPage() {
     setOpenNewVolunteerForm(!openNewVolunteerForm);
   };
 
-  function sortVolunteersAscending(volunteers: Volunteer[]): Volunteer[] {
-    return volunteers.slice().sort((a, b) => {
-      const lastNameA = a.surname.toLowerCase();
-      const lastNameB = b.surname.toLowerCase();
-      if (lastNameA < lastNameB) return -1;
-      if (lastNameA > lastNameB) return 1;
-      return 0;
-    });
-  }
-
-  function sortCitiesAscending(cities: City[]): City[] {
-    return cities.slice().sort((a, b) => {
-      const cityA = a.name.toLowerCase();
-      const cityB = b.name.toLowerCase();
-      if (cityA < cityB) return -1;
-      if (cityA > cityB) return 1;
+  function sortAscending<T>(items: T[], key: keyof T): T[] {
+    return items.slice().sort((a, b) => {
+      const valueA = String(a[key]).toLowerCase();
+      const valueB = String(b[key]).toLowerCase();
+      if (valueA < valueB) return -1;
+      if (valueA > valueB) return 1;
       return 0;
     });
   }
@@ -75,7 +65,7 @@ export default function VolunteersPage() {
       <h2>Popis volontera</h2>
       <div className="volunteers-layout">
         <div>
-          <VolunteersFilter
+          <Filter
             cities={cities}
             cityFilter={cityFilter}
             setCityFilter={setCityFilter}
