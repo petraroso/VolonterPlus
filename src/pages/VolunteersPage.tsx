@@ -7,6 +7,7 @@ import PlusButton from "../components/PlusButton/PlusButton";
 import Modal from "../components/Modal/Modal";
 import NewVolunteerForm from "../components/Forms/NewVolunteerForm";
 import Filter from "../components/Filter";
+import Loader from "../components/Loader/Loader";
 
 interface Volunteer {
   id: number;
@@ -63,48 +64,56 @@ export default function VolunteersPage() {
   return (
     <div className="page-container">
       <h2>Popis volontera</h2>
-      <div className="volunteers-layout">
-        <div>
-          <Filter
-            cities={cities}
-            cityFilter={cityFilter}
-            setCityFilter={setCityFilter}
-            activityFilter={activityFilter}
-            setActivityFilter={setActivityFilter}
-          />
-        </div>
-        <div className="volunteer-list">
-          {volunteers.map((volunteer) =>
-            (cityFilter === "Svi" && activityFilter === "Sve") ||
-            (activityFilter === "Sve" && cityFilter === volunteer.city) ||
-            (cityFilter === "Svi" &&
-              volunteer.activities.includes(activityFilter)) ||
-            (cityFilter === volunteer.city &&
-              volunteer.activities.includes(activityFilter)) ? (
-              <VolunteerCard
-                key={volunteer.id}
-                volunteer={volunteer}
+      {volunteers.length ? (
+        <>
+          <div className="volunteers-layout">
+            <div>
+              <Filter
+                cities={cities}
+                cityFilter={cityFilter}
+                setCityFilter={setCityFilter}
+                activityFilter={activityFilter}
+                setActivityFilter={setActivityFilter}
+              />
+            </div>
+            <div className="volunteer-list">
+              {volunteers.map((volunteer) =>
+                (cityFilter === "Svi" && activityFilter === "Sve") ||
+                (activityFilter === "Sve" && cityFilter === volunteer.city) ||
+                (cityFilter === "Svi" &&
+                  volunteer.activities.includes(activityFilter)) ||
+                (cityFilter === volunteer.city &&
+                  volunteer.activities.includes(activityFilter)) ? (
+                  <VolunteerCard
+                    key={volunteer.id}
+                    volunteer={volunteer}
+                    setUpdateVolunteers={setUpdateVolunteers}
+                    cities={cities}
+                  />
+                ) : (
+                  <></>
+                )
+              )}
+            </div>
+          </div>
+          {adminData.admin && (
+            <PlusButton openModal={toggleOpenNewVolunteerForm} />
+          )}
+
+          {openNewVolunteerForm && (
+            <Modal
+              modal={openNewVolunteerForm}
+              toggleModal={toggleOpenNewVolunteerForm}
+            >
+              <NewVolunteerForm
                 setUpdateVolunteers={setUpdateVolunteers}
                 cities={cities}
               />
-            ) : (
-              <></>
-            )
+            </Modal>
           )}
-        </div>
-      </div>
-      {adminData.admin && <PlusButton openModal={toggleOpenNewVolunteerForm} />}
-
-      {openNewVolunteerForm && (
-        <Modal
-          modal={openNewVolunteerForm}
-          toggleModal={toggleOpenNewVolunteerForm}
-        >
-          <NewVolunteerForm
-            setUpdateVolunteers={setUpdateVolunteers}
-            cities={cities}
-          />
-        </Modal>
+        </>
+      ) : (
+        <Loader />
       )}
     </div>
   );
