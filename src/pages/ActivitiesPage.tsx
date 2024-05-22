@@ -6,6 +6,7 @@ import PlusButton from "../components/PlusButton/PlusButton";
 import Modal from "../components/Modal/Modal";
 import NewActivityForm from "../components/Forms/NewActivityForm";
 import Filter from "../components/Filter";
+import Loader from "../components/Loader/Loader";
 
 interface Activity {
   id: number;
@@ -113,41 +114,47 @@ export default function ActivitiesPage() {
   return (
     <div className="page-container">
       <h2>Popis svih aktivnosti</h2>
-      <h3>Sortiranje</h3>
-      <select id="sort" name="sort" value={sortValue} onChange={handleSort}>
-        <option value={"latest"}>Najnovije dodano</option>
-        <option value={"oldest"}>Najstarije dodano</option>
-        <option value={"chronological"}>Po datumu odvijanja</option>
-      </select>
-      <div>
-        <Filter
-          cities={cities}
-          cityFilter={cityFilter}
-          setCityFilter={setCityFilter}
-          //activityFilter={activityFilter}
-          //setActivityFilter={setActivityFilter}
-        />
-      </div>
-      {activities.map((activity, index) =>
-        cityFilter === "Svi" || cityFilter === activity.location ? (
-          <ActivityCard
-            key={index}
-            activity={activity}
-            activityVolunteers={activityVolunteers}
-            setUpdateActivities={setUpdateActivities}
-          />
-        ) : (
-          <></>
-        )
-      )}
-      <PlusButton openModal={toggleOpenNewActivityForm} />
-      {openNewActivityForm && (
-        <Modal
-          modal={openNewActivityForm}
-          toggleModal={toggleOpenNewActivityForm}
-        >
-          <NewActivityForm setUpdateActivities={setUpdateActivities} />
-        </Modal>
+      {activities.length ? (
+        <>
+          <h3>Sortiranje</h3>
+          <select id="sort" name="sort" value={sortValue} onChange={handleSort}>
+            <option value={"latest"}>Najnovije dodano</option>
+            <option value={"oldest"}>Najstarije dodano</option>
+            <option value={"chronological"}>Po datumu odvijanja</option>
+          </select>
+          <div>
+            <Filter
+              cities={cities}
+              cityFilter={cityFilter}
+              setCityFilter={setCityFilter}
+              //activityFilter={activityFilter}
+              //setActivityFilter={setActivityFilter}
+            />
+          </div>
+          {activities.map((activity, index) =>
+            cityFilter === "Svi" || cityFilter === activity.location ? (
+              <ActivityCard
+                key={index}
+                activity={activity}
+                activityVolunteers={activityVolunteers}
+                setUpdateActivities={setUpdateActivities}
+              />
+            ) : (
+              <></>
+            )
+          )}
+          <PlusButton openModal={toggleOpenNewActivityForm} />
+          {openNewActivityForm && (
+            <Modal
+              modal={openNewActivityForm}
+              toggleModal={toggleOpenNewActivityForm}
+            >
+              <NewActivityForm setUpdateActivities={setUpdateActivities} />
+            </Modal>
+          )}
+        </>
+      ) : (
+        <Loader />
       )}
     </div>
   );

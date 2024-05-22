@@ -75,6 +75,7 @@ textarea {
 }
 .page-container {
   margin: 2rem 10%;
+  min-height: 50vh;
 }
 .page-container h2 {
   width: fit-content;
