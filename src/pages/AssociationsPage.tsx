@@ -6,6 +6,7 @@ import AssociationList from "../components/AssociationList";
 import PlusButton from "../components/PlusButton/PlusButton";
 import Modal from "../components/Modal/Modal";
 import NewAssociationForm from "../components/Forms/NewAssociationForm";
+import Loader from "../components/Loader/Loader";
 
 interface Association {
   id: number;
@@ -81,48 +82,61 @@ export default function AssociationsPage() {
 
   return (
     <div className="page-container">
-      <div>
-        <h3>Sortiranje</h3>
-        <select id="sort" name="sort" value={sortValue} onChange={handleSort}>
-          <option value={"name"}>Ime</option>
-          <option value={"address"}>Adresa</option>
-          <option value={"city"}>Grad</option>
-        </select>
-      </div>
-      <h2 className="table-title">Popis udruga</h2>
-      <hr></hr>
-      <AssociationList
-        associations={associations}
-        approved={true}
-        setUpdateAssociations={setUpdateAssociations}
-        cities={cities}
-      />
-
-      {adminData.admin && (
+      {associations.length ? (
         <>
-          <h2 className="table-title">Zahtjevi za odobrenje</h2>
+          <div>
+            <h3>Sortiranje</h3>
+            <select
+              id="sort"
+              name="sort"
+              value={sortValue}
+              onChange={handleSort}
+            >
+              <option value={"name"}>Ime</option>
+              <option value={"address"}>Adresa</option>
+              <option value={"city"}>Grad</option>
+            </select>
+          </div>
+          <h2 className="table-title">Popis udruga</h2>
           <hr></hr>
           <AssociationList
             associations={associations}
-            approved={false}
+            approved={true}
             setUpdateAssociations={setUpdateAssociations}
             cities={cities}
-
           />
+
+          {adminData.admin && (
+            <>
+              <h2 className="table-title">Zahtjevi za odobrenje</h2>
+              <hr></hr>
+              <AssociationList
+                associations={associations}
+                approved={false}
+                setUpdateAssociations={setUpdateAssociations}
+                cities={cities}
+              />
+            </>
+          )}
+
+          <PlusButton openModal={toggleOpenNewAssociationForm} />
+          {openNewAssociationForm && (
+            <Modal
+              modal={openNewAssociationForm}
+              toggleModal={toggleOpenNewAssociationForm}
+            >
+              <NewAssociationForm
+                setUpdateAssociations={setUpdateAssociations}
+                cities={cities}
+              />
+            </Modal>
+          )}
         </>
-      )}
-
-      <PlusButton openModal={toggleOpenNewAssociationForm} />
-      {openNewAssociationForm && (
-        <Modal
-          modal={openNewAssociationForm}
-          toggleModal={toggleOpenNewAssociationForm}
-        >
-          <NewAssociationForm
-            setUpdateAssociations={setUpdateAssociations}
-            cities={cities}
-          />
-        </Modal>
+      ) : (
+        <>
+          <h2 className="table-title">Popis udruga</h2>
+          <Loader />
+        </>
       )}
     </div>
   );
