@@ -80,7 +80,7 @@ ActivityCardProps) {
       window.alert("Unesite sve podatke.");
     } else {
       axios
-        .patch(`http://localhost:3001/activities/${formData.id}`, formData)
+        .patch(`https://json-server-volonterplus.onrender.com/activities/${formData.id}`, formData)
         .then((result) => {
           console.log(result);
           setUpdateActivities((prev) => !prev);

@@ -34,7 +34,7 @@ const AssociationList: React.FC<ListProps> = ({
 
   const handleDelete = (id: number) => {
     if (window.confirm("Jeste li sigurni da želite izbrisati udrugu?")) {
-      axios.delete(`http://localhost:3001/associations/${id}`).then((rez) => {
+      axios.delete(`https://json-server-volonterplus.onrender.com/associations/${id}`).then((rez) => {
         console.log(rez);
         setUpdateAssociations((prev) => !prev);
       });
@@ -43,7 +43,7 @@ const AssociationList: React.FC<ListProps> = ({
 
   const handleApproval = (id: number) => {
     axios
-      .patch(`http://localhost:3001/associations/${id}`, {
+      .patch(`https://json-server-volonterplus.onrender.com/associations/${id}`, {
         approved: true,
       })
       .then((result) => {

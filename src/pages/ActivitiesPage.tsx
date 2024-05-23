@@ -44,19 +44,19 @@ export default function ActivitiesPage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/activities")
+      .get("https://json-server-volonterplus.onrender.com/activities")
       .then((res) => {
         setActivities(sortActivities(res.data, "asc", "dateAdded"));
       })
       .catch((err) => console.log(err.message));
     axios
-      .get("http://localhost:3001/activityVolunteers")
+      .get("https://json-server-volonterplus.onrender.com/activityVolunteers")
       .then((res) => {
         setActivityVolunteers(res.data);
       })
       .catch((err) => console.log(err.message));
     axios
-      .get("http://localhost:3001/cities")
+      .get("https://json-server-volonterplus.onrender.com/cities")
       .then((res) => {
         setCities(sortAscending(res.data, "name"));
       })

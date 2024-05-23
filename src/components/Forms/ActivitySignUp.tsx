@@ -38,7 +38,7 @@ export default function ActivitySignUp({
       ) {
         axios
           .patch(
-            `http://localhost:3001/activityVolunteers/${existingVolunteers.id}`,
+            `https://json-server-volonterplus.onrender.com/activityVolunteers/${existingVolunteers.id}`,
             {
               list: [...existingVolunteers.list, updatedList],
             }
@@ -51,7 +51,7 @@ export default function ActivitySignUp({
           .catch((err) => console.log(err.message));
       } else {
         axios
-          .post(`http://localhost:3001/activityVolunteers/`, {
+          .post(`https://json-server-volonterplus.onrender.com/activityVolunteers/`, {
             activityId: activityId,
             list: [updatedList],
           })

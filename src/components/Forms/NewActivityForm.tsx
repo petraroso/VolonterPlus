@@ -50,7 +50,7 @@ export default function NewActivityForm({
       window.alert("Unesite sve podatke.");
     } else {
       axios
-        .post("http://localhost:3001/activities", formData)
+        .post("https://json-server-volonterplus.onrender.com/activities", formData)
         .then((result) => {
           console.log(result);
           setUpdateActivities((prev) => !prev);

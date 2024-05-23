@@ -49,7 +49,7 @@ export default function VolunteerCard({
   const handleDeleteVolunteer = () => {
     if (window.confirm("Jeste li sigurni da želite izbrisati volontera?")) {
       axios
-        .delete(`http://localhost:3001/signedVolunteers/${volunteer.id}`)
+        .delete(`https://json-server-volonterplus.onrender.com/signedVolunteers/${volunteer.id}`)
         .then((rez) => {
           console.log(rez);
           setUpdateVolunteers((prev) => !prev);

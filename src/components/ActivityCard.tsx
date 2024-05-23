@@ -55,7 +55,7 @@ export default function ActivityCard({
   const handleDeleteActivity = () => {
     if (window.confirm("Jeste li sigurni da želite izbrisati aktivnost?")) {
       axios
-        .delete(`http://localhost:3001/activities/${activity.id}`)
+        .delete(`https://json-server-volonterplus.onrender.com/activities/${activity.id}`)
         .then((rez) => {
           console.log(rez);
           setUpdateActivities((prev) => !prev);

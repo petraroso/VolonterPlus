@@ -89,7 +89,7 @@ export default function VolunteerDetailsEdit({
       window.alert("Unesite sve podatke.");
     } else {
       axios
-        .patch(`http://localhost:3001/signedVolunteers/${newData.id}`, newData)
+        .patch(`https://json-server-volonterplus.onrender.com/signedVolunteers/${newData.id}`, newData)
         .then((result) => {
           console.log(result);
           toggleEdit();

@@ -34,13 +34,13 @@ export default function VolunteersPage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/signedVolunteers")
+      .get("https://json-server-volonterplus.onrender.com/signedVolunteers")
       .then((res) => {
         setVolunteers(sortAscending(res.data, "surname"));
       })
       .catch((err) => console.log(err.message));
     axios
-      .get("http://localhost:3001/cities")
+      .get("https://json-server-volonterplus.onrender.com/cities")
       .then((res) => {
         setCities(sortAscending(res.data, "name"));
       })

@@ -37,7 +37,7 @@ export default function NewAssociationForm({
       setUserMessage(false);
     } else {
       axios
-        .post("http://localhost:3001/associations", formData)
+        .post("https://json-server-volonterplus.onrender.com/associations", formData)
         .then((result) => {
           console.log(result);
           setUpdateAssociations((prev) => !prev);

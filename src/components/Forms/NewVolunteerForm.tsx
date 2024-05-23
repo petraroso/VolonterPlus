@@ -72,7 +72,7 @@ export default function NewVolunteerForm({
       window.alert("Unesite sve podatke.");
     } else {
       axios
-        .post("http://localhost:3001/signedVolunteers", formData)
+        .post("https://json-server-volonterplus.onrender.com/signedVolunteers", formData)
         .then((result) => {
           console.log(result);
           setUpdateVolunteers((prev) => !prev);

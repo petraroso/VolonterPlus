@@ -66,7 +66,7 @@ const AssociationLMEdit: React.FC<ListProps> = ({
       window.alert("Unesite sve podatke.");
     } else {
       axios
-        .patch(`http://localhost:3001/associations/${formData.id}`, formData)
+        .patch(`https://json-server-volonterplus.onrender.com/associations/${formData.id}`, formData)
         .then((result) => {
           console.log(result);
           setUpdateAssociations((prev) => !prev);

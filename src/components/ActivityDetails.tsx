@@ -43,7 +43,7 @@ export default function ActivityDetails({
           (_volunteer, index) => index !== volunteerIndex
         );
         axios
-          .patch(`http://localhost:3001/activityVolunteers/${volunteers.id}`, {
+          .patch(`https://json-server-volonterplus.onrender.com/activityVolunteers/${volunteers.id}`, {
             list: updatedList,
           })
           .then((response) => {
@@ -52,7 +52,7 @@ export default function ActivityDetails({
           });
       } else {
         axios
-          .delete(`http://localhost:3001/activityVolunteers/${volunteers.id}`)
+          .delete(`https://json-server-volonterplus.onrender.com/activityVolunteers/${volunteers.id}`)
           .then((response) => {
             console.log(response);
             setUpdateActivities((prev) => !prev);
