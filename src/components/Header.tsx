@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 //NavLink is Link that knows if it's active or not
-import logo from "../assets/logo-no-bg.png";
+import logo from "../assets/logo-blue-no-bg.png";
 import { useState } from "react";
 import { useAdminContext } from "../AdminContext";
 
