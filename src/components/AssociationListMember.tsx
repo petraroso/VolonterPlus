@@ -8,7 +8,6 @@ interface Association {
   approved: boolean;
 }
 interface ListProps {
-  index: number;
   item: Association;
   approved: boolean;
   handleDelete: (arg0: number) => void;
@@ -17,7 +16,6 @@ interface ListProps {
 }
 
 const AssociationListMember: React.FC<ListProps> = ({
-  index,
   item,
   approved,
   handleDelete,
@@ -26,7 +24,7 @@ const AssociationListMember: React.FC<ListProps> = ({
 }) => {
   const adminData = useAdminContext();
   return (
-    <li key={index} className="association-list-nonedit">
+    <li key={item.id} className="association-list-nonedit">
       <strong>{item.name}</strong>
       <em>{item.address}</em> {item.city}
       {approved && adminData.admin ? (

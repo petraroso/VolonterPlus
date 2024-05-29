@@ -34,18 +34,25 @@ const AssociationList: React.FC<ListProps> = ({
 
   const handleDelete = (id: number) => {
     if (window.confirm("Jeste li sigurni da želite izbrisati udrugu?")) {
-      axios.delete(`https://json-server-volonterplus.onrender.com/associations/${id}`).then((rez) => {
-        console.log(rez);
-        setUpdateAssociations((prev) => !prev);
-      });
+      axios
+        .delete(
+          `https://json-server-volonterplus.onrender.com/associations/${id}`
+        )
+        .then((rez) => {
+          console.log(rez);
+          setUpdateAssociations((prev) => !prev);
+        });
     }
   };
 
   const handleApproval = (id: number) => {
     axios
-      .patch(`https://json-server-volonterplus.onrender.com/associations/${id}`, {
-        approved: true,
-      })
+      .patch(
+        `https://json-server-volonterplus.onrender.com/associations/${id}`,
+        {
+          approved: true,
+        }
+      )
       .then((result) => {
         console.log(result);
         setUpdateAssociations((prev) => !prev);
@@ -55,11 +62,10 @@ const AssociationList: React.FC<ListProps> = ({
 
   return (
     <ul className="association-list">
-      {associations.map((item, index) =>
+      {associations.map((item) =>
         associationEditId === item.id && item.approved === approved ? (
           <AssociationLMEdit
-            key={index}
-            index={index}
+            key={item.id}
             item={item}
             cities={cities}
             setUpdateAssociations={setUpdateAssociations}
@@ -67,8 +73,7 @@ const AssociationList: React.FC<ListProps> = ({
           />
         ) : item.approved === approved ? (
           <AssociationListMember
-            key={index}
-            index={index}
+            key={item.id}
             item={item}
             approved={approved}
             handleDelete={handleDelete}

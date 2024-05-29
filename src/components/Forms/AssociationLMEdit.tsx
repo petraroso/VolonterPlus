@@ -13,7 +13,6 @@ interface City {
   name: string;
 }
 interface ListProps {
-  index: number;
   item: Association;
   cities: City[];
   setUpdateAssociations: React.Dispatch<React.SetStateAction<boolean>>;
@@ -21,7 +20,6 @@ interface ListProps {
 }
 
 const AssociationLMEdit: React.FC<ListProps> = ({
-  index,
   item,
   cities,
   setUpdateAssociations,
@@ -66,7 +64,10 @@ const AssociationLMEdit: React.FC<ListProps> = ({
       window.alert("Unesite sve podatke.");
     } else {
       axios
-        .patch(`https://json-server-volonterplus.onrender.com/associations/${formData.id}`, formData)
+        .patch(
+          `https://json-server-volonterplus.onrender.com/associations/${formData.id}`,
+          formData
+        )
         .then((result) => {
           console.log(result);
           setUpdateAssociations((prev) => !prev);
@@ -81,7 +82,7 @@ const AssociationLMEdit: React.FC<ListProps> = ({
   }
 
   return (
-    <li key={index} className="association-list-edit">
+    <li key={item.id} className="association-list-edit">
       <strong>
         <input
           type="text"

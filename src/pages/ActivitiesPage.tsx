@@ -131,10 +131,10 @@ export default function ActivitiesPage() {
               //setActivityFilter={setActivityFilter}
             />
           </div>
-          {activities.map((activity, index) =>
+          {activities.map((activity) =>
             cityFilter === "Svi" || cityFilter === activity.location ? (
               <ActivityCard
-                key={index}
+                key={activity.id}
                 activity={activity}
                 activityVolunteers={activityVolunteers}
                 setUpdateActivities={setUpdateActivities}
