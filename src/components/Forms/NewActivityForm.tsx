@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./Form.css";
 
 export default function NewActivityForm({
@@ -15,9 +15,37 @@ export default function NewActivityForm({
     byAssociation: false,
     association: "",
     description: "",
-    dateAdded: new Date,
+    dateAdded: new Date(),
   };
   const [formData, setFormData] = useState(initialFormData);
+  const [shouldSendRequest, setShouldSendRequest] = useState(false);
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    //so it doesn't run on first component mount, only on dependancy change
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
+    if (shouldSendRequest) {
+      axios
+        .post(
+          "https://json-server-volonterplus.onrender.com/activities",
+          formData
+        )
+        .then((result) => {
+          console.log(result);
+          setUpdateActivities((prev) => !prev);
+          setFormData(initialFormData);
+          setShouldSendRequest(false);
+        })
+        .catch((err) => {
+          console.log(err.message);
+          setShouldSendRequest(false);
+        });
+    }
+  }, [shouldSendRequest]);
 
   const handleFormData = (
     event: React.ChangeEvent<
@@ -27,14 +55,7 @@ export default function NewActivityForm({
     const { name, value } = event.target;
     if (name === "byAssociation") {
       const boolValue: boolean = value === "true";
-      if (boolValue === false)
-        setFormData({
-          ...formData,
-          [name]: boolValue,
-          association: "Građani",
-          dateAdded: new Date(),
-        });
-      else setFormData({ ...formData, [name]: boolValue, dateAdded: new Date() });
+      setFormData({ ...formData, [name]: boolValue, dateAdded: new Date() });
     } else setFormData({ ...formData, [name]: value, dateAdded: new Date() });
   };
 
@@ -49,14 +70,9 @@ export default function NewActivityForm({
     ) {
       window.alert("Unesite sve podatke.");
     } else {
-      axios
-        .post("https://json-server-volonterplus.onrender.com/activities", formData)
-        .then((result) => {
-          console.log(result);
-          setUpdateActivities((prev) => !prev);
-          setFormData(initialFormData);
-        })
-        .catch((err) => console.log(err.message));
+      if (formData.byAssociation === false)
+        setFormData({ ...formData, association: "Građani" });
+      setShouldSendRequest(true);
     }
   };
 
