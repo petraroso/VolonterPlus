@@ -39,6 +39,7 @@ export default function ActivitiesPage() {
   const [cities, setCities] = useState<City[]>([]);
   const [sortValue, setSortValue] = useState("latest");
   const [openNewActivityForm, setOpenNewActivityForm] = useState(false);
+  const [showUserMessage, setShowUserMessage] = useState(false);
   const [updateActivities, setUpdateActivities] = useState(false);
   const [cityFilter, setCityFilter] = useState("Svi");
 
@@ -110,6 +111,10 @@ export default function ActivitiesPage() {
   const toggleOpenNewActivityForm = () => {
     setOpenNewActivityForm(!openNewActivityForm);
   };
+  const handleUserMessage = () => {
+    setShowUserMessage(false);
+    setOpenNewActivityForm(!openNewActivityForm);
+  };
 
   return (
     <div className="page-container">
@@ -144,13 +149,24 @@ export default function ActivitiesPage() {
             )
           )}
           <PlusButton openModal={toggleOpenNewActivityForm} />
-          {openNewActivityForm && (
-            <Modal
-              modal={openNewActivityForm}
-              toggleModal={toggleOpenNewActivityForm}
-            >
-              <NewActivityForm setUpdateActivities={setUpdateActivities} />
+          {openNewActivityForm && showUserMessage ? (
+            <Modal modal={openNewActivityForm} toggleModal={handleUserMessage}>
+              <div className="user-message-modal">
+                <h3>Nova aktivnost dodana!</h3>
+              </div>
             </Modal>
+          ) : (
+            openNewActivityForm && (
+              <Modal
+                modal={openNewActivityForm}
+                toggleModal={toggleOpenNewActivityForm}
+              >
+                <NewActivityForm
+                  setUpdateActivities={setUpdateActivities}
+                  setShowUserMessage={setShowUserMessage}
+                />
+              </Modal>
+            )
           )}
         </>
       ) : (

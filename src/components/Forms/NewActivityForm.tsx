@@ -4,8 +4,10 @@ import "./Form.css";
 
 export default function NewActivityForm({
   setUpdateActivities,
+  setShowUserMessage,
 }: {
   setUpdateActivities: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowUserMessage: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const initialFormData = {
     name: "",
@@ -22,7 +24,7 @@ export default function NewActivityForm({
   const isFirstRender = useRef(true);
 
   useEffect(() => {
-    //so it doesn't run on first component mount, only on dependancy change
+    //so it doesn't run on first component mount, only on dependency change
     if (isFirstRender.current) {
       isFirstRender.current = false;
       return;
@@ -39,6 +41,7 @@ export default function NewActivityForm({
           setUpdateActivities((prev) => !prev);
           setFormData(initialFormData);
           setShouldSendRequest(false);
+          setShowUserMessage(true);
         })
         .catch((err) => {
           console.log(err.message);

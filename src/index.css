@@ -132,6 +132,12 @@ h3 {
 .details-form h3 {
   margin-bottom: 1rem;
 }
+.user-message-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem auto;
+}
 @media (max-width: 1070px) {
   .page-container {
     margin: 2rem 5%;
