@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 interface Activity {
   id: number;
@@ -43,10 +43,34 @@ ActivityCardProps) {
     byAssociation: false,
     dateAdded: new Date(),
   });
+  const [shouldSendRequest, setShouldSendRequest] = useState(false);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
-    setFormData(activity);
-  }, []);
+    if (isFirstRender.current) {
+      setFormData(activity);
+      isFirstRender.current = false;
+      return;
+    }
+
+    if (shouldSendRequest) {
+      axios
+        .patch(
+          `https://json-server-volonterplus.onrender.com/activities/${formData.id}`,
+          formData
+        )
+        .then((result) => {
+          console.log(result);
+          setUpdateActivities((prev) => !prev);
+          toggleEdit();
+          setShouldSendRequest(false);
+        })
+        .catch((err) => {
+          console.log(err.message);
+          setShouldSendRequest(false);
+        });
+    }
+  }, [shouldSendRequest]);
 
   const handleFormData = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -55,15 +79,11 @@ ActivityCardProps) {
 
     if (name === "byAssociation") {
       const boolValue: boolean = value === "true";
-      if (boolValue === false)
-        setFormData({
-          ...formData,
-          [name]: boolValue,
-          association: "Građani",
-          dateAdded: new Date(),
-        });
-      else
-        setFormData({ ...formData, [name]: boolValue, dateAdded: new Date() });
+      setFormData({
+        ...formData,
+        [name]: boolValue,
+        dateAdded: new Date(),
+      });
     } else setFormData({ ...formData, [name]: value, dateAdded: new Date() });
   };
 
@@ -79,14 +99,9 @@ ActivityCardProps) {
     ) {
       window.alert("Unesite sve podatke.");
     } else {
-      axios
-        .patch(`https://json-server-volonterplus.onrender.com/activities/${formData.id}`, formData)
-        .then((result) => {
-          console.log(result);
-          setUpdateActivities((prev) => !prev);
-          toggleEdit();
-        })
-        .catch((err) => console.log(err.message));
+      if (formData.byAssociation === false)
+        setFormData({ ...formData, association: "Građani" });
+      setShouldSendRequest(true);
     }
   };
 

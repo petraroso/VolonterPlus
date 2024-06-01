@@ -79,9 +79,9 @@ export default function ActivitiesPage() {
     setSortValue(() => value);
 
     if (value === "latest") {
-      setActivities(sortActivities([...activities], "asc", "dateAdded"));
-    } else if (value === "oldest") {
       setActivities(sortActivities([...activities], "desc", "dateAdded"));
+    } else if (value === "oldest") {
+      setActivities(sortActivities([...activities], "asc", "dateAdded"));
     } else {
       setActivities(sortActivities([...activities], "asc", "date"));
     }
