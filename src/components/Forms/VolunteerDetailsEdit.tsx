@@ -9,6 +9,7 @@ interface Volunteer {
   city: string;
   image: string;
   activities: string[];
+  description: string;
 }
 interface City {
   id: Number;
@@ -20,6 +21,7 @@ interface VolunteerCardProps {
   toggleEdit: () => void;
   setUpdateVolunteers: React.Dispatch<React.SetStateAction<boolean>>;
   cities: City[];
+  setShowUserMessage: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export default function VolunteerDetailsEdit({
@@ -27,6 +29,7 @@ export default function VolunteerDetailsEdit({
   toggleEdit,
   setUpdateVolunteers,
   cities,
+  setShowUserMessage,
 }: VolunteerCardProps) {
   //const adminData = useAdminContext();
   const [newData, setNewData] = useState<Volunteer>({
@@ -37,6 +40,7 @@ export default function VolunteerDetailsEdit({
     city: "",
     image: "",
     activities: [],
+    description: "",
   });
   const [displayEmail, setDisplayEmail] = useState("");
   const [displayContactError, setDisplayContactError] = useState(false);
@@ -47,7 +51,9 @@ export default function VolunteerDetailsEdit({
   }, []);
 
   const handleFormData = (
-    event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
+    event: React.ChangeEvent<
+      HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value, type } = event.target;
 
@@ -89,11 +95,15 @@ export default function VolunteerDetailsEdit({
       window.alert("Unesite sve podatke.");
     } else {
       axios
-        .patch(`https://json-server-volonterplus.onrender.com/signedVolunteers/${newData.id}`, newData)
+        .patch(
+          `https://json-server-volonterplus.onrender.com/signedVolunteers/${newData.id}`,
+          newData
+        )
         .then((result) => {
           console.log(result);
           toggleEdit();
           setUpdateVolunteers((prev) => !prev);
+          setShowUserMessage(true);
         })
         .catch((err) => console.log(err.message));
     }
@@ -204,6 +214,16 @@ export default function VolunteerDetailsEdit({
           </label>
         </div>
       </div>
+      <label htmlFor="description">Opis:</label>
+      <textarea
+        id="description"
+        name="description"
+        placeholder="Opis volontera - opcionalan (max 300 znakova)"
+        maxLength={300}
+        rows={4}
+        value={newData.description}
+        onChange={handleFormData}
+      />
       <button onClick={sendData}>Spremi ✔️</button>
       <button onClick={toggleEdit}>Odbaci ❌</button>
     </div>

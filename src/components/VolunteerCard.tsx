@@ -33,6 +33,7 @@ export default function VolunteerCard({
   const adminData = useAdminContext();
   const [modal, setModal] = useState(false);
   const [editing, setEditing] = useState(false);
+  const [showUserMessage, setShowUserMessage] = useState(false);
 
   const toggleModal = () => {
     setModal(!modal);
@@ -49,7 +50,9 @@ export default function VolunteerCard({
   const handleDeleteVolunteer = () => {
     if (window.confirm("Jeste li sigurni da želite izbrisati volontera?")) {
       axios
-        .delete(`https://json-server-volonterplus.onrender.com/signedVolunteers/${volunteer.id}`)
+        .delete(
+          `https://json-server-volonterplus.onrender.com/signedVolunteers/${volunteer.id}`
+        )
         .then((rez) => {
           console.log(rez);
           setUpdateVolunteers((prev) => !prev);
@@ -57,21 +60,35 @@ export default function VolunteerCard({
     }
   };
 
+  const handleUserMessage = () => {
+    setShowUserMessage(false);
+    setModal(!modal);
+  };
+
   return (
     <>
-      {modal && (
-        <Modal modal={modal} toggleModal={toggleModal}>
-          {adminData.admin && editing ? (
-            <VolunteerDetailsEdit
-              volunteer={volunteer}
-              toggleEdit={toggleEdit}
-              setUpdateVolunteers={setUpdateVolunteers}
-              cities={cities}
-            />
-          ) : (
-            <VolunteerDetails volunteer={volunteer} toggleEdit={toggleEdit} />
-          )}
+      {modal && showUserMessage ? (
+        <Modal modal={modal} toggleModal={handleUserMessage}>
+          <div className="user-message-modal">
+            <h3>Volonter spremljen!</h3>
+          </div>
         </Modal>
+      ) : (
+        modal && (
+          <Modal modal={modal} toggleModal={toggleModal}>
+            {adminData.admin && editing ? (
+              <VolunteerDetailsEdit
+                volunteer={volunteer}
+                toggleEdit={toggleEdit}
+                setUpdateVolunteers={setUpdateVolunteers}
+                cities={cities}
+                setShowUserMessage={setShowUserMessage}
+              />
+            ) : (
+              <VolunteerDetails volunteer={volunteer} toggleEdit={toggleEdit} />
+            )}
+          </Modal>
+        )
       )}
       <div className="volunteer-card">
         <img
