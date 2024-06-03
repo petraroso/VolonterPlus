@@ -62,6 +62,7 @@ select {
   cursor: pointer;
   border-radius: 8px;
   outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
 }
 input[type="text"],
 input[type="date"],
@@ -79,6 +80,7 @@ textarea {
   border-color: light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
   border-image: initial;
   outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
 }
 
 input[type="text"]:focus,
@@ -108,15 +110,13 @@ button {
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, box-shadow 0.25s;
 }
 button:hover {
-  border-color: var(--clr-dark-blue);
+  border-color: var(--clr-light-blue);
+  box-shadow: 0 0 5px var(--clr-dark-blue);
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
 .bx-trash {
   color: var(--clr-orange);
 }
