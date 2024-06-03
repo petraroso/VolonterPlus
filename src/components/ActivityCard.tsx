@@ -35,6 +35,7 @@ export default function ActivityCard({
   const adminData = useAdminContext();
   const [modal, setModal] = useState(false);
   const [editing, setEditing] = useState(false);
+  const [showUserMessage, setShowUserMessage] = useState(false);
 
   const filteredVolonteers = activityVolunteers.filter((vol) => {
     return vol.activityId === activity.id;
@@ -55,45 +56,60 @@ export default function ActivityCard({
   const handleDeleteActivity = () => {
     if (window.confirm("Jeste li sigurni da želite izbrisati aktivnost?")) {
       axios
-        .delete(`https://json-server-volonterplus.onrender.com/activities/${activity.id}`)
+        .delete(
+          `https://json-server-volonterplus.onrender.com/activities/${activity.id}`
+        )
         .then((rez) => {
           console.log(rez);
           setUpdateActivities((prev) => !prev);
         });
     }
   };
+  const handleUserMessage = () => {
+    setShowUserMessage(false);
+    setModal(!modal);
+  };
 
   return (
     <>
-      {modal && (
-        <Modal modal={modal} toggleModal={toggleModal}>
-          {adminData.admin && editing ? (
-            <>
-              <ActivityDetailsEdit
-                activity={activity}
-                volunteers={filteredVolonteers[0]}
-                setUpdateActivities={setUpdateActivities}
-                toggleEdit={toggleEdit}
-              />
-            </>
-          ) : (
-            <>
-              <ActivityDetails
-                activity={activity}
-                volunteers={filteredVolonteers[0]}
-                setUpdateActivities={setUpdateActivities}
-                toggleEdit={toggleEdit}
-              />
-              {!adminData.admin && (
-                <ActivitySignUp
-                  activityId={activity.id}
-                  existingVolunteers={filteredVolonteers[0]}
-                  setUpdateActivities={setUpdateActivities}
-                />
-              )}
-            </>
-          )}
+      {modal && showUserMessage ? (
+        <Modal modal={modal} toggleModal={handleUserMessage}>
+          <div className="user-message-modal">
+            <h3>Aktivnost spremljena!</h3>
+          </div>
         </Modal>
+      ) : (
+        modal && (
+          <Modal modal={modal} toggleModal={toggleModal}>
+            {adminData.admin && editing ? (
+              <>
+                <ActivityDetailsEdit
+                  activity={activity}
+                  volunteers={filteredVolonteers[0]}
+                  setUpdateActivities={setUpdateActivities}
+                  toggleEdit={toggleEdit}
+                  setShowUserMessage={setShowUserMessage}
+                />
+              </>
+            ) : (
+              <>
+                <ActivityDetails
+                  activity={activity}
+                  volunteers={filteredVolonteers[0]}
+                  setUpdateActivities={setUpdateActivities}
+                  toggleEdit={toggleEdit}
+                />
+                {!adminData.admin && (
+                  <ActivitySignUp
+                    activityId={activity.id}
+                    existingVolunteers={filteredVolonteers[0]}
+                    setUpdateActivities={setUpdateActivities}
+                  />
+                )}
+              </>
+            )}
+          </Modal>
+        )
       )}
       <div className="activity-card">
         <div>

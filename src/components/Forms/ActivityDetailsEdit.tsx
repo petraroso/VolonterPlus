@@ -22,7 +22,7 @@ interface ActivityCardProps {
   volunteers: Volunteers;
   toggleEdit: () => void;
   setUpdateActivities: React.Dispatch<React.SetStateAction<boolean>>;
-  //cities: City[];
+  setShowUserMessage: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export default function ActivityDetailsEdit({
@@ -30,6 +30,7 @@ export default function ActivityDetailsEdit({
   //volunteers,
   toggleEdit,
   setUpdateActivities,
+  setShowUserMessage,
 }: //cities,
 ActivityCardProps) {
   const [formData, setFormData] = useState<Activity>({
@@ -64,6 +65,7 @@ ActivityCardProps) {
           setUpdateActivities((prev) => !prev);
           toggleEdit();
           setShouldSendRequest(false);
+          setShowUserMessage(true);
         })
         .catch((err) => {
           console.log(err.message);

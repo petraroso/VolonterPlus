@@ -47,7 +47,7 @@ export default function ActivitiesPage() {
     axios
       .get("https://json-server-volonterplus.onrender.com/activities")
       .then((res) => {
-        setActivities(sortActivities(res.data, "asc", "dateAdded"));
+        setActivities(sortActivities(res.data, "desc", "dateAdded"));
       })
       .catch((err) => console.log(err.message));
     axios
