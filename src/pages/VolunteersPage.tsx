@@ -28,6 +28,7 @@ export default function VolunteersPage() {
   const [volunteers, setVolunteers] = useState<Volunteer[]>([]);
   const [cities, setCities] = useState<City[]>([]);
   const [openNewVolunteerForm, setOpenNewVolunteerForm] = useState(false);
+  const [showUserMessage, setShowUserMessage] = useState(false);
   const [updateVolunteers, setUpdateVolunteers] = useState(false);
   const [cityFilter, setCityFilter] = useState("Svi");
   const [activityFilter, setActivityFilter] = useState("Sve");
@@ -60,6 +61,11 @@ export default function VolunteersPage() {
       return 0;
     });
   }
+
+  const handleUserMessage = () => {
+    setShowUserMessage(false);
+    setOpenNewVolunteerForm(!openNewVolunteerForm);
+  };
 
   return (
     <div className="page-container">
@@ -100,16 +106,25 @@ export default function VolunteersPage() {
             <PlusButton openModal={toggleOpenNewVolunteerForm} />
           )}
 
-          {openNewVolunteerForm && (
-            <Modal
-              modal={openNewVolunteerForm}
-              toggleModal={toggleOpenNewVolunteerForm}
-            >
-              <NewVolunteerForm
-                setUpdateVolunteers={setUpdateVolunteers}
-                cities={cities}
-              />
+          {openNewVolunteerForm && showUserMessage ? (
+            <Modal modal={openNewVolunteerForm} toggleModal={handleUserMessage}>
+              <div className="user-message-modal">
+                <h3>Novi volonter dodan!</h3>
+              </div>
             </Modal>
+          ) : (
+            openNewVolunteerForm && (
+              <Modal
+                modal={openNewVolunteerForm}
+                toggleModal={toggleOpenNewVolunteerForm}
+              >
+                <NewVolunteerForm
+                  setUpdateVolunteers={setUpdateVolunteers}
+                  cities={cities}
+                  setShowUserMessage={setShowUserMessage}
+                />
+              </Modal>
+            )
           )}
         </>
       ) : (

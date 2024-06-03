@@ -10,9 +10,11 @@ interface City {
 export default function NewVolunteerForm({
   setUpdateVolunteers,
   cities,
+  setShowUserMessage,
 }: {
   setUpdateVolunteers: React.Dispatch<React.SetStateAction<boolean>>;
   cities: City[];
+  setShowUserMessage: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const initialFormData = {
     name: "",
@@ -72,11 +74,15 @@ export default function NewVolunteerForm({
       window.alert("Unesite sve podatke.");
     } else {
       axios
-        .post("https://json-server-volonterplus.onrender.com/signedVolunteers", formData)
+        .post(
+          "https://json-server-volonterplus.onrender.com/signedVolunteers",
+          formData
+        )
         .then((result) => {
           console.log(result);
           setUpdateVolunteers((prev) => !prev);
           setFormData(initialFormData);
+          setShowUserMessage(true);
         })
         .catch((err) => console.log(err.message));
     }
@@ -90,7 +96,7 @@ export default function NewVolunteerForm({
         type="text"
         id="name"
         name="name"
-        placeholder="Vaše ime"
+        placeholder="Ime"
         value={formData.name}
         onChange={handleFormData}
       />
@@ -100,7 +106,7 @@ export default function NewVolunteerForm({
         type="text"
         id="surname"
         name="surname"
-        placeholder="Vaše prezime"
+        placeholder="Prezime"
         value={formData.surname}
         onChange={handleFormData}
       />
@@ -193,7 +199,7 @@ export default function NewVolunteerForm({
       <textarea
         id="description"
         name="description"
-        placeholder="Vaš opis - opcionalan (max 300 znakova)"
+        placeholder="Opis volontera - opcionalan (max 300 znakova)"
         maxLength={300}
         rows={4}
         value={formData.description}
