@@ -111,6 +111,7 @@ export default function ActivitiesPage() {
   const toggleOpenNewActivityForm = () => {
     setOpenNewActivityForm(!openNewActivityForm);
   };
+  
   const handleUserMessage = () => {
     setShowUserMessage(false);
     setOpenNewActivityForm(!openNewActivityForm);

@@ -7,9 +7,11 @@ interface City {
 export default function NewAssociationForm({
   setUpdateAssociations,
   cities,
+  setShowUserMessage,
 }: {
   setUpdateAssociations: React.Dispatch<React.SetStateAction<boolean>>;
   cities: City[];
+  setShowUserMessage: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const initialFormData = {
     name: "",
@@ -18,7 +20,6 @@ export default function NewAssociationForm({
     approved: false,
   };
   const [formData, setFormData] = useState(initialFormData);
-  const [userMessage, setUserMessage] = useState(false);
 
   const handleFormData = (
     event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
@@ -34,15 +35,17 @@ export default function NewAssociationForm({
       formData.city === ""
     ) {
       window.alert("Unesite sve podatke.");
-      setUserMessage(false);
     } else {
       axios
-        .post("https://json-server-volonterplus.onrender.com/associations", formData)
+        .post(
+          "https://json-server-volonterplus.onrender.com/associations",
+          formData
+        )
         .then((result) => {
           console.log(result);
           setUpdateAssociations((prev) => !prev);
           setFormData(initialFormData);
-          setUserMessage(true);
+          setShowUserMessage(true);
         })
         .catch((err) => console.log(err.message));
     }
@@ -87,12 +90,6 @@ export default function NewAssociationForm({
       </select>
 
       <button onClick={sendData}>Spremi ✔️</button>
-      {userMessage && (
-        <span className="successMessage">
-          Zahtjev poslan!<br></br>
-          Udruga će biti dodana nakon odobrenja!
-        </span>
-      )}
     </div>
   );
 }

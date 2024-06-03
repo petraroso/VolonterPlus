@@ -26,6 +26,7 @@ export default function AssociationsPage() {
   const [cities, setCities] = useState<City[]>([]);
   const [sortValue, setSortValue] = useState("name");
   const [openNewAssociationForm, setOpenNewAssociationForm] = useState(false);
+  const [showUserMessage, setShowUserMessage] = useState(false);
   const [updateAssociations, setUpdateAssociations] = useState(false);
 
   useEffect(() => {
@@ -80,6 +81,11 @@ export default function AssociationsPage() {
     setOpenNewAssociationForm(!openNewAssociationForm);
   };
 
+  const handleUserMessage = () => {
+    setShowUserMessage(false);
+    setOpenNewAssociationForm(!openNewAssociationForm);
+  };
+
   return (
     <div className="page-container">
       {associations.length ? (
@@ -120,16 +126,28 @@ export default function AssociationsPage() {
           )}
 
           <PlusButton openModal={toggleOpenNewAssociationForm} />
-          {openNewAssociationForm && (
+          {openNewAssociationForm && showUserMessage ? (
             <Modal
               modal={openNewAssociationForm}
-              toggleModal={toggleOpenNewAssociationForm}
+              toggleModal={handleUserMessage}
             >
-              <NewAssociationForm
-                setUpdateAssociations={setUpdateAssociations}
-                cities={cities}
-              />
+              <div className="user-message-modal">
+                <h3>Nova udruga dodana i čeka odobrenje!</h3>
+              </div>
             </Modal>
+          ) : (
+            openNewAssociationForm && (
+              <Modal
+                modal={openNewAssociationForm}
+                toggleModal={toggleOpenNewAssociationForm}
+              >
+                <NewAssociationForm
+                  setUpdateAssociations={setUpdateAssociations}
+                  cities={cities}
+                  setShowUserMessage={setShowUserMessage}
+                />
+              </Modal>
+            )
           )}
         </>
       ) : (
