@@ -17,6 +17,7 @@ interface ListProps {
   cities: City[];
   setUpdateAssociations: React.Dispatch<React.SetStateAction<boolean>>;
   setAssociationEditId: React.Dispatch<React.SetStateAction<number | null>>;
+  setShowUserMessage: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const AssociationLMEdit: React.FC<ListProps> = ({
@@ -24,6 +25,7 @@ const AssociationLMEdit: React.FC<ListProps> = ({
   cities,
   setUpdateAssociations,
   setAssociationEditId,
+  setShowUserMessage,
 }) => {
   const [formData, setFormData] = useState<Association>({
     id: 0,
@@ -72,6 +74,7 @@ const AssociationLMEdit: React.FC<ListProps> = ({
           console.log(result);
           setUpdateAssociations((prev) => !prev);
           setAssociationEditId(null);
+          setShowUserMessage(true);
         })
         .catch((err) => console.log(err.message));
     }

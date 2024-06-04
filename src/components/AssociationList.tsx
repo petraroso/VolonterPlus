@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import AssociationListMember from "./AssociationListMember";
 import AssociationLMEdit from "./Forms/AssociationLMEdit";
+import Modal from "./Modal/Modal";
 
 interface Association {
   id: number;
@@ -31,6 +32,7 @@ const AssociationList: React.FC<ListProps> = ({
   const [associationEditId, setAssociationEditId] = useState<number | null>(
     null
   );
+  const [showUserMessage, setShowUserMessage] = useState(false);
 
   const handleDelete = (id: number) => {
     if (window.confirm("Jeste li sigurni da želite izbrisati udrugu?")) {
@@ -61,30 +63,43 @@ const AssociationList: React.FC<ListProps> = ({
   };
 
   return (
-    <ul className="association-list">
-      {associations.map((item) =>
-        associationEditId === item.id && item.approved === approved ? (
-          <AssociationLMEdit
-            key={item.id}
-            item={item}
-            cities={cities}
-            setUpdateAssociations={setUpdateAssociations}
-            setAssociationEditId={setAssociationEditId}
-          />
-        ) : item.approved === approved ? (
-          <AssociationListMember
-            key={item.id}
-            item={item}
-            approved={approved}
-            handleDelete={handleDelete}
-            handleApproval={handleApproval}
-            setAssociationEditId={setAssociationEditId}
-          />
-        ) : (
-          <></>
-        )
+    <>
+      <ul className="association-list">
+        {associations.map((item) =>
+          associationEditId === item.id && item.approved === approved ? (
+            <AssociationLMEdit
+              key={item.id}
+              item={item}
+              cities={cities}
+              setUpdateAssociations={setUpdateAssociations}
+              setAssociationEditId={setAssociationEditId}
+              setShowUserMessage={setShowUserMessage}
+            />
+          ) : item.approved === approved ? (
+            <AssociationListMember
+              key={item.id}
+              item={item}
+              approved={approved}
+              handleDelete={handleDelete}
+              handleApproval={handleApproval}
+              setAssociationEditId={setAssociationEditId}
+            />
+          ) : (
+            <></>
+          )
+        )}
+      </ul>
+      {showUserMessage && (
+        <Modal
+          modal={showUserMessage}
+          toggleModal={() => setShowUserMessage(false)}
+        >
+          <div className="user-message-modal">
+            <h3>Podaci spremljeni!</h3>
+          </div>
+        </Modal>
       )}
-    </ul>
+    </>
   );
 };
 
