@@ -293,9 +293,7 @@
 .filter-container {
   margin: 2rem 0;
 }
-.filter-container h3 {
-  margin-bottom: 1rem;
-}
+
 .filter-container .all-filters {
   display: flex;
 }
