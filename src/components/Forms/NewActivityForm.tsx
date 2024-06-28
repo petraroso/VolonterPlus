@@ -79,6 +79,15 @@ export default function NewActivityForm({
     }
   };
 
+  const handleFocus = (
+    event: React.ChangeEvent<
+      HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement
+    >
+  ) => {
+    //const { name, value } = event.target;
+    //setFocused
+  };
+
   return (
     <div className="form">
       <h2>Nova aktivnost</h2>
@@ -90,7 +99,13 @@ export default function NewActivityForm({
         placeholder="Naziv aktivnosti"
         value={formData.name}
         onChange={handleFormData}
+        pattern="^[A-Za-z0-9 ]{3,30}$"
+        required={true}
       />
+      <span className="errorFormMessage">
+        Ime treba biti duljine 3-30 znakova i ne smije sadržavati posebne
+        znakove
+      </span>
 
       <label htmlFor="date">Datum:</label>
       <input
@@ -109,7 +124,14 @@ export default function NewActivityForm({
         placeholder="Mjesto održavanja"
         value={formData.location}
         onChange={handleFormData}
+        pattern="^[A-Za-z0-9 ]{3,30}$"
+        required={true}
       />
+      <span className="errorFormMessage">
+        Lokacija treba biti duljine 3-30 znakova i ne smije sadržavati posebne
+        znakove
+      </span>
+
       <p>Organizator:</p>
       <label>
         Udruga:
@@ -138,14 +160,22 @@ export default function NewActivityForm({
       </label>
 
       {formData.byAssociation === true && (
-        <input
-          type="text"
-          id="association"
-          name="association"
-          placeholder="Naziv udruge"
-          value={formData.association}
-          onChange={handleFormData}
-        />
+        <>
+          <input
+            type="text"
+            id="association"
+            name="association"
+            placeholder="Naziv udruge"
+            value={formData.association}
+            onChange={handleFormData}
+            pattern="^[A-Za-z0-9 ]{3,30}$"
+            required={true}
+          />
+          <span className="errorFormMessage">
+            Naziv treba biti duljine 3-30 znakova i ne smije sadržavati posebne
+            znakove
+          </span>
+        </>
       )}
 
       <label htmlFor="description">Opis:</label>
@@ -157,17 +187,21 @@ export default function NewActivityForm({
         rows={4}
         value={formData.description}
         onChange={handleFormData}
+        onFocus={handleFocus}
       />
 
       <label htmlFor="image">Slika:</label>
       <input
+        //type="file"
         type="text"
         id="image"
         name="image"
         placeholder="../jadro.jpg"
         value={formData.image}
         onChange={handleFormData}
+        required={true}
       />
+      <span className="errorFormMessage">Unesite put do slike</span>
 
       <button onClick={sendData}>Spremi ✔️</button>
     </div>

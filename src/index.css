@@ -66,6 +66,7 @@ select {
 }
 input[type="text"],
 input[type="date"],
+input[type="file"],
 textarea {
   display: block;
 
@@ -84,6 +85,7 @@ textarea {
 }
 
 input[type="text"]:focus,
+input[type="date"]:focus,
 input[type="date"]:focus,
 textarea:focus,
 select:focus {
