@@ -22,6 +22,14 @@ export default function NewActivityForm({
   const [formData, setFormData] = useState(initialFormData);
   const [shouldSendRequest, setShouldSendRequest] = useState(false);
   const isFirstRender = useRef(true);
+  const [focused, setFocused] = useState({
+    name: false,
+    //date: false,
+    location: false,
+    association: false,
+    description: false,
+    image: false,
+  });
 
   useEffect(() => {
     //so it doesn't run on first component mount, only on dependency change
@@ -84,8 +92,8 @@ export default function NewActivityForm({
       HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement
     >
   ) => {
-    //const { name, value } = event.target;
-    //setFocused
+    const { name } = event.target;
+    setFocused({ ...focused, [name]: true });
   };
 
   return (
@@ -99,11 +107,14 @@ export default function NewActivityForm({
         placeholder="Naziv aktivnosti"
         value={formData.name}
         onChange={handleFormData}
-        pattern="^[A-Za-z0-9 ]{3,30}$"
+        pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,30}$"
         required={true}
+        data-focused={focused.name.toString()}
+        onBlur={handleFocus}
+        //onFocus={()=>setFocused(false)}
       />
       <span className="errorFormMessage">
-        Ime treba biti duljine 3-30 znakova i ne smije sadržavati posebne
+        Naziv treba biti duljine 3-30 znakova i ne smije sadržavati posebne
         znakove
       </span>
 
@@ -124,8 +135,11 @@ export default function NewActivityForm({
         placeholder="Mjesto održavanja"
         value={formData.location}
         onChange={handleFormData}
-        pattern="^[A-Za-z0-9 ]{3,30}$"
+        pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,30}$"
         required={true}
+        data-focused={focused.location.toString()}
+        onBlur={handleFocus}
+        //onFocus={()=>setFocused(false)}
       />
       <span className="errorFormMessage">
         Lokacija treba biti duljine 3-30 znakova i ne smije sadržavati posebne
@@ -168,8 +182,11 @@ export default function NewActivityForm({
             placeholder="Naziv udruge"
             value={formData.association}
             onChange={handleFormData}
-            pattern="^[A-Za-z0-9 ]{3,30}$"
+            pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,30}$"
             required={true}
+            data-focused={focused.association.toString()}
+            onBlur={handleFocus}
+            //onFocus={()=>setFocused(false)}
           />
           <span className="errorFormMessage">
             Naziv treba biti duljine 3-30 znakova i ne smije sadržavati posebne
@@ -187,8 +204,14 @@ export default function NewActivityForm({
         rows={4}
         value={formData.description}
         onChange={handleFormData}
-        onFocus={handleFocus}
+        //onFocus={handleFocus}
+        //pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,30}$"
+        required={true}
+        data-focused={focused.description.toString()}
+        onBlur={handleFocus}
+        //onFocus={()=>setFocused(false)}
       />
+      <span className="errorFormMessage">Unesite opis do 300 znakova</span>
 
       <label htmlFor="image">Slika:</label>
       <input
@@ -200,6 +223,9 @@ export default function NewActivityForm({
         value={formData.image}
         onChange={handleFormData}
         required={true}
+        data-focused={focused.image.toString()}
+        onBlur={handleFocus}
+        //onFocus={()=>setFocused(false)}
       />
       <span className="errorFormMessage">Unesite put do slike</span>
 
