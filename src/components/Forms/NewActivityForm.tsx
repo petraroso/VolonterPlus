@@ -72,12 +72,16 @@ export default function NewActivityForm({
 
   const sendData = () => {
     if (
-      formData.name === "" ||
+      formData.name.length < 3 ||
+      formData.name.length > 30 ||
       formData.date === "" ||
-      formData.location === "" ||
+      formData.location.length < 3 ||
+      formData.location.length > 30 ||
       formData.description === "" ||
+      formData.description.length > 300 ||
       formData.image === "" ||
-      (formData.byAssociation === true && formData.association === "")
+      (formData.byAssociation === true && formData.association.length < 3) ||
+      formData.association.length > 30
     ) {
       window.alert("Unesite sve podatke.");
     } else {
