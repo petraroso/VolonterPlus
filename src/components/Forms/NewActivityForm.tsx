@@ -24,7 +24,7 @@ export default function NewActivityForm({
   const isFirstRender = useRef(true);
   const [focused, setFocused] = useState({
     name: false,
-    //date: false,
+    date: false,
     location: false,
     association: false,
     description: false,
@@ -129,7 +129,11 @@ export default function NewActivityForm({
         name="date"
         value={formData.date}
         onChange={handleFormData}
+        required={true}
+        data-focused={focused.date.toString()}
+        onBlur={handleFocus}
       />
+      <span className="errorFormMessage">Odaberite datum</span>
 
       <label htmlFor="location">Lokacija: </label>
       <input
