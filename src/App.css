@@ -421,12 +421,6 @@ select {
     display: none;
   }
 
-  .icons #close-icon {
-    display: none;
-  }
-  #check:checked ~ .icons #close-icon {
-    display: block;
-  }
   .navbar {
     position: absolute;
     top: 100%;
