@@ -16,10 +16,15 @@ export default function NewAssociationForm({
   const initialFormData = {
     name: "",
     address: "",
-    city: "Dubrovnik",
+    city: "",
     approved: false,
   };
   const [formData, setFormData] = useState(initialFormData);
+  const [focused, setFocused] = useState({
+    name: false,
+    address: false,
+    city: false,
+  });
 
   const handleFormData = (
     event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
@@ -30,8 +35,10 @@ export default function NewAssociationForm({
 
   const sendData = () => {
     if (
-      formData.name === "" ||
-      formData.address === "" ||
+      formData.name.length < 3 ||
+      formData.name.length > 30 ||
+      formData.address.length < 3 ||
+      formData.address.length > 30 ||
       formData.city === ""
     ) {
       window.alert("Unesite sve podatke.");
@@ -51,6 +58,15 @@ export default function NewAssociationForm({
     }
   };
 
+  const handleFocus = (
+    event: React.ChangeEvent<
+      HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name } = event.target;
+    setFocused({ ...focused, [name]: true });
+  };
+
   return (
     <div className="form">
       <h2>Nova udruga</h2>
@@ -62,7 +78,16 @@ export default function NewAssociationForm({
         placeholder="Naziv udruge"
         value={formData.name}
         onChange={handleFormData}
+        pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,30}$"
+        required={true}
+        data-focused={focused.name.toString()}
+        onBlur={handleFocus}
+        //onFocus={()=>setFocused(false)}
       />
+      <span className="errorFormMessage">
+        Naziv treba biti duljine 3-30 znakova i ne smije sadržavati posebne
+        znakove
+      </span>
 
       <label htmlFor="address">Adresa:</label>
       <input
@@ -72,7 +97,16 @@ export default function NewAssociationForm({
         placeholder="Adresa udruge"
         value={formData.address}
         onChange={handleFormData}
+        pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,30}$"
+        required={true}
+        data-focused={focused.address.toString()}
+        onBlur={handleFocus}
+        //onFocus={()=>setFocused(false)}
       />
+      <span className="errorFormMessage">
+        Adresa treba biti duljine 3-30 znakova i ne smije sadržavati posebne
+        znakove
+      </span>
 
       <label htmlFor="city">Grad:</label>
       <select
@@ -80,14 +114,21 @@ export default function NewAssociationForm({
         name="city"
         value={formData.city}
         onChange={handleFormData}
-        required
+        required={true}
+        data-focused={focused.city.toString()}
+        onBlur={handleFocus}
+        //onFocus={()=>setFocused(false)}
       >
+        <option key="none" value="">
+          - Odaberite -
+        </option>
         {cities.map((city) => (
           <option key={city.name} value={city.name}>
             {city.name}
           </option>
         ))}
       </select>
+      <span className="errorFormMessage">Odaberite grad</span>
 
       <button onClick={sendData}>Spremi ✔️</button>
     </div>
