@@ -209,7 +209,7 @@ export default function NewActivityForm({
         name="description"
         placeholder="Opis (max 300 znakova)"
         maxLength={300}
-        rows={4}
+        rows={7}
         value={formData.description}
         onChange={handleFormData}
         //onFocus={handleFocus}
