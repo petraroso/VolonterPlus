@@ -73,15 +73,15 @@ export default function NewActivityForm({
   const sendData = () => {
     if (
       formData.name.length < 3 ||
-      formData.name.length > 30 ||
+      formData.name.length > 50 ||
       formData.date === "" ||
       formData.location.length < 3 ||
-      formData.location.length > 30 ||
+      formData.location.length > 40 ||
       formData.description === "" ||
       formData.description.length > 300 ||
       formData.image === "" ||
-      (formData.byAssociation === true && formData.association.length < 3) ||
-      formData.association.length > 30
+      (formData.byAssociation === true &&
+        (formData.association.length < 3 || formData.association.length > 30))
     ) {
       window.alert("Unesite sve podatke.");
     } else {
@@ -111,52 +111,37 @@ export default function NewActivityForm({
         placeholder="Naziv aktivnosti"
         value={formData.name}
         onChange={handleFormData}
-        pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,30}$"
+        pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,50}$"
         required={true}
         data-focused={focused.name.toString()}
         onBlur={handleFocus}
         //onFocus={()=>setFocused(false)}
       />
       <span className="errorFormMessage">
-        Naziv treba biti duljine 3-30 znakova i ne smije sadržavati posebne
+        Naziv treba biti duljine 3-50 znakova i ne smije sadržavati posebne
         znakove
       </span>
 
-      <label htmlFor="date">Datum:</label>
-      <input
-        type="date"
-        id="date"
-        name="date"
-        value={formData.date}
+      <label htmlFor="description">Opis:</label>
+      <textarea
+        id="description"
+        name="description"
+        placeholder="Opis (max 300 znakova)"
+        maxLength={300}
+        rows={7}
+        value={formData.description}
         onChange={handleFormData}
+        //onFocus={handleFocus}
+        //pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,30}$"
         required={true}
-        data-focused={focused.date.toString()}
-        onBlur={handleFocus}
-      />
-      <span className="errorFormMessage">Odaberite datum</span>
-
-      <label htmlFor="location">Lokacija: </label>
-      <input
-        type="text"
-        id="location"
-        name="location"
-        placeholder="Mjesto održavanja"
-        value={formData.location}
-        onChange={handleFormData}
-        pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,30}$"
-        required={true}
-        data-focused={focused.location.toString()}
+        data-focused={focused.description.toString()}
         onBlur={handleFocus}
         //onFocus={()=>setFocused(false)}
       />
-      <span className="errorFormMessage">
-        Lokacija treba biti duljine 3-30 znakova i ne smije sadržavati posebne
-        znakove
-      </span>
+      <span className="errorFormMessage">Unesite opis do 300 znakova</span>
 
-      <p>Organizator:</p>
       <label>
-        Udruga:
+        Organizator udruga:
         <label>
           <input
             type="radio"
@@ -203,23 +188,37 @@ export default function NewActivityForm({
         </>
       )}
 
-      <label htmlFor="description">Opis:</label>
-      <textarea
-        id="description"
-        name="description"
-        placeholder="Opis (max 300 znakova)"
-        maxLength={300}
-        rows={7}
-        value={formData.description}
+      <label htmlFor="date">Datum:</label>
+      <input
+        type="date"
+        id="date"
+        name="date"
+        value={formData.date}
         onChange={handleFormData}
-        //onFocus={handleFocus}
-        //pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,30}$"
         required={true}
-        data-focused={focused.description.toString()}
+        data-focused={focused.date.toString()}
+        onBlur={handleFocus}
+      />
+      <span className="errorFormMessage">Odaberite datum</span>
+
+      <label htmlFor="location">Lokacija: </label>
+      <input
+        type="text"
+        id="location"
+        name="location"
+        placeholder="Mjesto održavanja"
+        value={formData.location}
+        onChange={handleFormData}
+        pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,40}$"
+        required={true}
+        data-focused={focused.location.toString()}
         onBlur={handleFocus}
         //onFocus={()=>setFocused(false)}
       />
-      <span className="errorFormMessage">Unesite opis do 300 znakova</span>
+      <span className="errorFormMessage">
+        Lokacija treba biti duljine 3-40 znakova i ne smije sadržavati posebne
+        znakove
+      </span>
 
       <label htmlFor="image">Slika:</label>
       <input
@@ -236,7 +235,7 @@ export default function NewActivityForm({
         //onFocus={()=>setFocused(false)}
       />
       <span className="errorFormMessage">Unesite put do slike</span>
-
+      <br></br>
       <button onClick={sendData}>Spremi ✔️</button>
     </div>
   );

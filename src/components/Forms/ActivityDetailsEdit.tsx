@@ -46,6 +46,14 @@ ActivityCardProps) {
   });
   const [shouldSendRequest, setShouldSendRequest] = useState(false);
   const isFirstRender = useRef(true);
+  const [focused, setFocused] = useState({
+    name: false,
+    date: false,
+    location: false,
+    association: false,
+    description: false,
+    image: false,
+  });
 
   useEffect(() => {
     if (isFirstRender.current) {
@@ -92,11 +100,16 @@ ActivityCardProps) {
   const sendData = () => {
     if (
       formData.name === "" ||
+      formData.name.length > 50 ||
       formData.date === "" ||
-      formData.location === "" ||
+      formData.location.length < 3 ||
+      formData.location.length > 40 ||
       formData.description === "" ||
+      formData.description.length > 300 ||
       formData.image === "" ||
-      (formData.byAssociation === true && formData.association === "") ||
+      (formData.byAssociation === true &&
+        (formData.association.length < 3 ||
+          formData.association.length > 30)) ||
       (formData.byAssociation === true && formData.association === "Građani")
     ) {
       window.alert("Unesite sve podatke.");
@@ -105,6 +118,15 @@ ActivityCardProps) {
         setFormData({ ...formData, association: "Građani" });
       setShouldSendRequest(true);
     }
+  };
+
+  const handleFocus = (
+    event: React.ChangeEvent<
+      HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name } = event.target;
+    setFocused({ ...focused, [name]: true });
   };
 
   return (
@@ -119,21 +141,33 @@ ActivityCardProps) {
           placeholder="Naziv aktivnosti"
           value={formData.name}
           onChange={handleFormData}
+          pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,50}$"
+          required={true}
+          data-focused={focused.name.toString()}
+          onBlur={handleFocus}
         />
+        <span className="errorFormMessage">
+          Naziv treba biti duljine 3-50 znakova i ne smije sadržavati posebne
+          znakove
+        </span>
+
         <label htmlFor="description">Opis:</label>
         <textarea
           id="description"
           name="description"
           placeholder="Opis (max 300 znakova)"
           maxLength={300}
-          rows={4}
+          rows={7}
           value={formData.description}
           onChange={handleFormData}
+          required={true}
+          data-focused={focused.description.toString()}
+          onBlur={handleFocus}
         />
-        <br></br>
+        <span className="errorFormMessage">Unesite opis do 300 znakova</span>
 
         <label>
-          Organizator:
+          Organizator udruga:
           <label>
             <input
               type="radio"
@@ -159,14 +193,24 @@ ActivityCardProps) {
         </label>
 
         {formData.byAssociation === true && (
-          <input
-            type="text"
-            id="association"
-            name="association"
-            placeholder="Naziv udruge"
-            value={formData.association}
-            onChange={handleFormData}
-          />
+          <>
+            <input
+              type="text"
+              id="association"
+              name="association"
+              placeholder="Naziv udruge"
+              value={formData.association}
+              onChange={handleFormData}
+              pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,30}$"
+              required={true}
+              data-focused={focused.association.toString()}
+              onBlur={handleFocus}
+            />
+            <span className="errorFormMessage">
+              Naziv treba biti duljine 3-30 znakova i ne smije sadržavati
+              posebne znakove
+            </span>
+          </>
         )}
 
         <label htmlFor="date">Datum:</label>
@@ -176,7 +220,12 @@ ActivityCardProps) {
           name="date"
           value={formData.date}
           onChange={handleFormData}
+          required={true}
+          data-focused={focused.date.toString()}
+          onBlur={handleFocus}
         />
+        <span className="errorFormMessage">Odaberite datum</span>
+
         <label htmlFor="location">Lokacija: </label>
         <input
           type="text"
@@ -185,7 +234,15 @@ ActivityCardProps) {
           placeholder="Mjesto održavanja"
           value={formData.location}
           onChange={handleFormData}
+          pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,40}$"
+          required={true}
+          data-focused={focused.location.toString()}
+          onBlur={handleFocus}
         />
+        <span className="errorFormMessage">
+          Lokacija treba biti duljine 3-40 znakova i ne smije sadržavati posebne
+          znakove
+        </span>
 
         <label htmlFor="image">Slika:</label>
         <input
@@ -195,7 +252,11 @@ ActivityCardProps) {
           placeholder="../jadro.jpg"
           value={formData.image}
           onChange={handleFormData}
+          required={true}
+          data-focused={focused.image.toString()}
+          onBlur={handleFocus}
         />
+        <span className="errorFormMessage">Unesite put do slike</span>
         <br></br>
         <button onClick={sendData}>Spremi ✔️</button>
         <button onClick={toggleEdit}>Odbaci ❌</button>
