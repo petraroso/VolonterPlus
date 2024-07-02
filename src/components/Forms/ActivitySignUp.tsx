@@ -20,6 +20,10 @@ export default function ActivitySignUp({
     name: "",
     surname: "",
   });
+  const [focused, setFocused] = useState({
+    name: false,
+    surname: false,
+  });
 
   const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -27,8 +31,13 @@ export default function ActivitySignUp({
   };
 
   const sendData = () => {
-    if (username.name === "" || username.surname === "") {
-      window.alert("Unesite ime i prezime.");
+    if (
+      username.name.length < 3 ||
+      username.name.length > 30 ||
+      username.surname.length < 3 ||
+      username.surname.length > 30
+    ) {
+      window.alert("Unesite ispravno ime i prezime.");
     } else {
       const updatedList = username.name + " " + username.surname;
       if (
@@ -51,10 +60,13 @@ export default function ActivitySignUp({
           .catch((err) => console.log(err.message));
       } else {
         axios
-          .post(`https://json-server-volonterplus.onrender.com/activityVolunteers/`, {
-            activityId: activityId,
-            list: [updatedList],
-          })
+          .post(
+            `https://json-server-volonterplus.onrender.com/activityVolunteers/`,
+            {
+              activityId: activityId,
+              list: [updatedList],
+            }
+          )
           .then((result) => {
             console.log(result);
             setUsername({ ...username, name: "", surname: "" });
@@ -63,6 +75,15 @@ export default function ActivitySignUp({
           .catch((err) => console.log(err.message));
       }
     }
+  };
+
+  const handleFocus = (
+    event: React.ChangeEvent<
+      HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name } = event.target;
+    setFocused({ ...focused, [name]: true });
   };
 
   return (
@@ -76,7 +97,15 @@ export default function ActivitySignUp({
         placeholder="Vaše ime"
         value={username.name}
         onChange={handleUsernameChange}
+        pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,30}$"
+        required={true}
+        data-focused={focused.name.toString()}
+        onBlur={handleFocus}
       ></input>
+      <span className="errorFormMessage">
+        Ime treba biti duljine 3-30 znakova i ne smije sadržavati posebne
+        znakove
+      </span>
       <label htmlFor="surname">Prezime:</label>
       <input
         type="text"
@@ -86,7 +115,15 @@ export default function ActivitySignUp({
         placeholder="Vaše prezime"
         value={username.surname}
         onChange={handleUsernameChange}
+        pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,30}$"
+        required={true}
+        data-focused={focused.surname.toString()}
+        onBlur={handleFocus}
       ></input>
+      <span className="errorFormMessage">
+        Prezime treba biti duljine 3-30 znakova i ne smije sadržavati posebne
+        znakove
+      </span>
 
       <button onClick={sendData}>Prijava ✔️</button>
     </div>
