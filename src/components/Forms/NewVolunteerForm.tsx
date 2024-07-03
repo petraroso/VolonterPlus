@@ -182,7 +182,6 @@ export default function NewVolunteerForm({
       </select>
       <span className="errorFormMessage">Odaberite grad</span>
 
-
       <label htmlFor="image">Slika:</label>
       <input
         type="text"

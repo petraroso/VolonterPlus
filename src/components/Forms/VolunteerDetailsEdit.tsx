@@ -43,7 +43,14 @@ export default function VolunteerDetailsEdit({
     description: "",
   });
   const [displayEmail, setDisplayEmail] = useState("");
-  const [displayContactError, setDisplayContactError] = useState(false);
+  //const [displayContactError, setDisplayContactError] = useState(false);
+  const [focused, setFocused] = useState({
+    name: false,
+    surname: false,
+    contact: false,
+    city: false,
+    image: false,
+  });
 
   useEffect(() => {
     setNewData(volunteer);
@@ -73,10 +80,10 @@ export default function VolunteerDetailsEdit({
         const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
         if (isValidEmail) {
           setNewData({ ...newData, [name]: value });
-          setDisplayContactError(false);
+          //setDisplayContactError(false);
         } else {
           setNewData({ ...newData, [name]: "" });
-          setDisplayContactError(true);
+          //setDisplayContactError(true);
         }
       } else {
         setNewData({ ...newData, [name]: value });
@@ -109,10 +116,19 @@ export default function VolunteerDetailsEdit({
     }
   };
 
+  const handleFocus = (
+    event: React.ChangeEvent<
+      HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name } = event.target;
+    setFocused({ ...focused, [name]: true });
+  };
+
   return (
     <div className="form">
       <h3>Uredite podatke</h3>
-      <label htmlFor="name">Ime</label>
+      <label htmlFor="name">Ime:</label>
       <input
         type="text"
         id="name"
@@ -120,8 +136,17 @@ export default function VolunteerDetailsEdit({
         placeholder="Ime"
         value={newData.name}
         onChange={handleFormData}
-      ></input>
-      <label htmlFor="surname">Prezime</label>
+        pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,30}$"
+        required={true}
+        data-focused={focused.name.toString()}
+        onBlur={handleFocus}
+      />
+      <span className="errorFormMessage">
+        Ime treba biti duljine 3-30 znakova i ne smije sadržavati posebne
+        znakove
+      </span>
+
+      <label htmlFor="surname">Prezime:</label>
       <input
         type="text"
         id="surname"
@@ -129,9 +154,53 @@ export default function VolunteerDetailsEdit({
         placeholder="Prezime"
         value={newData.surname}
         onChange={handleFormData}
-      ></input>
+        pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,30}$"
+        required={true}
+        data-focused={focused.surname.toString()}
+        onBlur={handleFocus}
+      />
+      <span className="errorFormMessage">
+        Prezime treba biti duljine 3-30 znakova i ne smije sadržavati posebne
+        znakove
+      </span>
 
-      <label htmlFor="image">Slika</label>
+      <label htmlFor="contact">Kontakt:</label>
+      <input
+        type="email"
+        id="contact"
+        name="contact"
+        autoComplete="email"
+        placeholder="Email adresa"
+        value={displayEmail}
+        onChange={handleFormData}
+        required={true}
+        data-focused={focused.contact.toString()}
+        onBlur={handleFocus}
+      ></input>
+      <span className="errorFormMessage">Unesite ispravnu email adresu</span>
+
+      <label htmlFor="city">Grad:</label>
+      <select
+        id="city"
+        name="city"
+        value={newData.city}
+        onChange={handleFormData}
+        required={true}
+        data-focused={focused.city.toString()}
+        onBlur={handleFocus}
+      >
+        <option key="none" value="">
+          - Odaberite -
+        </option>
+        {cities.map((city) => (
+          <option key={city.name} value={city.name}>
+            {city.name}
+          </option>
+        ))}
+      </select>
+      <span className="errorFormMessage">Odaberite grad</span>
+
+      <label htmlFor="image">Slika:</label>
       <input
         type="text"
         id="image"
@@ -139,35 +208,11 @@ export default function VolunteerDetailsEdit({
         placeholder="../jadro.jpg"
         value={newData.image}
         onChange={handleFormData}
-      ></input>
-      <label htmlFor="contact">Kontakt</label>
-      <input
-        type="text"
-        id="contact"
-        name="contact"
-        autoComplete="auto"
-        placeholder="Email adresa"
-        value={displayEmail}
-        onChange={handleFormData}
-      ></input>
-      {displayContactError && (
-        <span className="errorMessage">Unesite ispravan e-mail</span>
-      )}
-
-      <label htmlFor="city">Grad</label>
-      <select
-        id="city"
-        name="city"
-        value={newData.city}
-        onChange={handleFormData}
-        required
-      >
-        {cities.map((city) => (
-          <option key={city.name} value={city.name}>
-            {city.name}
-          </option>
-        ))}
-      </select>
+        required={true}
+        data-focused={focused.image.toString()}
+        onBlur={handleFocus}
+      />
+      <span className="errorFormMessage">Unesite put do slike</span>
 
       <div className="activity-container">
         <label htmlFor="activities">Aktivnosti:</label>
@@ -220,7 +265,7 @@ export default function VolunteerDetailsEdit({
         name="description"
         placeholder="Opis volontera - opcionalan (max 300 znakova)"
         maxLength={300}
-        rows={4}
+        rows={7}
         value={newData.description}
         onChange={handleFormData}
       />
