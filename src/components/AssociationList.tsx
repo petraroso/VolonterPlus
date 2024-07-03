@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import AssociationListMember from "./AssociationListMember";
-import AssociationLMEdit from "./Forms/AssociationLMEdit";
 import Modal from "./Modal/Modal";
 
 interface Association {
@@ -18,20 +17,17 @@ interface City {
 
 interface ListProps {
   associations: Association[];
-  approved: boolean;
+  approvedStatus: boolean;
   setUpdateAssociations: React.Dispatch<React.SetStateAction<boolean>>;
   cities: City[];
 }
 
 const AssociationList: React.FC<ListProps> = ({
   associations,
-  approved,
+  approvedStatus,
   setUpdateAssociations,
   cities,
 }) => {
-  const [associationEditId, setAssociationEditId] = useState<number | null>(
-    null
-  );
   const [showUserMessage, setShowUserMessage] = useState(false);
 
   const handleDelete = (id: number) => {
@@ -65,28 +61,19 @@ const AssociationList: React.FC<ListProps> = ({
   return (
     <>
       <ul className="association-list">
-        {associations.map((item) =>
-          associationEditId === item.id && item.approved === approved ? (
-            <AssociationLMEdit
-              key={item.id}
-              item={item}
-              cities={cities}
-              setUpdateAssociations={setUpdateAssociations}
-              setAssociationEditId={setAssociationEditId}
-              setShowUserMessage={setShowUserMessage}
-            />
-          ) : item.approved === approved ? (
-            <AssociationListMember
-              key={item.id}
-              item={item}
-              approved={approved}
-              handleDelete={handleDelete}
-              handleApproval={handleApproval}
-              setAssociationEditId={setAssociationEditId}
-            />
-          ) : (
-            <></>
-          )
+        {associations.map(
+          (association) =>
+            association.approved === approvedStatus && (
+              <AssociationListMember
+                key={association.id}
+                association={association}
+                approvedStatus={approvedStatus}
+                handleDelete={handleDelete}
+                handleApproval={handleApproval}
+                cities={cities}
+                setUpdateAssociations={setUpdateAssociations}
+              />
+            )
         )}
       </ul>
       {showUserMessage && (

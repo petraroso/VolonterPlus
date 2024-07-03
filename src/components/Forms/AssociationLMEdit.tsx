@@ -13,19 +13,21 @@ interface City {
   name: string;
 }
 interface ListProps {
-  item: Association;
+  association: Association;
   cities: City[];
   setUpdateAssociations: React.Dispatch<React.SetStateAction<boolean>>;
   setAssociationEditId: React.Dispatch<React.SetStateAction<number | null>>;
   setShowUserMessage: React.Dispatch<React.SetStateAction<boolean>>;
+  setModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const AssociationLMEdit: React.FC<ListProps> = ({
-  item,
+  association,
   cities,
   setUpdateAssociations,
   setAssociationEditId,
   setShowUserMessage,
+  setModal,
 }) => {
   const [formData, setFormData] = useState<Association>({
     id: 0,
@@ -34,9 +36,13 @@ const AssociationLMEdit: React.FC<ListProps> = ({
     city: "",
     approved: false,
   });
+  const [focused, setFocused] = useState({
+    name: false,
+    address: false,
+  });
 
   useEffect(() => {
-    setFormData(item);
+    setFormData(association);
   }, []);
 
   const handleFormData = (
@@ -59,8 +65,10 @@ const AssociationLMEdit: React.FC<ListProps> = ({
 
   const sendData = () => {
     if (
-      formData.name === "" ||
-      formData.address === "" ||
+      formData.name.length < 3 ||
+      formData.name.length > 30 ||
+      formData.address.length < 3 ||
+      formData.address.length > 30 ||
       formData.city === ""
     ) {
       window.alert("Unesite sve podatke.");
@@ -82,38 +90,64 @@ const AssociationLMEdit: React.FC<ListProps> = ({
 
   function handleAbort() {
     setAssociationEditId(null);
+    setModal(false);
   }
 
+  const handleFocus = (
+    event: React.ChangeEvent<
+      HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name } = event.target;
+    setFocused({ ...focused, [name]: true });
+  };
+
   return (
-    <li key={item.id} className="association-list-edit">
-      <strong>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Naziv udruge"
-          value={formData.name}
-          onChange={handleFormData}
-          required
-        />
-      </strong>
-      <em>
-        <input
-          type="text"
-          id="address"
-          name="address"
-          placeholder="Naziv udruge"
-          value={formData.address}
-          onChange={handleFormData}
-          required
-        />
-      </em>{" "}
+    <div className="form details-form">
+      <h3>Uredite: {association.name}</h3>
+      <label htmlFor="name">Naziv</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Naziv udruge"
+        value={formData.name}
+        onChange={handleFormData}
+        pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,50}$"
+        required={true}
+        data-focused={focused.name.toString()}
+        onBlur={handleFocus}
+      />
+      <span className="errorFormMessage">
+        Naziv treba biti duljine 3-50 znakova i ne smije sadržavati posebne
+        znakove
+      </span>
+
+      <label htmlFor="address">Adresa:</label>
+      <input
+        type="text"
+        id="address"
+        name="address"
+        placeholder="Naziv udruge"
+        value={formData.address}
+        onChange={handleFormData}
+        pattern="^[A-Za-z0-9 čćšđžČĆŠĐŽ]{3,30}$"
+        required={true}
+        data-focused={focused.address.toString()}
+        onBlur={handleFocus}
+      />
+      <span className="errorFormMessage">
+        Adresa treba biti duljine 3-30 znakova i ne smije sadržavati posebne
+        znakove
+      </span>
+
+      <label htmlFor="city">Grad:</label>
       <select
         id="city"
         name="city"
         value={formData.city}
         onChange={handleFormData}
-        required
+        required={true}
       >
         {cities.map((city) => (
           <option key={city.name} value={city.name}>
@@ -121,21 +155,26 @@ const AssociationLMEdit: React.FC<ListProps> = ({
           </option>
         ))}
       </select>
+
+      <label>Status odobrenja:</label>
       <select
         id="approved"
         name="approved"
         value={formData.approved.toString()}
         onChange={handleFormData}
-        required
+        required={true}
       >
-        <option value={"false"}>Neodobreno</option>
-        <option value={"true"}>Odobreno</option>
+        <option key="1" value={"false"}>
+          Neodobreno
+        </option>
+        <option key="2" value={"true"}>
+          Odobreno
+        </option>
       </select>
-      <div>
-        <button onClick={sendData}>✔️</button>
-        <button onClick={handleAbort}>❌</button>
-      </div>
-    </li>
+
+      <button onClick={sendData}>Spremi ✔️</button>
+      <button onClick={handleAbort}>Odbaci ❌</button>
+    </div>
   );
 };
 

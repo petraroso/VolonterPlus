@@ -334,7 +334,7 @@ select {
 .association-list li div:last-child {
   justify-self: center;
 }
-.association-list button {
+.association-list-nonedit button {
   padding: 0.2em;
 }
 .association-list .admin-buttons button:last-child {

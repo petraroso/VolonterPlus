@@ -19,16 +19,15 @@
   color: red;
   display: none;
 }
-input:invalid[data-focused="true"] + span {
-  display: block;
-}
+input:invalid[data-focused="true"] + span,
+select:invalid[data-focused="true"] + span,
 textarea:invalid[data-focused="true"] + span {
   display: block;
 }
-input:invalid[data-focused="true"] {
-  border: 1px solid red;
-}
-textarea:invalid[data-focused="true"] {
+
+input:invalid[data-focused="true"],
+textarea:invalid[data-focused="true"],
+select:invalid[data-focused="true"] {
   border: 1px solid red;
 }
 

@@ -107,7 +107,7 @@ export default function AssociationsPage() {
           <hr></hr>
           <AssociationList
             associations={associations}
-            approved={true}
+            approvedStatus={true}
             setUpdateAssociations={setUpdateAssociations}
             cities={cities}
           />
@@ -118,7 +118,7 @@ export default function AssociationsPage() {
               <hr></hr>
               <AssociationList
                 associations={associations}
-                approved={false}
+                approvedStatus={false}
                 setUpdateAssociations={setUpdateAssociations}
                 cities={cities}
               />
