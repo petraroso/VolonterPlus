@@ -1,162 +1,5 @@
-/*Header*/
-.header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1.3rem 10%;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
-}
-.header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(50px);
-  z-index: -1;
-}
-.logo {
-  height: 2rem;
-}
-.navbar {
-  font-size: 1.15rem;
-  color: var(--clr-dark);
-  font-weight: 500;
-}
-.navbar a {
-  margin-left: 2.5rem;
-
-  position: relative;
-}
-
-.nav-link-active {
-  color: var(--clr-orange);
-}
-.admin-toggle {
-  display: inline-flex;
-  font-size: 1.15rem;
-  color: var(--clr-dark);
-  font-weight: 500;
-  margin-left: 2.5rem;
-}
-#check {
-  display: none;
-}
-.icons {
-  position: absolute;
-  right: 5%;
-  font-size: 2.8rem;
-  color: var(--clr-light);
-  cursor: pointer;
-  display: none;
-}
-.toggle-btn {
-  background-color: #b7b9ba;
-  border: 1px solid #aaa;
-  border-radius: 99px;
-  width: 45px;
-  height: 25px;
-  transition: background-color 0.1s ease, border-color 0.2s ease;
-  cursor: pointer;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.748);
-  position: relative;
-
-  margin-left: 0.5rem;
-}
-.toggle-btn .thumb {
-  height: 20px;
-  width: 20px;
-  background-color: #fff;
-  border-radius: 99px;
-  transform: translateX(0);
-  transition: left 0.15s ease;
-  position: absolute;
-  left: 2px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.toggle-btn.toggled {
-  background-color: var(--clr-light-orange);
-}
-.toggled-btn:hover {
-  border-color: #6f6f6f;
-}
-.toggle-btn.toggled .thumb {
-  left: 20px;
-}
-
-/*Footer*/
-.footer-container {
-  width: 100%;
-  padding: 2.6rem 10%;
-}
-.footer-container .nav-logo {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 2.6rem;
-}
-.social-icons {
-  display: flex;
-  justify-content: center;
-}
-.social-icons a {
-  padding: 0.6rem;
-  background-color: var(--clr-light);
-  margin: 0.6rem;
-  border-radius: 50%;
-}
-.social-icons a i {
-  font-size: 2rem;
-  color: var(--clr-dark);
-  opacity: 0.9;
-}
-.social-icons a:hover {
-  background-color: var(--clr-dark-gray);
-  transition: 0.5s;
-}
-.social-icons a:hover i {
-  color: var(--clr-light);
-  transition: 0.5s;
-}
-.footer-nav {
-  margin: 1.3rem 0 0 0;
-}
-.footer-nav ul {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-}
-.footer-nav ul li a {
-  color: var(--clr-light);
-  margin: 0 1.25rem;
-  font-size: 1.15rem;
-  opacity: 0.7;
-  transition: 0.5s;
-}
-.footer-nav ul li a:hover {
-  opacity: 1;
-}
-
-.footer-copyright {
-  background-color: var(--clr-dark);
-  padding: 1.3rem;
-  text-align: center;
-}
-.footer-copyright p {
-  color: var(--clr-light);
-}
-.owner-name {
-  opacity: 0.7;
-  letter-spacing: 0.7px;
-  font-weight: 500;
-}
+/*CSS styles for pages; if style is not here, it' a general style in 
+index.css or it's in the component style file*/
 
 /*Homepage*/
 .banner-image {
@@ -289,18 +132,15 @@
 .volunteer-card .admin-buttons button:last-child {
   margin-left: 0.5rem;
 }
-
-.filter-container {
-  margin: 2rem 0;
-}
-
-.filter-container .all-filters {
+.details-form .volunteer-display {
   display: flex;
+  align-items: center;
 }
-.filter-container .filter-activities {
-  display: flex;
-  flex-direction: column;
-  margin: 0 2rem;
+.details-form .volunteer-display button {
+  margin-left: auto;
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  padding: 0.2em;
 }
 
 /*Associations Page*/
@@ -324,10 +164,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
-.association-list-edit input,
-select {
-  width: 150px; /*fix*/
-}
+
 .association-list li:nth-child(odd) {
   background-color: rgba(128, 128, 128, 0.2);
 }
@@ -371,20 +208,8 @@ select {
   color: var(--clr-light);
 }
 
+/*media queries*/
 @media (min-width: 1045px) {
-  .navbar a::before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: currentColor;
-    transition: 0.3s;
-  }
-  .navbar a:hover::before {
-    width: 100%;
-  }
   .banner-image {
     width: 75%;
   }
@@ -398,72 +223,14 @@ select {
   .volunteer-list {
     width: 100%;
   }
-  .filter-container .all-filters {
-    flex-direction: column;
-    margin-right: 4rem;
-  }
-  .filter-container .filter-activities {
-    margin: 2rem 0;
-  }
-}
-
-@media (max-width: 1070px) {
-  .header {
-    padding: 1.3rem 5%;
-  }
 }
 
 @media (max-width: 950px) {
   .icons {
     display: inline-flex;
   }
-  #check:checked ~ .icons #menu-icon {
-    display: none;
-  }
+}
 
-  .navbar {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(50px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: 0.3s ease;
-  }
-  #check:checked ~ .navbar {
-    height: 17.7rem;
-  }
-  .navbar a {
-    display: block;
-    font-size: 1.1rem;
-    margin: 1.5rem 0;
-    text-align: center;
-    transform: translateY(-50px);
-    transition: 0.3s ease;
-  }
-  #check:checked ~ .navbar a {
-    transform: translateY(0);
-  }
-  .admin-toggle {
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-    margin: 0;
-  }
-}
-@media (max-width: 700px) {
-  .footer-nav ul {
-    flex-direction: column;
-  }
-  .footer-nav ul li {
-    width: 100%;
-    text-align: center;
-    margin: 10px;
-  }
-}
 @media (max-width: 600px) {
   .volunteer-list {
     grid-template-columns: repeat(2, 1fr);

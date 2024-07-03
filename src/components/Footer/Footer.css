@@ -1,0 +1,83 @@
+footer {
+  background-color: var(--clr-dark-gray);
+}
+.footer-container {
+  width: 100%;
+  padding: 2.6rem 10%;
+}
+.footer-container .nav-logo {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2.6rem;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+.social-icons a {
+  padding: 0.6rem;
+  background-color: var(--clr-light);
+  margin: 0.6rem;
+  border-radius: 50%;
+}
+.social-icons a i {
+  font-size: 2rem;
+  color: var(--clr-dark);
+  opacity: 0.9;
+}
+.social-icons a:hover {
+  background-color: var(--clr-dark-gray);
+  transition: 0.5s;
+}
+.social-icons a:hover i {
+  color: var(--clr-light);
+  transition: 0.5s;
+}
+.footer-nav {
+  margin: 1.3rem 0 0 0;
+}
+.footer-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+.footer-nav ul li a {
+  color: var(--clr-light);
+  margin: 0 1.25rem;
+  font-size: 1.15rem;
+  opacity: 0.7;
+  transition: 0.5s;
+}
+.footer-nav ul li a:hover {
+  opacity: 1;
+}
+
+.footer-copyright {
+  background-color: var(--clr-dark);
+  padding: 1.3rem;
+  text-align: center;
+}
+.footer-copyright p {
+  color: var(--clr-light);
+}
+.owner-name {
+  opacity: 0.7;
+  letter-spacing: 0.7px;
+  font-weight: 500;
+}
+
+@media (max-width: 950px) {
+  .icons {
+    display: inline-flex;
+  }
+}
+@media (max-width: 700px) {
+  .footer-nav ul {
+    flex-direction: column;
+  }
+  .footer-nav ul li {
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+  }
+}

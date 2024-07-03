@@ -5,7 +5,7 @@ import ActivityCard from "../components/ActivityCard";
 import PlusButton from "../components/PlusButton/PlusButton";
 import Modal from "../components/Modal/Modal";
 import NewActivityForm from "../components/Forms/NewActivityForm";
-import Filter from "../components/Filter";
+import Filter from "../components/Filter/Filter";
 import Loader from "../components/Loader/Loader";
 
 interface Activity {
@@ -111,7 +111,7 @@ export default function ActivitiesPage() {
   const toggleOpenNewActivityForm = () => {
     setOpenNewActivityForm(!openNewActivityForm);
   };
-  
+
   const handleUserMessage = () => {
     setShowUserMessage(false);
     setOpenNewActivityForm(!openNewActivityForm);

@@ -6,7 +6,7 @@ import VolunteerCard from "../components/VolunteerCard";
 import PlusButton from "../components/PlusButton/PlusButton";
 import Modal from "../components/Modal/Modal";
 import NewVolunteerForm from "../components/Forms/NewVolunteerForm";
-import Filter from "../components/Filter";
+import Filter from "../components/Filter/Filter";
 import Loader from "../components/Loader/Loader";
 
 interface Volunteer {

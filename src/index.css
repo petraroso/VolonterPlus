@@ -43,9 +43,6 @@ a {
   text-decoration: none;
   color: inherit;
 }
-footer {
-  background-color: var(--clr-dark-gray);
-}
 #sort {
   display: block;
   width: 200px;
@@ -133,16 +130,7 @@ button:hover {
   display: flex;
   flex-direction: column;
 }
-.details-form .volunteer-display {
-  display: flex;
-  align-items: center;
-}
-.details-form .volunteer-display button {
-  margin-left: auto;
-  margin-top: 0.1rem;
-  margin-bottom: 0.1rem;
-  padding: 0.2em;
-}
+
 .details-form img,
 h3 {
   align-self: center;
@@ -156,6 +144,7 @@ h3 {
   align-items: center;
   margin: 3rem auto;
 }
+
 @media (max-width: 1070px) {
   .page-container {
     margin: 2rem 5%;

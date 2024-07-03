@@ -1,0 +1,21 @@
+.filter-container {
+  margin: 2rem 0;
+}
+.filter-container .all-filters {
+  display: flex;
+}
+.filter-container .filter-activities {
+  display: flex;
+  flex-direction: column;
+  margin: 0 2rem;
+}
+
+@media (min-width: 1045px) {
+  .filter-container .all-filters {
+    flex-direction: column;
+    margin-right: 4rem;
+  }
+  .filter-container .filter-activities {
+    margin: 2rem 0;
+  }
+}
