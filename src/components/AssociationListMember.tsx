@@ -81,7 +81,7 @@ const AssociationListMember: React.FC<ListProps> = ({
         <strong>{association.name}</strong>
         <em>{association.address}</em> {association.city}
         {approvedStatus && adminData.admin ? (
-          <div>
+          <div className="admin-buttons">
             <button onClick={openModal}>
               <i className="bx bx-edit-alt"></i>
             </button>
