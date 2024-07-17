@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /dist/
+Disallow: /node_modules/
+Disallow: /src/
+Allow: /public/
+Disallow: /.eslintrc.cjs
+Disallow: /README.md
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /.gitignore
+Allow: /index.html
+Disallow: /tsconfig.json
+Disallow: /tsconfig.node.json
+Disallow: /vite.config.ts
