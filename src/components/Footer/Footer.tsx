@@ -5,25 +5,50 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <footer>
-      <div className="footer-container">
+      <div className="footer-container" role="navigation">
         <NavLink to="/" className="nav-logo">
           <img src={logo} className="logo" alt={"logo"} />
         </NavLink>
 
-        <div className="social-icons">
-          <a href="">
+        <div className="social-icons" aria-label="Social media links">
+          <a
+            href="https://www.facebook.com"
+            aria-label="Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fa-brands fa-facebook"></i>
           </a>
-          <a href="">
+          <a
+            href="https://www.instagram.com"
+            aria-label="Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fa-brands fa-instagram"></i>
           </a>
-          <a href="">
+          <a
+            href="https://www.twitter.com"
+            aria-label="Twitter"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fa-brands fa-x-twitter"></i>
           </a>
-          <a href="">
+          <a
+            href="https://plus.google.com"
+            aria-label="Google Plus"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fa-brands fa-google-plus"></i>
           </a>
-          <a href="">
+          <a
+            href="https://www.youtube.com"
+            aria-label="YouTube"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fa-brands fa-youtube"></i>
           </a>
         </div>

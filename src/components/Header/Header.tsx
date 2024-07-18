@@ -41,7 +41,7 @@ export default function Header() {
 
   return (
     <header className="header">
-      <NavLink to="/" className="nav-logo">
+      <NavLink to="/" className="nav-logo" role="navigation">
         <img src={logo} className="logo" alt={"logo"} />
       </NavLink>
 
@@ -57,7 +57,7 @@ export default function Header() {
         <i className="bx bx-menu" id="menu-icon"></i>
       </label>
 
-      <nav className="navbar">
+      <nav className="navbar" role="navigation">
         <NavLink
           to="/"
           className={({ isActive }) => {
