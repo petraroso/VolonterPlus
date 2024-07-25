@@ -31,7 +31,13 @@ select:invalid[data-focused="true"] {
   border: 1px solid red;
 }
 
-.activity-container {
+.volunteer-location {
+  margin: 0 auto 1rem auto;
+  color: var(--clr-light-blue);
+}
+
+.activity-container,
+.contact-container {
   display: flex;
 }
 
@@ -40,11 +46,14 @@ select:invalid[data-focused="true"] {
   flex-direction: column;
   padding: 0;
   margin-top: 1rem;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }
 .activity-checkboxes label {
   margin-top: 0;
 }
 .activity-container h4 {
   margin-top: 1rem;
+}
+.contact-container p {
+  margin-left: 0.5rem;
 }

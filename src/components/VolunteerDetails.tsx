@@ -32,12 +32,14 @@ export default function VolunteerDetails({
       <h3>
         {volunteer.name} {volunteer.surname}
       </h3>
-      <p>
+      <p className="volunteer-location">
         <i className="bx bx-location-plus"></i>
         {volunteer.city}
       </p>
-
-      <p>{volunteer.contact}</p>
+      <div className="contact-container">
+        <h4>Kontakt:</h4>
+        <p>{volunteer.contact}</p>
+      </div>
 
       {volunteer.activities && (
         <div className="activity-container">
