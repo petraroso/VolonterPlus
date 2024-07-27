@@ -35,6 +35,25 @@ select:invalid[data-focused="true"] {
   margin: 0 auto 0.5rem auto;
   color: var(--clr-light-blue);
 }
+.activity-image-details {
+  height: 150px;
+  max-width: 400px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.activity-location {
+  margin: auto;
+  color: var(--clr-light-blue);
+}
+.activity-date {
+  margin: 0 auto 0.5rem auto;
+}
+.volunteer-list-layout {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 
 .activity-container,
 .contact-container {
@@ -56,4 +75,7 @@ select:invalid[data-focused="true"] {
 }
 .contact-container p {
   margin-left: 0.5rem;
+}
+.signup-title {
+  margin: 0 0 -1rem 0;
 }

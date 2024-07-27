@@ -43,16 +43,21 @@ export default function ActivityDetails({
           (_volunteer, index) => index !== volunteerIndex
         );
         axios
-          .patch(`https://json-server-volonterplus.onrender.com/activityVolunteers/${volunteers.id}`, {
-            list: updatedList,
-          })
+          .patch(
+            `https://json-server-volonterplus.onrender.com/activityVolunteers/${volunteers.id}`,
+            {
+              list: updatedList,
+            }
+          )
           .then((response) => {
             console.log(response);
             setUpdateActivities((prev) => !prev);
           });
       } else {
         axios
-          .delete(`https://json-server-volonterplus.onrender.com/activityVolunteers/${volunteers.id}`)
+          .delete(
+            `https://json-server-volonterplus.onrender.com/activityVolunteers/${volunteers.id}`
+          )
           .then((response) => {
             console.log(response);
             setUpdateActivities((prev) => !prev);
@@ -63,16 +68,25 @@ export default function ActivityDetails({
 
   return (
     <div className="form details-form">
+      <img
+        src={activity.image}
+        alt="activity image"
+        className="activity-image-details"
+      />
       <h3>{activity.name}</h3>
-      <p>{activity.description}</p>
-      <br></br>
-      <p>Organizator: {activity.association}</p>
-      <p>{activity.date}</p>
-      <p>
+
+      <p className="activity-location">
         <i className="bx bx-location-plus"></i>
         {activity.location}
       </p>
+      <p className="activity-date">{activity.date}</p>
+      <p>{activity.description}</p>
       <br></br>
+      <p>
+        <strong>Organizator:</strong> {activity.association}
+      </p>
+
+      <hr></hr>
       {adminData.admin && (
         <button onClick={toggleEdit}>
           <i className="bx bx-edit-alt"></i>
@@ -81,22 +95,24 @@ export default function ActivityDetails({
       {volunteers &&
         Array.isArray(volunteers.list) &&
         volunteers.list.length > 0 && (
-          <>
-            <h4>Volonteri:</h4>
-            {volunteers.list.map((volunteer, index) => (
-              <div className="volunteer-display" key={index}>
-                <p>{volunteer}</p>
-                {adminData.admin && (
-                  <button
-                    onClick={() => handleDeleteVolunteer(index)}
-                    className="admin-delete"
-                  >
-                    <i className="bx bx-trash"></i>
-                  </button>
-                )}
-              </div>
-            ))}
-          </>
+          <div className="volunteer-list-layout">
+            <h4>Prijavljeni volonteri:</h4>
+            <div>
+              {volunteers.list.map((volunteer, index) => (
+                <div className="volunteer-display" key={index}>
+                  <p>{volunteer}</p>
+                  {adminData.admin && (
+                    <button
+                      onClick={() => handleDeleteVolunteer(index)}
+                      className="admin-delete"
+                    >
+                      <i className="bx bx-trash"></i>
+                    </button>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
         )}
     </div>
   );

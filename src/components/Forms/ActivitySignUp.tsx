@@ -88,6 +88,7 @@ export default function ActivitySignUp({
 
   return (
     <div className="form">
+      <h4 className="signup-title">Prijavite se i volontirajte:</h4>
       <label htmlFor="name">Ime:</label>
       <input
         type="text"
