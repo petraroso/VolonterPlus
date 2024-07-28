@@ -258,8 +258,12 @@ ActivityCardProps) {
         />
         <span className="errorFormMessage">Unesite put do slike</span>
         <br></br>
-        <button onClick={sendData}>Spremi ✔️</button>
-        <button onClick={toggleEdit}>Odbaci ❌</button>
+        <button className="save-button" onClick={sendData}>
+          Spremi
+        </button>
+        <button className="discard-button" onClick={toggleEdit}>
+          Odbaci
+        </button>
       </div>
     </>
   );

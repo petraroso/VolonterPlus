@@ -236,7 +236,9 @@ export default function NewActivityForm({
       />
       <span className="errorFormMessage">Unesite put do slike</span>
       <br></br>
-      <button onClick={sendData}>Spremi ✔️</button>
+      <button className="save-button" onClick={sendData}>
+        Spremi
+      </button>
     </div>
   );
 }

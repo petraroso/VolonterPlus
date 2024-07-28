@@ -126,7 +126,9 @@ export default function ActivitySignUp({
         znakove
       </span>
 
-      <button onClick={sendData}>Prijava ✔️</button>
+      <button className="save-button" onClick={sendData}>
+        Prijava
+      </button>
     </div>
   );
 }

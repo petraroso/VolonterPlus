@@ -269,8 +269,12 @@ export default function VolunteerDetailsEdit({
         value={newData.description}
         onChange={handleFormData}
       />
-      <button onClick={sendData}>Spremi ✔️</button>
-      <button onClick={toggleEdit}>Odbaci ❌</button>
+      <button className="save-button" onClick={sendData}>
+        Spremi
+      </button>
+      <button className="discard-button" onClick={toggleEdit}>
+        Odbaci
+      </button>
     </div>
   );
 }

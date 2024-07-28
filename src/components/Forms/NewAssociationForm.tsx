@@ -130,7 +130,9 @@ export default function NewAssociationForm({
       </select>
       <span className="errorFormMessage">Odaberite grad</span>
 
-      <button onClick={sendData}>Spremi ✔️</button>
+      <button className="save-button" onClick={sendData}>
+        Spremi
+      </button>
     </div>
   );
 }

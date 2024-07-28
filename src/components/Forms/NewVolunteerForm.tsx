@@ -252,7 +252,9 @@ export default function NewVolunteerForm({
         onChange={handleFormData}
       />
 
-      <button onClick={sendData}>Dodaj ✔️</button>
+      <button className="save-button" onClick={sendData}>
+        Dodaj
+      </button>
     </div>
   );
 }

@@ -27,6 +27,8 @@
   --clr-dark-gray: #111;
   --clr-gray: #888;
   --clr-green: #1add27;
+  --clr-green-transparent: #1add277c;
+  --clr-orange-transparent: #ff481f7a;
 }
 * {
   margin: 0;
@@ -116,6 +118,25 @@ button:hover {
   border-color: var(--clr-light-blue);
   box-shadow: 0 0 5px var(--clr-dark-blue);
 }
+.save-button{
+  background-color: var(--clr-green-transparent);
+}
+.save-button:hover{
+  color: var(--clr-light);
+  background-color: var(--clr-green);
+  border-color: var(--clr-green-transparent);
+  box-shadow: 0 0 5px var(--clr-green);
+}
+.discard-button{
+  background-color: var(--clr-orange-transparent);
+}
+.discard-button:hover{
+  color: var(--clr-light);
+  background-color: var(--clr-orange);
+  border-color: var(--clr-orange);
+  box-shadow: 0 0 5px var(--clr-orange-transparent);
+}
+
 
 .bx-trash {
   color: var(--clr-orange);

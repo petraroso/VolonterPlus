@@ -172,8 +172,12 @@ const AssociationLMEdit: React.FC<ListProps> = ({
         </option>
       </select>
 
-      <button onClick={sendData}>Spremi ✔️</button>
-      <button onClick={handleAbort}>Odbaci ❌</button>
+      <button className="save-button" onClick={sendData}>
+        Spremi
+      </button>
+      <button className="discard-button" onClick={handleAbort}>
+        Odbaci
+      </button>
     </div>
   );
 };
