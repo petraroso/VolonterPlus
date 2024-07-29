@@ -1,12 +1,15 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 
-export default function LAyout() {
+export default function Layout() {
   return (
     <>
       <Header />
-      <Outlet />
+      <main>
+        <Outlet />
+        <ScrollRestoration />
+      </main>
       <Footer />
     </>
   );

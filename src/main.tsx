@@ -22,7 +22,7 @@ import "./App.css";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />} errorElement={<NotFoundPage />}>
-      <Route path="" element={<HomePage />} />
+      <Route index element={<HomePage />} />
       <Route path="activities" element={<ActivitiesPage />} />
       <Route path="associations" element={<AssociationsPage />} />
       <Route path="volunteers" element={<VolunteersPage />} />
