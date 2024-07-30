@@ -88,7 +88,10 @@ export default function ActivityDetails({
 
       <hr></hr>
       {adminData.admin && (
-        <button className="edit-button" onClick={toggleEdit}>
+        <button
+          className="edit-button edit-button-activity"
+          onClick={toggleEdit}
+        >
           <i className="bx bx-edit-alt"></i>
         </button>
       )}
