@@ -82,22 +82,31 @@ const AssociationListMember: React.FC<ListProps> = ({
         <em>{association.address}</em> {association.city}
         {approvedStatus && adminData.admin ? (
           <div className="admin-buttons">
-            <button onClick={openModal}>
+            <button className="edit-button" onClick={openModal}>
               <i className="bx bx-edit-alt"></i>
             </button>
-            <button onClick={() => handleDelete(association.id)}>
+            <button
+              className="delete-button"
+              onClick={() => handleDelete(association.id)}
+            >
               <i className="bx bx-trash"></i>
             </button>
           </div>
         ) : adminData.admin ? (
           <div className="admin-buttons">
-            <button onClick={openModal}>
+            <button className="edit-button" onClick={openModal}>
               <i className="bx bx-edit-alt"></i>
             </button>
-            <button onClick={() => handleDelete(association.id)}>
+            <button
+              className="delete-button"
+              onClick={() => handleDelete(association.id)}
+            >
               <i className="bx bx-trash"></i>
             </button>
-            <button onClick={() => handleApproval(association.id)}>
+            <button
+              className="approve-button"
+              onClick={() => handleApproval(association.id)}
+            >
               <i className="bx bxs-up-arrow-square"></i>
             </button>
           </div>

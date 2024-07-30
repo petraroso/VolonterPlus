@@ -61,7 +61,7 @@ export default function VolunteerDetails({
       )}
 
       {adminData.admin && (
-        <button onClick={toggleEdit}>
+        <button className="edit-button" onClick={toggleEdit}>
           <i className="bx bx-edit-alt"></i>
         </button>
       )}

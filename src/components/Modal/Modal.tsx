@@ -25,7 +25,7 @@ export default function Modal({
         <div onClick={toggleModal} className="overlay"></div>
         <div className="modal-content">
           {children}
-          <button onClick={toggleModal} className="close-modal">
+          <button onClick={toggleModal} className="close-modal close-button">
             <i className="bx bx-x"></i>
           </button>
         </div>

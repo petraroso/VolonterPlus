@@ -88,7 +88,7 @@ export default function ActivityDetails({
 
       <hr></hr>
       {adminData.admin && (
-        <button onClick={toggleEdit}>
+        <button className="edit-button" onClick={toggleEdit}>
           <i className="bx bx-edit-alt"></i>
         </button>
       )}
@@ -104,7 +104,7 @@ export default function ActivityDetails({
                   {adminData.admin && (
                     <button
                       onClick={() => handleDeleteVolunteer(index)}
-                      className="admin-delete"
+                      className="admin-delete delete-button"
                     >
                       <i className="bx bx-trash"></i>
                     </button>

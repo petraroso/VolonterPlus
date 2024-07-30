@@ -26,6 +26,7 @@
   --clr-dark: #000000;
   --clr-dark-gray: #111;
   --clr-gray: #888;
+  --clr-light-gray: hsl(0, 0%, 65%);
   --clr-green: #1add27;
   --clr-green-transparent: #1add277c;
   --clr-orange-transparent: #ff481f7a;
@@ -118,35 +119,58 @@ button:hover {
   border-color: var(--clr-light-blue);
   box-shadow: 0 0 5px var(--clr-dark-blue);
 }
-.save-button{
-  background-color: var(--clr-green-transparent);
+.close-button:hover {
+  color: var(--clr-light);
+  background-color: var(--clr-lightest-blue);
+  border-color: var(--clr-lightest-blue);
+  box-shadow: 0 0 5px var(--clr-lightest-blue);
 }
-.save-button:hover{
+.edit-button {
+  color: var(--clr-dark-blue);
+}
+.edit-button:hover {
+  color: var(--clr-light);
+  background-color: var(--clr-dark-blue);
+  border-color: var(--clr-light-blue);
+  box-shadow: 0 0 5px var(--clr-dark-blue);
+}
+.delete-button {
+  color: var(--clr-orange);
+}
+.delete-button:hover {
+  color: var(--clr-light);
+  background-color: var(--clr-orange);
+  border-color: var(--clr-orange-transparent);
+  box-shadow: 0 0 5px var(--clr-orange);
+}
+.approve-button {
+  color: var(--clr-green);
+}
+.approve-button:hover {
   color: var(--clr-light);
   background-color: var(--clr-green);
   border-color: var(--clr-green-transparent);
   box-shadow: 0 0 5px var(--clr-green);
 }
-.discard-button{
+.save-button {
+  background-color: var(--clr-green-transparent);
+}
+.save-button:hover {
+  color: var(--clr-light);
+  background-color: var(--clr-green);
+  border-color: var(--clr-green-transparent);
+  box-shadow: 0 0 5px var(--clr-green);
+}
+.discard-button {
   background-color: var(--clr-orange-transparent);
 }
-.discard-button:hover{
+.discard-button:hover {
   color: var(--clr-light);
   background-color: var(--clr-orange);
   border-color: var(--clr-orange);
   box-shadow: 0 0 5px var(--clr-orange-transparent);
 }
 
-
-.bx-trash {
-  color: var(--clr-orange);
-}
-.bxs-up-arrow-square {
-  color: var(--clr-green);
-}
-.bx-edit-alt {
-  color: var(--clr-dark-blue);
-}
 .details-form {
   display: flex;
   flex-direction: column;
@@ -176,12 +200,12 @@ h3 {
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--clr-lightest-blue);
+  background: var(--clr-light-gray);
   border-radius: 8px;
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--clr-dark-blue);
+  background: var(--clr-lightest-blue);
 }
 
 @media (max-width: 1070px) {
