@@ -100,9 +100,6 @@ index.css or it's in the component style file*/
   flex-wrap: nowrap;
   gap: 0.5rem;
 }
-.edit-button-activity {
-  margin-bottom: 1.4rem;
-}
 
 /*Volunteers page*/
 .volunteer-list {

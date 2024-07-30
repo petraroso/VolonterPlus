@@ -87,14 +87,7 @@ export default function ActivityDetails({
       </p>
 
       <hr></hr>
-      {adminData.admin && (
-        <button
-          className="edit-button edit-button-activity"
-          onClick={toggleEdit}
-        >
-          <i className="bx bx-edit-alt"></i>
-        </button>
-      )}
+
       {volunteers &&
         Array.isArray(volunteers.list) &&
         volunteers.list.length > 0 && (
@@ -117,6 +110,11 @@ export default function ActivityDetails({
             </div>
           </div>
         )}
+      {adminData.admin && (
+        <button className="edit-button" onClick={toggleEdit}>
+          <i className="bx bx-edit-alt"></i>
+        </button>
+      )}
     </div>
   );
 }
