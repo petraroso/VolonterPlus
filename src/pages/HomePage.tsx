@@ -22,10 +22,12 @@ export default function HomePage() {
             gdje svatko može pronaći svoj način da doprinese društvenim
             promjenama i izgradi bolje sutra.
           </p>
-          <NavLink to="/activities" role="navigation">
-            Pridružite se volontiranju!{" "}
-            <i className="bx bxs-chevrons-right"></i>
-          </NavLink>
+          <button className="animated">
+            <NavLink to="/activities" role="navigation">
+              Pridružite se volontiranju!
+              <i className="bx bxs-chevrons-right"></i>
+            </NavLink>
+          </button>
         </div>
         <img
           src={volunteeringImage1}
@@ -40,9 +42,11 @@ export default function HomePage() {
             Volonteri diljem Hrvatske redovito sudjeluju u edukacijskim i
             ekološkim akcijama!
           </p>
-          <NavLink to="/volunteers" role="navigation">
-            Prijavite se i Vi! <i className="bx bxs-chevrons-right"></i>
-          </NavLink>
+          <button className="animated">
+            <NavLink to="/volunteers" role="navigation">
+              Prijavite se i Vi! <i className="bx bxs-chevrons-right"></i>
+            </NavLink>
+          </button>
         </div>
       </div>
 
@@ -64,10 +68,12 @@ export default function HomePage() {
             održivom razvoju i reciklaži. Njihova misija je očuvati prirodu i
             educirati građane o važnosti ekološke osviještenosti.
           </p>
-          <NavLink to="/associations" role="navigation">
-            Otkrijte udruge!
-            <i className="bx bxs-chevrons-right"></i>
-          </NavLink>
+          <button className="animated">
+            <NavLink to="/associations" role="navigation">
+              Otkrijte udruge!
+              <i className="bx bxs-chevrons-right"></i>
+            </NavLink>
+          </button>
         </div>
       </div>
     </>
