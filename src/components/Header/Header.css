@@ -64,7 +64,7 @@
   height: 25px;
   transition: background-color 0.1s ease, border-color 0.2s ease;
   cursor: pointer;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.748);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.748);
   position: relative;
 
   margin-left: 0.5rem;
@@ -84,8 +84,9 @@
 .toggle-btn.toggled {
   background-color: var(--clr-light-orange);
 }
-.toggled-btn:hover {
-  border-color: #6f6f6f;
+.toggle-btn:hover {
+  border-color: var(--clr-light-orange);
+  box-shadow: 0 0 5px var(--clr-light-orange);
 }
 .toggle-btn.toggled .thumb {
   left: 20px;

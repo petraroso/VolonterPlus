@@ -140,7 +140,7 @@ button.animated {
     background-position: 0% 0%;
   }
 }
-button:hover {
+button.animated:hover {
   border-color: var(--clr-light-blue);
   box-shadow: 0 0 5px var(--clr-dark-blue);
 }
