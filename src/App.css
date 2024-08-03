@@ -56,21 +56,32 @@ index.css or it's in the component style file*/
   width: 100%;
   display: flex;
   background-image: url("./assets/volunteering2.jpg");
-  height: 400px;
+  height: 500px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .parallax-image div {
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
   margin: auto;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--clr-light);
   font-size: 1.15rem;
   border-radius: 8px;
 }
+.parallax-image div p {
+  margin-bottom: 2rem;
+}
+.parallax-image button {
+  max-width: 500px;
+  width: 100%;
+}
 .parallax-image a {
+  font-size: 1.15rem;
   font-weight: 500;
 }
 .parallax-image a i {
