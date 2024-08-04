@@ -16,6 +16,7 @@ import VolunteersPage from "./pages/VolunteersPage";
 
 import Layout from "./components/Layout";
 
+import "./modern-normalize.css";
 import "./index.css";
 import "./App.css";
 
