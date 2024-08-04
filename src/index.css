@@ -54,6 +54,8 @@ a {
   border-radius: 8px;
 }
 select {
+  -webkit-appearance: none; /* Uklanjanje zadanog izgleda na iOS-u */
+  appearance: none; /* Uklanjanje zadanog izgleda na modernim preglednicima */
   display: block;
   width: 200px;
   height: fit-content;
@@ -63,14 +65,16 @@ select {
   border-radius: 8px;
   outline: none;
   transition: border-color 0.25s, box-shadow 0.25s;
-  -webkit-appearance: none; /* Uklanjanje zadanog izgleda na iOS-u */
-  appearance: none; /* Uklanjanje zadanog izgleda na modernim preglednicima */
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
 }
 input[type="text"],
 input[type="date"],
 input[type="file"],
 input[type="email"],
 textarea {
+  -webkit-appearance: none; /* Uklanjanje zadanog izgleda na iOS-u */
+  appearance: none; /* Uklanjanje zadanog izgleda na modernim preglednicima */
   display: block;
   height: fit-content;
   padding: 0.5rem;
@@ -83,8 +87,8 @@ textarea {
   border-image: initial;
   outline: none;
   transition: border-color 0.25s, box-shadow 0.25s;
-  -webkit-appearance: none; /* Uklanjanje zadanog izgleda na iOS-u */
-  appearance: none; /* Uklanjanje zadanog izgleda na modernim preglednicima */
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
 }
 
 input[type="text"]:focus,
