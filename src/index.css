@@ -63,6 +63,8 @@ select {
   border-radius: 8px;
   outline: none;
   transition: border-color 0.25s, box-shadow 0.25s;
+  -webkit-appearance: none; /* Uklanjanje zadanog izgleda na iOS-u */
+  appearance: none; /* Uklanjanje zadanog izgleda na modernim preglednicima */
 }
 input[type="text"],
 input[type="date"],
@@ -70,12 +72,10 @@ input[type="file"],
 input[type="email"],
 textarea {
   display: block;
-
   height: fit-content;
   padding: 0.5rem;
   font-size: 1rem;
   resize: none;
-
   border-radius: 8px;
   border-width: 1px;
   border-style: solid;
@@ -83,6 +83,8 @@ textarea {
   border-image: initial;
   outline: none;
   transition: border-color 0.25s, box-shadow 0.25s;
+  -webkit-appearance: none; /* Uklanjanje zadanog izgleda na iOS-u */
+  appearance: none; /* Uklanjanje zadanog izgleda na modernim preglednicima */
 }
 
 input[type="text"]:focus,
