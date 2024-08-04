@@ -63,6 +63,10 @@ select {
   font-size: 1rem;
   cursor: pointer;
   border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-image: initial;
   outline: none;
   transition: border-color 0.25s, box-shadow 0.25s;
   background-color: var(--clr-light);
@@ -77,6 +81,7 @@ textarea {
   appearance: none; /* Uklanjanje zadanog izgleda na modernim preglednicima */
   display: block;
   height: fit-content;
+  min-height: 2rem;
   padding: 0.5rem;
   font-size: 1rem;
   resize: none;
