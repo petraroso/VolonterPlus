@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/logo-no-bg.png";
+import Logo from "../Logo/Logo";
+//import logo from "../../assets/logo-no-bg.png";
 import "./Footer.css";
 
 export default function Footer() {
@@ -7,7 +8,7 @@ export default function Footer() {
     <footer>
       <div className="footer-container" role="navigation">
         <NavLink to="/" className="nav-logo">
-          <img src={logo} className="logo" alt={"logo"} />
+          <Logo textColor="white" shadowColor="#111"/>
         </NavLink>
 
         <div className="social-icons" aria-label="Social media links">

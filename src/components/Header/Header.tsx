@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 //NavLink is Link that knows if it's active or not
-import logo from "../../assets/logo-blue-no-bg.png";
+import Logo from "../Logo/Logo";
+//import logo from "../../assets/logo-blue-no-bg.png";
 import { useState, useEffect, useRef } from "react";
 import { useAdminContext } from "../../AdminContext";
 import "./Header.css";
@@ -42,7 +43,7 @@ export default function Header() {
   return (
     <header className="header">
       <NavLink to="/" className="nav-logo" role="navigation">
-        <img src={logo} className="logo" alt={"logo"} />
+        <Logo />
       </NavLink>
 
       <input

@@ -1,0 +1,9 @@
+.logo-layout {
+  display: flex;
+  align-items: center;
+}
+.logo-text {
+  letter-spacing: 0.1rem;
+  font-weight: 900;
+  margin-left: 0.6rem;
+}

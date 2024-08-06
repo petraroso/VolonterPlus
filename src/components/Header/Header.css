@@ -21,8 +21,11 @@
   backdrop-filter: blur(50px);
   z-index: -1;
 }
-.logo {
+/*.logo {
   height: 2rem;
+}*/
+#menu-icon {
+  text-shadow: 0 0 5px var(--clr-gray);
 }
 .navbar {
   font-size: 1.15rem;
