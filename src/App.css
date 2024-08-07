@@ -223,9 +223,10 @@ index.css or it's in the component style file*/
 /*media queries*/
 @media (min-width: 1045px) {
   .banner-image {
-    width: 75%;
+    width: 80%;
   }
   .section {
+    padding: 2rem 0;
     margin: 4rem 10%;
   }
 
@@ -244,6 +245,12 @@ index.css or it's in the component style file*/
 }
 
 @media (max-width: 600px) {
+  .banner-image {
+    width: 100%;
+  }
+  .section div {
+    padding-right: 0;
+  }
   .volunteer-list {
     grid-template-columns: repeat(2, 1fr);
     margin: 0;
