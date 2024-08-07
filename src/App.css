@@ -11,6 +11,7 @@ index.css or it's in the component style file*/
   display: flex;
   padding: 2rem;
   margin: 4rem 0;
+  text-align: justify;
 }
 .homepage-image {
   border-radius: 8px;
