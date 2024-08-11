@@ -128,7 +128,7 @@ export default function ActivitiesPage() {
             <option value={"oldest"}>Najstarije dodano</option>
             <option value={"chronological"}>Po datumu odvijanja</option>
           </select>
-          <div>
+          <div className="activities-filter-container">
             <Filter
               cities={cities}
               cityFilter={cityFilter}
