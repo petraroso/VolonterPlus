@@ -120,13 +120,15 @@ export default function ActivityCard({
             className="activity-image"
           />
         </div>
-        <div>
+        <div className="activity-info">
           <h3 onClick={toggleModal}>{activity.name}</h3>
-          <p onClick={toggleModal}>{activity.date}</p>
-          <p onClick={toggleModal}>
-            <i className="bx bx-location-plus"></i>
-            {activity.location}
-          </p>
+          <div className="activity-date-location">
+            <p onClick={toggleModal}>{activity.date}</p>
+            <p className="activity-location" onClick={toggleModal}>
+              <i className="bx bx-location-plus"></i>
+              {activity.location}
+            </p>
+          </div>
         </div>
         {adminData.admin && (
           <div className="admin-buttons">
