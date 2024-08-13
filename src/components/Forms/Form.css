@@ -58,16 +58,19 @@ select:invalid[data-focused="true"] {
 .activity-container,
 .contact-container {
   display: flex;
+  margin-top: 1rem;
 }
 
 .activity-checkboxes {
   display: flex;
   flex-direction: column;
   padding: 0;
-  margin-top: 0.5rem;
   margin-left: 0.5rem;
 }
 .activity-checkboxes label {
+  margin-top: 0;
+}
+.activity-container label {
   margin-top: 0;
 }
 .activity-container h4 {
