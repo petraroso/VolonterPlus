@@ -1,4 +1,4 @@
-import "./Loader.css";
+import styles from "./style.module.css";
 import { useEffect, useState } from "react";
 
 function Loader() {
@@ -10,9 +10,9 @@ function Loader() {
 
   return (
     showSpinner && (
-      <div className="loader-prompt">
-        <div className="loader-modal">
-          <div className="loader"></div>
+      <div className={styles.loaderPrompt}>
+        <div className={styles.loaderModal}>
+          <div className={styles.loader}></div>
         </div>
         <h3>Učitavanje podataka...</h3>
         <p>Stranica koristi besplatni Render.com servis</p>

@@ -1,9 +1,9 @@
-.loader-prompt {
+.loaderPrompt {
   display: flex;
   flex-direction: column;
   margin-top: 4rem;
 }
-.loader-prompt p {
+.loaderPrompt p {
   text-align: center;
 }
 .loader {
