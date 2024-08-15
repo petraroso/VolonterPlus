@@ -1,8 +1,8 @@
-.logo-layout {
+.logoLayout {
   display: flex;
   align-items: center;
 }
-.logo-text {
+.logoText {
   letter-spacing: 0.1rem;
   font-weight: 900;
   margin-left: 0.6rem;

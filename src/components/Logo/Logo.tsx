@@ -1,5 +1,5 @@
 import LogoIcon from "../LogoIcon/LogoIcon";
-import "./Logo.css";
+import styles from "./style.module.css";
 
 interface LogoProps {
   iconColor?: string;
@@ -16,10 +16,10 @@ const Logo: React.FC<LogoProps> = ({
   fontSize = "2rem",
   shadowColor = "#888",
 }) => (
-  <div className="logo-layout">
+  <div className={styles.logoLayout}>
     <LogoIcon color={iconColor} height={iconHeight} />
     <h1
-      className="logo-text"
+      className={styles.logoText}
       style={{
         color: textColor,
         fontSize: fontSize,
