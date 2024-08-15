@@ -1,5 +1,5 @@
 import React from "react";
-import "./Filter.css";
+import styles from "./style.module.css";
 
 interface FilterTypes {
   cities: City[];
@@ -31,9 +31,9 @@ const Filter: React.FC<FilterTypes> = ({
   };
 
   return (
-    <div className="filter-container">
+    <div>
       <h3>Filter</h3>
-      <div className="all-filters">
+      <div className={styles.allFilters}>
         <select
           id="cityFilter"
           name="cityFilter"
@@ -48,7 +48,7 @@ const Filter: React.FC<FilterTypes> = ({
           ))}
         </select>
         {activityFilter && setActivityFilter && (
-          <div className="filter-activities">
+          <div className={styles.filterActivities}>
             <label>
               <input
                 type="radio"
