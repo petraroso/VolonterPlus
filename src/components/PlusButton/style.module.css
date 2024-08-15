@@ -1,10 +1,10 @@
-.add-button {
+.addButton {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 100;
 }
-.open-modal {
+.openModal {
   background-color: var(--clr-dark-blue);
   color: white;
   border: none;
@@ -16,9 +16,9 @@
   align-items: center;
   cursor: pointer;
 }
-.open-modal:hover {
+.openModal:hover {
   background-color: var(--clr-light-blue);
 }
-.open-modal:focus {
+.openModal:focus {
   outline: none;
 }

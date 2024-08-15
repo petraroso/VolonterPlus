@@ -1,10 +1,10 @@
-import "./PlusButton.css";
+import styles from "./style.module.css";
 
 export default function PlusButton({ openModal }: { openModal: () => void }) {
   return (
     <>
-      <div className="add-button">
-        <button onClick={openModal} className="open-modal">
+      <div className={styles.addButton}>
+        <button onClick={openModal} className={styles.openModal}>
           <i className="bx bx-plus-medical"></i>
         </button>
       </div>
