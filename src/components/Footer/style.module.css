@@ -1,66 +1,66 @@
 footer {
   background-color: var(--clr-dark-gray);
 }
-.footer-container {
+.footerContainer {
   width: 100%;
   padding: 2.6rem 10%;
 }
-.footer-container .nav-logo {
+.navLogo {
   display: flex;
   justify-content: center;
   padding-bottom: 2.6rem;
 }
-.social-icons {
+.socialIcons {
   display: flex;
   justify-content: center;
 }
-.social-icons a {
+.socialIcons a {
   padding: 0.6rem;
   background-color: var(--clr-light);
   margin: 0.6rem;
   border-radius: 50%;
 }
-.social-icons a i {
+.socialIcons a i {
   font-size: 2rem;
   color: var(--clr-dark);
   opacity: 0.9;
 }
-.social-icons a:hover {
+.socialIcons a:hover {
   background-color: var(--clr-dark-gray);
   transition: 0.5s;
 }
-.social-icons a:hover i {
+.socialIcons a:hover i {
   color: var(--clr-light);
   transition: 0.5s;
 }
-.footer-nav {
+.footerNav {
   margin: 1.3rem 0 0 0;
 }
-.footer-nav ul {
+.footerNav ul {
   display: flex;
   justify-content: center;
   list-style-type: none;
 }
-.footer-nav ul li a {
+.footerNav ul li a {
   color: var(--clr-light);
   margin: 0 1.25rem;
   font-size: 1.15rem;
   opacity: 0.7;
   transition: 0.5s;
 }
-.footer-nav ul li a:hover {
+.footerNav ul li a:hover {
   opacity: 1;
 }
 
-.footer-copyright {
+.footerCopyright {
   background-color: var(--clr-dark);
   padding: 1.3rem;
   text-align: center;
 }
-.footer-copyright p {
+.footerCopyright p {
   color: var(--clr-light);
 }
-.owner-name {
+.ownerName {
   opacity: 0.7;
   letter-spacing: 0.7px;
   font-weight: 500;
@@ -72,10 +72,10 @@ footer {
   }
 }
 @media (max-width: 700px) {
-  .footer-nav ul {
+  .footerNav ul {
     flex-direction: column;
   }
-  .footer-nav ul li {
+  .footerNav ul li {
     width: 100%;
     text-align: center;
     margin: 10px;

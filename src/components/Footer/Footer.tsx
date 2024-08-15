@@ -1,17 +1,16 @@
 import { NavLink } from "react-router-dom";
 import Logo from "../Logo/Logo";
-//import logo from "../../assets/logo-no-bg.png";
-import "./Footer.css";
+import styles from "./style.module.css";
 
 export default function Footer() {
   return (
     <footer>
-      <div className="footer-container" role="navigation">
-        <NavLink to="/" className="nav-logo">
-          <Logo textColor="white" shadowColor="#111"/>
+      <div className={styles.footerContainer} role="navigation">
+        <NavLink to="/" className={styles.navLogo}>
+          <Logo textColor="white" shadowColor="#111" />
         </NavLink>
 
-        <div className="social-icons" aria-label="Social media links">
+        <div className={styles.socialIcons} aria-label="Social media links">
           <a
             href="https://www.facebook.com"
             aria-label="Facebook"
@@ -26,7 +25,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fa-brands fa-instagram"></i>
+            <i className="fa-brands fa-facebook"></i>
           </a>
           <a
             href="https://www.twitter.com"
@@ -53,35 +52,35 @@ export default function Footer() {
             <i className="fa-brands fa-youtube"></i>
           </a>
         </div>
-        <div className="footer-nav">
+        <div className={styles.footerNav}>
           <ul>
             <li>
-              <NavLink to="/" className="nav-link">
+              <NavLink to="/" className={styles.navLink}>
                 Početna
               </NavLink>
             </li>
             <li>
-              <NavLink to="/activities" className="nav-link">
+              <NavLink to="/activities" className={styles.navLink}>
                 Aktivnosti
               </NavLink>
             </li>
             <li>
-              <NavLink to="/volunteers" className="nav-link">
+              <NavLink to="/volunteers" className={styles.navLink}>
                 Volonteri
               </NavLink>
             </li>
             <li>
-              <NavLink to="/associations" className="nav-link">
+              <NavLink to="/associations" className={styles.navLink}>
                 Udruge
               </NavLink>
             </li>
           </ul>
         </div>
       </div>
-      <div className="footer-copyright">
+      <div className={styles.footerCopyright}>
         <p>
           Copyright &copy;2024
-          <span className="owner-name"> VolonterPlus</span>
+          <span className={styles.ownerName}> VolonterPlus</span>
         </p>
       </div>
     </footer>
