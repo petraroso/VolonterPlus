@@ -231,6 +231,10 @@ h3 {
 .details-form h3 {
   margin-bottom: 1rem;
 }
+body.active-modal {
+  overflow-y: hidden;
+}
+
 .user-message-modal {
   display: flex;
   flex-direction: column;

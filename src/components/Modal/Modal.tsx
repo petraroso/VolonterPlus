@@ -1,4 +1,4 @@
-import "./Modal.css";
+import styles from "./style.module.css";
 import { useEffect } from "react";
 
 export default function Modal({
@@ -21,11 +21,14 @@ export default function Modal({
 
   return (
     <>
-      <div className="modal">
-        <div onClick={toggleModal} className="overlay"></div>
-        <div className="modal-content">
+      <div className={styles.modal}>
+        <div onClick={toggleModal} className={styles.overlay}></div>
+        <div className={styles.modalContent}>
           {children}
-          <button onClick={toggleModal} className="close-modal close-button">
+          <button
+            onClick={toggleModal}
+            className={`${styles.closeModal} close-button`}
+          >
             <i className="bx bx-x"></i>
           </button>
         </div>
