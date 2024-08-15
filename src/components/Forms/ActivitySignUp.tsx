@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import styles from "./style.module.css";
 
 interface ActivitySignUpProps {
   activityId: number;
@@ -87,8 +88,8 @@ export default function ActivitySignUp({
   };
 
   return (
-    <div className="form">
-      <h4 className="signup-title">Prijavite se i volontirajte:</h4>
+    <div className={styles.form}>
+      <h4 className={styles.signupTitle}>Prijavite se i volontirajte:</h4>
       <label htmlFor="name">Ime:</label>
       <input
         type="text"
@@ -103,7 +104,7 @@ export default function ActivitySignUp({
         data-focused={focused.name.toString()}
         onBlur={handleFocus}
       ></input>
-      <span className="errorFormMessage">
+      <span className={styles.errorFormMessage}>
         Ime treba biti duljine 3-30 znakova i ne smije sadržavati posebne
         znakove
       </span>
@@ -121,7 +122,7 @@ export default function ActivitySignUp({
         data-focused={focused.surname.toString()}
         onBlur={handleFocus}
       ></input>
-      <span className="errorFormMessage">
+      <span className={styles.errorFormMessage}>
         Prezime treba biti duljine 3-30 znakova i ne smije sadržavati posebne
         znakove
       </span>

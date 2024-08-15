@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useRef, useEffect } from "react";
-import "./Form.css";
+import styles from "./style.module.css";
 
 export default function NewActivityForm({
   setUpdateActivities,
@@ -101,7 +101,7 @@ export default function NewActivityForm({
   };
 
   return (
-    <div className="form">
+    <div className={styles.form}>
       <h2>Nova aktivnost</h2>
       <label htmlFor="name">Naziv:</label>
       <input
@@ -117,7 +117,7 @@ export default function NewActivityForm({
         onBlur={handleFocus}
         //onFocus={()=>setFocused(false)}
       />
-      <span className="errorFormMessage">
+      <span className={styles.errorFormMessage}>
         Naziv treba biti duljine 3-50 znakova i ne smije sadržavati posebne
         znakove
       </span>
@@ -138,7 +138,9 @@ export default function NewActivityForm({
         onBlur={handleFocus}
         //onFocus={()=>setFocused(false)}
       />
-      <span className="errorFormMessage">Unesite opis do 300 znakova</span>
+      <span className={styles.errorFormMessage}>
+        Unesite opis do 300 znakova
+      </span>
 
       <label>
         Organizator udruga:
@@ -181,7 +183,7 @@ export default function NewActivityForm({
             onBlur={handleFocus}
             //onFocus={()=>setFocused(false)}
           />
-          <span className="errorFormMessage">
+          <span className={styles.errorFormMessage}>
             Naziv treba biti duljine 3-30 znakova i ne smije sadržavati posebne
             znakove
           </span>
@@ -199,7 +201,7 @@ export default function NewActivityForm({
         data-focused={focused.date.toString()}
         onBlur={handleFocus}
       />
-      <span className="errorFormMessage">Odaberite datum</span>
+      <span className={styles.errorFormMessage}>Odaberite datum</span>
 
       <label htmlFor="location">Lokacija: </label>
       <input
@@ -215,7 +217,7 @@ export default function NewActivityForm({
         onBlur={handleFocus}
         //onFocus={()=>setFocused(false)}
       />
-      <span className="errorFormMessage">
+      <span className={styles.errorFormMessage}>
         Lokacija treba biti duljine 3-40 znakova i ne smije sadržavati posebne
         znakove
       </span>
@@ -234,7 +236,7 @@ export default function NewActivityForm({
         onBlur={handleFocus}
         //onFocus={()=>setFocused(false)}
       />
-      <span className="errorFormMessage">Unesite put do slike</span>
+      <span className={styles.errorFormMessage}>Unesite put do slike</span>
       <br></br>
       <button className="save-button" onClick={sendData}>
         Spremi

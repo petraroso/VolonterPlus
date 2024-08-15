@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
+import styles from "./style.module.css";
+
 interface City {
   id: Number;
   name: string;
@@ -68,7 +70,7 @@ export default function NewAssociationForm({
   };
 
   return (
-    <div className="form">
+    <div className={styles.form}>
       <h2>Nova udruga</h2>
       <label htmlFor="name">Naziv:</label>
       <input
@@ -84,7 +86,7 @@ export default function NewAssociationForm({
         onBlur={handleFocus}
         //onFocus={()=>setFocused(false)}
       />
-      <span className="errorFormMessage">
+      <span className={styles.errorFormMessage}>
         Naziv treba biti duljine 3-30 znakova i ne smije sadržavati posebne
         znakove
       </span>
@@ -103,7 +105,7 @@ export default function NewAssociationForm({
         onBlur={handleFocus}
         //onFocus={()=>setFocused(false)}
       />
-      <span className="errorFormMessage">
+      <span className={styles.errorFormMessage}>
         Adresa treba biti duljine 3-30 znakova i ne smije sadržavati posebne
         znakove
       </span>
@@ -128,7 +130,7 @@ export default function NewAssociationForm({
           </option>
         ))}
       </select>
-      <span className="errorFormMessage">Odaberite grad</span>
+      <span className={styles.errorFormMessage}>Odaberite grad</span>
 
       <button className="save-button" onClick={sendData}>
         Spremi

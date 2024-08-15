@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import styles from "./style.module.css";
 
 interface Association {
   id: number;
@@ -103,7 +104,7 @@ const AssociationLMEdit: React.FC<ListProps> = ({
   };
 
   return (
-    <div className="form details-form">
+    <div className={`${styles.form} ${styles.detailsForm}`}>
       <h3>Uredite: {association.name}</h3>
       <label htmlFor="name">Naziv</label>
       <input
@@ -118,7 +119,7 @@ const AssociationLMEdit: React.FC<ListProps> = ({
         data-focused={focused.name.toString()}
         onBlur={handleFocus}
       />
-      <span className="errorFormMessage">
+      <span className={styles.errorFormMessage}>
         Naziv treba biti duljine 3-50 znakova i ne smije sadržavati posebne
         znakove
       </span>
@@ -136,7 +137,7 @@ const AssociationLMEdit: React.FC<ListProps> = ({
         data-focused={focused.address.toString()}
         onBlur={handleFocus}
       />
-      <span className="errorFormMessage">
+      <span className={styles.errorFormMessage}>
         Adresa treba biti duljine 3-30 znakova i ne smije sadržavati posebne
         znakove
       </span>

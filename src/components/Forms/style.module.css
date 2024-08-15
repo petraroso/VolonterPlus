@@ -1,0 +1,45 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.form label {
+  margin-top: 1rem;
+}
+.form button {
+  margin-top: 1rem;
+}
+.form input[type="radio"] {
+  margin-left: 1rem;
+}
+.errorFormMessage {
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+  display: none;
+}
+.activityContainer,
+.contactContainer {
+  display: flex;
+  margin-top: 1rem;
+}
+.activityCheckboxes {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-left: 0.5rem;
+}
+.activityCheckboxes label {
+  margin-top: 0;
+}
+.activityContainer label {
+  margin-top: 0;
+}
+.activityContainer h4 {
+  margin-top: 0.5rem;
+}
+.contactContainer p {
+  margin-left: 0.5rem;
+}
+.signupTitle {
+  margin: 0 0 -1rem 0;
+}

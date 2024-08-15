@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import "./Form.css";
+import styles from "./style.module.css"
 
 interface City {
   id: Number;
@@ -108,7 +108,7 @@ export default function NewVolunteerForm({
   };
 
   return (
-    <div className="form">
+    <div className={styles.form}>
       <h2>Novi volonter</h2>
       <label htmlFor="name">Ime:</label>
       <input
@@ -123,7 +123,7 @@ export default function NewVolunteerForm({
         data-focused={focused.name.toString()}
         onBlur={handleFocus}
       />
-      <span className="errorFormMessage">
+      <span className={styles.errorFormMessage}>
         Ime treba biti duljine 3-30 znakova i ne smije sadržavati posebne
         znakove
       </span>
@@ -141,7 +141,7 @@ export default function NewVolunteerForm({
         data-focused={focused.surname.toString()}
         onBlur={handleFocus}
       />
-      <span className="errorFormMessage">
+      <span className={styles.errorFormMessage}>
         Prezime treba biti duljine 3-30 znakova i ne smije sadržavati posebne
         znakove
       </span>
@@ -159,7 +159,7 @@ export default function NewVolunteerForm({
         data-focused={focused.contact.toString()}
         onBlur={handleFocus}
       ></input>
-      <span className="errorFormMessage">Unesite ispravnu email adresu</span>
+      <span className={styles.errorFormMessage}>Unesite ispravnu email adresu</span>
 
       <label htmlFor="city">Grad:</label>
       <select
@@ -180,7 +180,7 @@ export default function NewVolunteerForm({
           </option>
         ))}
       </select>
-      <span className="errorFormMessage">Odaberite grad</span>
+      <span className={styles.errorFormMessage}>Odaberite grad</span>
 
       <label htmlFor="image">Slika:</label>
       <input
@@ -194,11 +194,11 @@ export default function NewVolunteerForm({
         data-focused={focused.image.toString()}
         onBlur={handleFocus}
       />
-      <span className="errorFormMessage">Unesite put do slike</span>
+      <span className={styles.errorFormMessage}>Unesite put do slike</span>
 
-      <div className="activity-container">
+      <div className={styles.activityContainer}>
         <label htmlFor="activities">Aktivnosti:</label>
-        <div className="activity-checkboxes">
+        <div className={styles.activityCheckboxes}>
           <label>
             <input
               type="checkbox"

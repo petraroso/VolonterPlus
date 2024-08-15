@@ -104,6 +104,17 @@ select:focus {
   border-color: var(--clr-lightest-orange);
   box-shadow: 0 0 5px var(--clr-lightest-orange);
 }
+input:invalid[data-focused="true"] + span,
+select:invalid[data-focused="true"] + span,
+textarea:invalid[data-focused="true"] + span {
+  display: block;
+}
+
+input:invalid[data-focused="true"],
+textarea:invalid[data-focused="true"],
+select:invalid[data-focused="true"] {
+  border: 1px solid red;
+}
 .page-container {
   margin: 2rem 10%;
   min-height: 50vh;

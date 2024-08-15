@@ -1,6 +1,8 @@
 //import { useAdminContext } from "../AdminContext";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import styles from "./style.module.css";
+
 interface Volunteer {
   id: number;
   name: string;
@@ -126,7 +128,7 @@ export default function VolunteerDetailsEdit({
   };
 
   return (
-    <div className="form">
+    <div className={styles.form}>
       <h3>Uredite podatke</h3>
       <label htmlFor="name">Ime:</label>
       <input
@@ -141,7 +143,7 @@ export default function VolunteerDetailsEdit({
         data-focused={focused.name.toString()}
         onBlur={handleFocus}
       />
-      <span className="errorFormMessage">
+      <span className={styles.errorFormMessage}>
         Ime treba biti duljine 3-30 znakova i ne smije sadržavati posebne
         znakove
       </span>
@@ -159,7 +161,7 @@ export default function VolunteerDetailsEdit({
         data-focused={focused.surname.toString()}
         onBlur={handleFocus}
       />
-      <span className="errorFormMessage">
+      <span className={styles.errorFormMessage}>
         Prezime treba biti duljine 3-30 znakova i ne smije sadržavati posebne
         znakove
       </span>
@@ -177,7 +179,9 @@ export default function VolunteerDetailsEdit({
         data-focused={focused.contact.toString()}
         onBlur={handleFocus}
       ></input>
-      <span className="errorFormMessage">Unesite ispravnu email adresu</span>
+      <span className={styles.errorFormMessage}>
+        Unesite ispravnu email adresu
+      </span>
 
       <label htmlFor="city">Grad:</label>
       <select
@@ -198,7 +202,7 @@ export default function VolunteerDetailsEdit({
           </option>
         ))}
       </select>
-      <span className="errorFormMessage">Odaberite grad</span>
+      <span className={styles.errorFormMessage}>Odaberite grad</span>
 
       <label htmlFor="image">Slika:</label>
       <input
@@ -212,11 +216,11 @@ export default function VolunteerDetailsEdit({
         data-focused={focused.image.toString()}
         onBlur={handleFocus}
       />
-      <span className="errorFormMessage">Unesite put do slike</span>
+      <span className={styles.errorFormMessage}>Unesite put do slike</span>
 
-      <div className="activity-container">
+      <div className={styles.activityContainer}>
         <label htmlFor="activities">Aktivnosti:</label>
-        <div className="activity-checkboxes">
+        <div className={styles.activityCheckboxes}>
           <label>
             <input
               type="checkbox"

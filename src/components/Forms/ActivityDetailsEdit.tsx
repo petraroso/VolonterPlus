@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import styles from "./style.module.css";
+
 interface Activity {
   id: number;
   name: string;
@@ -131,7 +133,7 @@ ActivityCardProps) {
 
   return (
     <>
-      <div className="form details-form">
+      <div className={`${styles.form} ${styles.detailsForm}`}>
         <h3>Uredite: {activity.name}</h3>
         <label htmlFor="name">Naziv</label>
         <input
@@ -146,7 +148,7 @@ ActivityCardProps) {
           data-focused={focused.name.toString()}
           onBlur={handleFocus}
         />
-        <span className="errorFormMessage">
+        <span className={styles.errorFormMessage}>
           Naziv treba biti duljine 3-50 znakova i ne smije sadržavati posebne
           znakove
         </span>
@@ -164,7 +166,9 @@ ActivityCardProps) {
           data-focused={focused.description.toString()}
           onBlur={handleFocus}
         />
-        <span className="errorFormMessage">Unesite opis do 300 znakova</span>
+        <span className={styles.errorFormMessage}>
+          Unesite opis do 300 znakova
+        </span>
 
         <label>
           Organizator udruga:
@@ -206,7 +210,7 @@ ActivityCardProps) {
               data-focused={focused.association.toString()}
               onBlur={handleFocus}
             />
-            <span className="errorFormMessage">
+            <span className={styles.errorFormMessage}>
               Naziv treba biti duljine 3-30 znakova i ne smije sadržavati
               posebne znakove
             </span>
@@ -224,7 +228,7 @@ ActivityCardProps) {
           data-focused={focused.date.toString()}
           onBlur={handleFocus}
         />
-        <span className="errorFormMessage">Odaberite datum</span>
+        <span className={styles.errorFormMessage}>Odaberite datum</span>
 
         <label htmlFor="location">Lokacija: </label>
         <input
@@ -239,7 +243,7 @@ ActivityCardProps) {
           data-focused={focused.location.toString()}
           onBlur={handleFocus}
         />
-        <span className="errorFormMessage">
+        <span className={styles.errorFormMessage}>
           Lokacija treba biti duljine 3-40 znakova i ne smije sadržavati posebne
           znakove
         </span>
@@ -256,7 +260,7 @@ ActivityCardProps) {
           data-focused={focused.image.toString()}
           onBlur={handleFocus}
         />
-        <span className="errorFormMessage">Unesite put do slike</span>
+        <span className={styles.errorFormMessage}>Unesite put do slike</span>
         <br></br>
         <button className="save-button" onClick={sendData}>
           Spremi
