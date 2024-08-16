@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-import ActivityCard from "../components/ActivityCard";
+import ActivityCard from "../components/ActivityCard/ActivityCard";
 import PlusButton from "../components/PlusButton/PlusButton";
 import Modal from "../components/Modal/Modal";
 import NewActivityForm from "../components/Forms/NewActivityForm";
