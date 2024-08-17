@@ -94,27 +94,7 @@ index.css or it's in the component style file*/
 .activities-filter-container {
   margin-top: 1rem;
 }
-.activity-card {
-  display: flex;
-  align-items: center;
-  margin: 2rem 0;
-}
-.activity-image {
-  height: 100px;
-  width: 200px;
-  object-fit: cover;
-  margin-right: 2rem;
-  border-radius: 8px;
-}
-.activity-card .admin-delete {
-  margin-left: auto;
-}
-.activity-card .admin-buttons {
-  margin-left: auto;
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 0.5rem;
-}
+
 .activity-image-details {
   height: 150px;
   max-width: 400px;
@@ -303,29 +283,7 @@ index.css or it's in the component style file*/
   .volunteer-card:nth-child(3n-2) {
     justify-self: center;
   }
-  .activity-card {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    grid-template-areas: "image info" ". buttons";
-  }
-  .activity-image {
-    grid-area: image;
-    width: 150px;
-    margin-right: 0;
-  }
-  .activity-info {
-    grid-area: info;
-    margin-left: 0.5rem;
-  }
-  .activity-date-location {
-    display: flex;
-  }
-  .activity-card .admin-buttons {
-    grid-area: buttons;
-    margin-left: 0;
-    margin-right: auto;
-    margin-top: 0.5rem;
-  }
+
   .section {
     flex-direction: column;
   }

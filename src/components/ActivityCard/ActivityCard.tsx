@@ -5,7 +5,7 @@ import ActivityDetailsEdit from "../Forms/ActivityDetailsEdit";
 import ActivitySignUp from "../Forms/ActivitySignUp";
 import { useAdminContext } from "../../AdminContext";
 import axios from "axios";
-import styles from "./style.module.css"
+import styles from "./style.module.css";
 
 interface Activity {
   id: number;
@@ -112,34 +112,31 @@ export default function ActivityCard({
           </Modal>
         )
       )}
-      <div className="activity-card">
+      <div className={styles.activityCard}>
         <div>
           <img
             onClick={toggleModal}
             src={activity.image}
             alt="Activity site"
-            className="activity-image"
+            className={styles.activityImage}
           />
         </div>
-        <div className="activity-info">
+        <div className={styles.activityInfo}>
           <h3 onClick={toggleModal}>{activity.name}</h3>
-          <div className="activity-date-location">
+          <div className={styles.activityDateLocation}>
             <p onClick={toggleModal}>{activity.date}</p>
-            <p className="activity-location" onClick={toggleModal}>
+            <p className={styles.activityLocation} onClick={toggleModal}>
               <i className="bx bx-location-plus"></i>
               {activity.location}
             </p>
           </div>
         </div>
         {adminData.admin && (
-          <div className="admin-buttons">
+          <div className={styles.adminButtons}>
             <button className="edit-button" onClick={toggleEditAndModal}>
               <i className="bx bx-edit-alt"></i>
             </button>
-            <button
-              onClick={handleDeleteActivity}
-              className="admin-delete delete-button"
-            >
+            <button onClick={handleDeleteActivity} className="delete-button">
               <i className="bx bx-trash"></i>
             </button>
           </div>

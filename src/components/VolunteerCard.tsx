@@ -111,7 +111,7 @@ export default function VolunteerCard({
             <button className="edit-button" onClick={toggleEditAndModal}>
               <i className="bx bx-edit-alt"></i>
             </button>
-            <button onClick={handleDeleteVolunteer} className="admin-delete delete-button">
+            <button onClick={handleDeleteVolunteer} className=" delete-button">
               <i className="bx bx-trash"></i>
             </button>
           </div>

@@ -1,0 +1,55 @@
+.activityCard {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+.activityCard .delete-button {
+  margin-left: auto;
+}
+.adminButtons {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+.activityImage {
+  height: 100px;
+  width: 200px;
+  object-fit: cover;
+  margin-right: 2rem;
+  border-radius: 8px;
+}
+.activityInfo {
+  grid-area: info;
+  margin-left: 0.5rem;
+}
+.activityLocation {
+  margin: auto;
+  color: var(--clr-light-blue);
+}
+
+@media (max-width: 600px) {
+  .activityCard {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-template-areas: "image info" ". buttons";
+  }
+  .activityImage {
+    grid-area: image;
+    width: 150px;
+    margin-right: 0;
+  }
+  .activityInfo {
+    grid-area: info;
+    margin-left: 0.5rem;
+  }
+  .activityDateLocation {
+    display: flex;
+  }
+  .adminButtons {
+    grid-area: buttons;
+    margin-left: 0;
+    margin-right: auto;
+    margin-top: 0.5rem;
+  }
+}
