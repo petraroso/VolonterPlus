@@ -1,0 +1,25 @@
+.volunteerImage {
+  height: 130px;
+  width: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.volunteerLocation {
+  margin: 0 auto 0.5rem auto;
+  color: var(--clr-light-blue);
+}
+.activityContainer,
+.contactContainer {
+  display: flex;
+  margin-top: 1rem;
+}
+.contactContainer p {
+  margin-left: 0.5rem;
+}
+.activityCheckboxes {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+}

@@ -103,52 +103,17 @@ index.css or it's in the component style file*/
   margin: 2rem 0;
 }
 
-.volunteer-image {
-  height: 130px;
-  width: 130px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-
-.volunteer-location {
-  margin: 0 auto 0.5rem auto;
-  color: var(--clr-light-blue);
-}
-.activity-container,
-.contact-container {
-  display: flex;
-  margin-top: 1rem;
-}
-.contact-container p {
-  margin-left: 0.5rem;
-}
-.activity-checkboxes {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin-left: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
 /*Associations Page*/
 .table-title {
   margin-top: 2rem;
-}
-
-.association-list-edit {
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr 2fr 1fr;
 }
 
 /*404 page*/
 .page-404 {
   width: 100%;
   display: flex;
-
   background-image: url("./assets/volunteering2.jpg");
   height: 100vh;
-
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;

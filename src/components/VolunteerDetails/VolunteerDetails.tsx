@@ -1,4 +1,5 @@
-import { useAdminContext } from "../AdminContext";
+import { useAdminContext } from "../../AdminContext";
+import styles from "./style.module.css";
 interface Volunteer {
   id: number;
   name: string;
@@ -23,16 +24,16 @@ export default function VolunteerDetails({
   const adminData = useAdminContext();
 
   return (
-    <div className="form details-form">
+    <div className="details-form">
       <img
         src={volunteer.image}
         alt="Volunteer avatar"
-        className="volunteer-image"
+        className={styles.volunteerImage}
       />
       <h3>
         {volunteer.name} {volunteer.surname}
       </h3>
-      <p className="volunteer-location">
+      <p className={styles.volunteerLocation}>
         <i className="bx bx-location-plus"></i>
         {volunteer.city}
       </p>
@@ -42,9 +43,9 @@ export default function VolunteerDetails({
       </div>
 
       {volunteer.activities && (
-        <div className="activity-container">
+        <div className={styles.activityContainer}>
           <h4>Aktivnosti:</h4>
-          <div className="activity-checkboxes">
+          <div className={styles.activityCheckboxes}>
             {volunteer.activities.map((activity, index) => (
               <div key={index}>
                 <p>{activity}</p>
