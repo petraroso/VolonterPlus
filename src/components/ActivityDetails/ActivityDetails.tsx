@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useAdminContext } from "../AdminContext";
+import { useAdminContext } from "../../AdminContext";
+import styles from "./style.module.css";
 
 interface Activity {
   id: number;
@@ -67,19 +68,19 @@ export default function ActivityDetails({
   };
 
   return (
-    <div className="form details-form">
+    <div className="details-form">
       <img
         src={activity.image}
         alt="activity image"
-        className="activity-image-details"
+        className={styles.activityImageDetails}
       />
       <h3>{activity.name}</h3>
 
-      <p className="activity-location">
+      <p className={styles.activityLocation}>
         <i className="bx bx-location-plus"></i>
         {activity.location}
       </p>
-      <p className="activity-date">{activity.date}</p>
+      <p className={styles.activityDate}>{activity.date}</p>
       <p>{activity.description}</p>
       <br></br>
       <p>
@@ -91,16 +92,16 @@ export default function ActivityDetails({
       {volunteers &&
         Array.isArray(volunteers.list) &&
         volunteers.list.length > 0 && (
-          <div className="volunteer-list-layout">
+          <div className={styles.volunteerListLayout}>
             <h4>Prijavljeni volonteri:</h4>
             <div>
               {volunteers.list.map((volunteer, index) => (
-                <div className="volunteer-display" key={index}>
+                <div className={styles.volunteerDisplay} key={index}>
                   <p>{volunteer}</p>
                   {adminData.admin && (
                     <button
                       onClick={() => handleDeleteVolunteer(index)}
-                      className="admin-delete delete-button"
+                      className="delete-button"
                     >
                       <i className="bx bx-trash"></i>
                     </button>

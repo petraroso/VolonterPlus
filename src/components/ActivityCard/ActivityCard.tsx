@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Modal from "../Modal/Modal";
-import ActivityDetails from "../ActivityDetails";
+import ActivityDetails from "../ActivityDetails/ActivityDetails";
 import ActivityDetailsEdit from "../Forms/ActivityDetailsEdit";
 import ActivitySignUp from "../Forms/ActivitySignUp";
 import { useAdminContext } from "../../AdminContext";

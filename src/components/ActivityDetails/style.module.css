@@ -1,0 +1,29 @@
+.activityImageDetails {
+  height: 150px;
+  max-width: 400px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.activityLocation {
+  margin: auto;
+  color: var(--clr-light-blue);
+}
+.activityDate {
+  margin: 0 auto 0.5rem auto;
+}
+.volunteerListLayout {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.volunteerDisplay {
+  display: flex;
+  align-items: center;
+}
+.volunteerDisplay button {
+  margin-left: auto;
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  padding: 0.2em;
+}

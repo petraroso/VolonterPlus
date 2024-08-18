@@ -95,26 +95,6 @@ index.css or it's in the component style file*/
   margin-top: 1rem;
 }
 
-.activity-image-details {
-  height: 150px;
-  max-width: 400px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-}
-.activity-location {
-  margin: auto;
-  color: var(--clr-light-blue);
-}
-.activity-date {
-  margin: 0 auto 0.5rem auto;
-}
-.volunteer-list-layout {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
 /*Volunteers page*/
 .volunteer-list {
   display: grid;
@@ -147,16 +127,7 @@ index.css or it's in the component style file*/
   flex-wrap: nowrap;
   gap: 0.5rem;
 }
-.details-form .volunteer-display {
-  display: flex;
-  align-items: center;
-}
-.details-form .volunteer-display button {
-  margin-left: auto;
-  margin-top: 0.1rem;
-  margin-bottom: 0.1rem;
-  padding: 0.2em;
-}
+
 .volunteer-location {
   margin: 0 auto 0.5rem auto;
   color: var(--clr-light-blue);
