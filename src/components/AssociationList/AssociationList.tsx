@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import AssociationListMember from "../AssociationListMember";
+import AssociationListMember from "../AssociationListMember/AssociationListMember";
 import Modal from "../Modal/Modal";
 import styles from "./style.module.css";
 

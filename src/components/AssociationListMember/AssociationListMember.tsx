@@ -1,7 +1,8 @@
-import { useAdminContext } from "../AdminContext";
-import Modal from "./Modal/Modal";
+import { useAdminContext } from "../../AdminContext";
+import Modal from "../Modal/Modal";
 import { useState } from "react";
-import AssociationLMEdit from "./Forms/AssociationLMEdit";
+import AssociationLMEdit from "../Forms/AssociationLMEdit";
+import styles from "./style.module.css";
 
 interface Association {
   id: number;
@@ -77,11 +78,11 @@ const AssociationListMember: React.FC<ListProps> = ({
         )
       )}
 
-      <li key={association.id} className="association-list-nonedit">
+      <li key={association.id} className={styles.list}>
         <strong>{association.name}</strong>
         <em>{association.address}</em> {association.city}
         {approvedStatus && adminData.admin ? (
-          <div className="admin-buttons">
+          <div className={`${styles.adminButtons} admin-buttons`}>
             <button className="edit-button" onClick={openModal}>
               <i className="bx bx-edit-alt"></i>
             </button>
@@ -93,7 +94,7 @@ const AssociationListMember: React.FC<ListProps> = ({
             </button>
           </div>
         ) : adminData.admin ? (
-          <div className="admin-buttons">
+          <div className={`${styles.adminButtons} admin-buttons`}>
             <button className="edit-button" onClick={openModal}>
               <i className="bx bx-edit-alt"></i>
             </button>

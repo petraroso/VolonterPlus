@@ -152,20 +152,10 @@ index.css or it's in the component style file*/
 .table-title {
   margin-top: 2rem;
 }
-.association-list-nonedit {
-  grid-template-columns: 2fr 2fr 2fr 1fr;
-}
+
 .association-list-edit {
   display: grid;
   grid-template-columns: 2fr 2fr 2fr 2fr 1fr;
-}
-.association-list-nonedit button {
-  padding: 0.2em;
-}
-.association-list-nonedit .admin-buttons {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 0.5rem;
 }
 
 /*404 page*/
