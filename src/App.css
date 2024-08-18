@@ -1,5 +1,5 @@
-/*CSS styles for pages; if style is not here, it' a general style in 
-index.css or it's in the component style file*/
+/*CSS styles for pages; if style is not here, it's a general style in 
+index.css or it's in the component style module file*/
 
 /*Homepage*/
 .banner-image {
@@ -154,12 +154,6 @@ index.css or it's in the component style file*/
   }
 }
 
-@media (max-width: 950px) {
-  .icons {
-    display: inline-flex;
-  }
-}
-
 @media (max-width: 600px) {
   .banner-image {
     width: 100%;
@@ -193,7 +187,6 @@ index.css or it's in the component style file*/
     width: 100%;
     margin-left: 0;
   }
-
   .parallax-image div {
     width: 100%;
     margin-left: 2rem;
