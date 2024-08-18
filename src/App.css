@@ -152,27 +152,12 @@ index.css or it's in the component style file*/
 .table-title {
   margin-top: 2rem;
 }
-.association-list {
-  list-style-type: none;
-}
-.association-list li {
-  min-height: 2rem;
-  display: grid;
-  align-items: center;
-  padding: 0 1rem;
-}
 .association-list-nonedit {
   grid-template-columns: 2fr 2fr 2fr 1fr;
 }
 .association-list-edit {
   display: grid;
   grid-template-columns: 2fr 2fr 2fr 2fr 1fr;
-}
-.association-list li:nth-child(odd) {
-  background-color: rgba(128, 128, 128, 0.2);
-}
-.association-list li div:last-child {
-  justify-self: center;
 }
 .association-list-nonedit button {
   padding: 0.2em;

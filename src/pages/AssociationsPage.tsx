@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 import { useAdminContext } from "../AdminContext";
-import AssociationList from "../components/AssociationList";
+import AssociationList from "../components/AssociationList/AssociationList";
 import PlusButton from "../components/PlusButton/PlusButton";
 import Modal from "../components/Modal/Modal";
 import NewAssociationForm from "../components/Forms/NewAssociationForm";

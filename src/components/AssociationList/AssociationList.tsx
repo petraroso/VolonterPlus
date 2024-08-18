@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
-import AssociationListMember from "./AssociationListMember";
-import Modal from "./Modal/Modal";
+import AssociationListMember from "../AssociationListMember";
+import Modal from "../Modal/Modal";
+import styles from "./style.module.css";
 
 interface Association {
   id: number;
@@ -60,7 +61,7 @@ const AssociationList: React.FC<ListProps> = ({
 
   return (
     <>
-      <ul className="association-list">
+      <ul className={styles.associationList}>
         {associations.map(
           (association) =>
             association.approved === approvedStatus && (
