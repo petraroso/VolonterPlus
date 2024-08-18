@@ -1,9 +1,10 @@
 import { useState } from "react";
-import Modal from "./Modal/Modal";
-import VolunteerDetails from "./VolunteerDetails";
-import VolunteerDetailsEdit from "./Forms/VolunteerDetailsEdit";
-import { useAdminContext } from "../AdminContext";
+import Modal from "../Modal/Modal";
+import VolunteerDetails from "../VolunteerDetails";
+import VolunteerDetailsEdit from "../Forms/VolunteerDetailsEdit";
+import { useAdminContext } from "../../AdminContext";
 import axios from "axios";
+import styles from "./style.module.css"
 
 interface Volunteer {
   id: number;
@@ -90,12 +91,12 @@ export default function VolunteerCard({
           </Modal>
         )
       )}
-      <div className="volunteer-card">
+      <div className={styles.volunteerCard}>
         <img
           onClick={toggleModal}
           src={volunteer.image}
           alt="Volunteer avatar"
-          className="volunteer-image"
+          className={styles.volunteerImage}
         />
         <h3 onClick={toggleModal}>
           {volunteer.name}&nbsp;
@@ -107,11 +108,11 @@ export default function VolunteerCard({
           {volunteer.city}
         </p>
         {adminData.admin && (
-          <div className="admin-buttons">
+          <div className={`${styles.adminButtons} admin-buttons`}>
             <button className="edit-button" onClick={toggleEditAndModal}>
               <i className="bx bx-edit-alt"></i>
             </button>
-            <button onClick={handleDeleteVolunteer} className=" delete-button">
+            <button onClick={handleDeleteVolunteer} className="delete-button">
               <i className="bx bx-trash"></i>
             </button>
           </div>

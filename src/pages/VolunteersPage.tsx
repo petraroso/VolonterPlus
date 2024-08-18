@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useAdminContext } from "../AdminContext";
 
-import VolunteerCard from "../components/VolunteerCard";
+import VolunteerCard from "../components/VolunteerCard/VolunteerCard";
 import PlusButton from "../components/PlusButton/PlusButton";
 import Modal from "../components/Modal/Modal";
 import NewVolunteerForm from "../components/Forms/NewVolunteerForm";
