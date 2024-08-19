@@ -10,7 +10,7 @@ import { AdminContext } from "./AdminContext";
 
 import ActivitiesPage from "./pages/ActivitiesPage";
 import AssociationsPage from "./pages/AssociationsPage";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import VolunteersPage from "./pages/VolunteersPage";
 

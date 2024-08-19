@@ -1,15 +1,16 @@
 //import bigLogo from "../assets/big-logo.png";
-import wordCloud from "../assets/word-cloud.png";
-import volunteeringImage1 from "../assets/volunteering1.jpg";
-import volunteeringImage2 from "../assets/group-people-hands.jpg";
+import wordCloud from "../../assets/word-cloud.png";
+import volunteeringImage1 from "../../assets/volunteering1.jpg";
+import volunteeringImage2 from "../../assets/group-people-hands.jpg";
+import styles from "./style.module.css";
 
 import { NavLink } from "react-router-dom";
 
 export default function HomePage() {
   return (
     <>
-      <img src={wordCloud} alt="Banner" className="banner-image"></img>
-      <div className="section">
+      <img src={wordCloud} alt="Banner" className={styles.bannerImage}></img>
+      <div className={styles.section}>
         <div>
           <h1>Naš cilj</h1>
           <p>
@@ -32,11 +33,11 @@ export default function HomePage() {
         <img
           src={volunteeringImage1}
           alt="Volonteri"
-          className="homepage-image"
+          className={styles.homepageImage}
         ></img>
       </div>
 
-      <div className="parallax-image">
+      <div className={styles.parallaxImage}>
         <div>
           <p>
             Volonteri diljem Hrvatske redovito sudjeluju u edukacijskim i
@@ -50,13 +51,13 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="section">
+      <div className={styles.section}>
         <img
           src={volunteeringImage2}
           alt="Udruge"
-          className="homepage-image-left"
+          className={styles.homepageImageLeft}
         ></img>
-        <div className="righthand-text">
+        <div className={styles.righthandText}>
           <h1>Brojne udruge</h1>
           <p>
             VolonterPlus okuplja raznolike udruge koje dijele našu strast prema
