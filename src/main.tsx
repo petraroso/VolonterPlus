@@ -11,14 +11,13 @@ import { AdminContext } from "./AdminContext";
 import ActivitiesPage from "./pages/ActivitiesPage/ActivitiesPage";
 import AssociationsPage from "./pages/AssociationsPage/AssociationsPage";
 import HomePage from "./pages/HomePage/HomePage";
-import NotFoundPage from "./pages/NotFoundPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import VolunteersPage from "./pages/VolunteersPage/VolunteersPage";
 
 import Layout from "./components/Layout";
 
 import "./modern-normalize.css";
 import "./index.css";
-import "./App.css";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
