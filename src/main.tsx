@@ -9,7 +9,7 @@ import {
 import { AdminContext } from "./AdminContext";
 
 import ActivitiesPage from "./pages/ActivitiesPage/ActivitiesPage";
-import AssociationsPage from "./pages/AssociationsPage";
+import AssociationsPage from "./pages/AssociationsPage/AssociationsPage";
 import HomePage from "./pages/HomePage/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import VolunteersPage from "./pages/VolunteersPage";

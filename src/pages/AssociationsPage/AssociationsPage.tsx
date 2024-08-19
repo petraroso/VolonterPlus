@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-import { useAdminContext } from "../AdminContext";
-import AssociationList from "../components/AssociationList/AssociationList";
-import PlusButton from "../components/PlusButton/PlusButton";
-import Modal from "../components/Modal/Modal";
-import NewAssociationForm from "../components/Forms/NewAssociationForm";
-import Loader from "../components/Loader/Loader";
+import { useAdminContext } from "../../AdminContext";
+import AssociationList from "../../components/AssociationList/AssociationList";
+import PlusButton from "../../components/PlusButton/PlusButton";
+import Modal from "../../components/Modal/Modal";
+import NewAssociationForm from "../../components/Forms/NewAssociationForm";
+import Loader from "../../components/Loader/Loader";
+import styles from "./style.module.css";
 
 interface Association {
   id: number;
@@ -103,7 +104,7 @@ export default function AssociationsPage() {
               <option value={"city"}>Grad</option>
             </select>
           </div>
-          <h2 className="table-title">Popis udruga</h2>
+          <h2 className={styles.tableTitle}>Popis udruga</h2>
           <hr></hr>
           <AssociationList
             associations={associations}
@@ -114,7 +115,7 @@ export default function AssociationsPage() {
 
           {adminData.admin && (
             <>
-              <h2 className="table-title">Zahtjevi za odobrenje</h2>
+              <h2 className={styles.tableTitle}>Zahtjevi za odobrenje</h2>
               <hr></hr>
               <AssociationList
                 associations={associations}
@@ -152,7 +153,7 @@ export default function AssociationsPage() {
         </>
       ) : (
         <>
-          <h2 className="table-title">Popis udruga</h2>
+          <h2 className={styles.tableTitle}>Popis udruga</h2>
           <Loader />
         </>
       )}
