@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-import ActivityCard from "../components/ActivityCard/ActivityCard";
-import PlusButton from "../components/PlusButton/PlusButton";
-import Modal from "../components/Modal/Modal";
-import NewActivityForm from "../components/Forms/NewActivityForm";
-import Filter from "../components/Filter/Filter";
-import Loader from "../components/Loader/Loader";
+import ActivityCard from "../../components/ActivityCard/ActivityCard";
+import PlusButton from "../../components/PlusButton/PlusButton";
+import Modal from "../../components/Modal/Modal";
+import NewActivityForm from "../../components/Forms/NewActivityForm";
+import Filter from "../../components/Filter/Filter";
+import Loader from "../../components/Loader/Loader";
+import styles from "./style.module.css";
 
 interface Activity {
   id: number;
@@ -128,7 +129,7 @@ export default function ActivitiesPage() {
             <option value={"oldest"}>Najstarije dodano</option>
             <option value={"chronological"}>Po datumu odvijanja</option>
           </select>
-          <div className="activities-filter-container">
+          <div className={styles.activitiesFilterContainer}>
             <Filter
               cities={cities}
               cityFilter={cityFilter}

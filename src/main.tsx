@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import { AdminContext } from "./AdminContext";
 
-import ActivitiesPage from "./pages/ActivitiesPage";
+import ActivitiesPage from "./pages/ActivitiesPage/ActivitiesPage";
 import AssociationsPage from "./pages/AssociationsPage";
 import HomePage from "./pages/HomePage/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";

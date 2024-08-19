@@ -1,11 +1,6 @@
 /*CSS styles for pages; if style is not here, it's a general style in 
 index.css or it's in the component style module file*/
 
-/*Activities page*/
-.activities-filter-container {
-  margin-top: 1rem;
-}
-
 /*Volunteers page*/
 .volunteer-list {
   display: grid;
