@@ -1,14 +1,6 @@
 /*CSS styles for pages; if style is not here, it's a general style in 
 index.css or it's in the component style module file*/
 
-/*Volunteers page*/
-.volunteer-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-  margin: 2rem 0;
-}
-
 /*404 page*/
 .page-404 {
   width: 100%;
@@ -35,21 +27,4 @@ index.css or it's in the component style module file*/
 .container-404 button {
   background-color: var(--clr-dark-blue);
   color: var(--clr-light);
-}
-
-/*media queries*/
-@media (min-width: 1045px) {
-  .volunteers-layout {
-    display: flex;
-  }
-  .volunteer-list {
-    width: 100%;
-  }
-}
-
-@media (max-width: 600px) {
-  .volunteer-list {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0;
-  }
 }

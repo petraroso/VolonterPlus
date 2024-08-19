@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useAdminContext } from "../AdminContext";
+import { useAdminContext } from "../../AdminContext";
 
-import VolunteerCard from "../components/VolunteerCard/VolunteerCard";
-import PlusButton from "../components/PlusButton/PlusButton";
-import Modal from "../components/Modal/Modal";
-import NewVolunteerForm from "../components/Forms/NewVolunteerForm";
-import Filter from "../components/Filter/Filter";
-import Loader from "../components/Loader/Loader";
+import VolunteerCard from "../../components/VolunteerCard/VolunteerCard";
+import PlusButton from "../../components/PlusButton/PlusButton";
+import Modal from "../../components/Modal/Modal";
+import NewVolunteerForm from "../../components/Forms/NewVolunteerForm";
+import Filter from "../../components/Filter/Filter";
+import Loader from "../../components/Loader/Loader";
+import styles from "./style.module.css"
 
 interface Volunteer {
   id: number;
@@ -72,7 +73,7 @@ export default function VolunteersPage() {
       <h2>Popis volontera</h2>
       {volunteers.length ? (
         <>
-          <div className="volunteers-layout">
+          <div className={styles.volunteersLayout}>
             <div>
               <Filter
                 cities={cities}
@@ -82,7 +83,7 @@ export default function VolunteersPage() {
                 setActivityFilter={setActivityFilter}
               />
             </div>
-            <div className="volunteer-list">
+            <div className={styles.volunteerList}>
               {volunteers.map((volunteer) =>
                 (cityFilter === "Svi" && activityFilter === "Sve") ||
                 (activityFilter === "Sve" && cityFilter === volunteer.city) ||

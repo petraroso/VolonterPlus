@@ -1,0 +1,20 @@
+.volunteerList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  margin: 2rem 0;
+}
+@media (min-width: 1045px) {
+  .volunteersLayout {
+    display: flex;
+  }
+  .volunteerList {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .volunteerList {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0;
+  }
+}
