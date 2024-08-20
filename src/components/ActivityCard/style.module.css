@@ -3,8 +3,8 @@
   align-items: center;
   margin: 2rem 0;
 }
-.activityCard .delete-button {
-  margin-left: auto;
+.activityContent {
+  width: 100%;
 }
 .adminButtons {
   margin-left: auto;
@@ -20,36 +20,29 @@
   border-radius: 8px;
 }
 .activityInfo {
-  grid-area: info;
   margin-left: 0.5rem;
 }
+.activityDateLocation {
+  display: flex;
+}
 .activityLocation {
-  margin: auto;
+  margin-left: 2rem;
   color: var(--clr-light-blue);
 }
 
 @media (max-width: 600px) {
-  .activityCard {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    grid-template-areas: "image info" ". buttons";
-  }
   .activityImage {
-    grid-area: image;
     width: 150px;
+    height: 150px;
     margin-right: 0;
-  }
-  .activityInfo {
-    grid-area: info;
-    margin-left: 0.5rem;
   }
   .activityDateLocation {
     display: flex;
+    justify-content: space-between;
   }
   .adminButtons {
-    grid-area: buttons;
-    margin-left: 0;
-    margin-right: auto;
+    display: flex;
+    justify-content: center;
     margin-top: 0.5rem;
   }
 }

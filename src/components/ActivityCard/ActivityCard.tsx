@@ -121,26 +121,28 @@ export default function ActivityCard({
             className={styles.activityImage}
           />
         </div>
-        <div className={styles.activityInfo}>
-          <h3 onClick={toggleModal}>{activity.name}</h3>
-          <div className={styles.activityDateLocation}>
-            <p onClick={toggleModal}>{activity.date}</p>
-            <p className={styles.activityLocation} onClick={toggleModal}>
-              <i className="bx bx-location-plus"></i>
-              {activity.location}
-            </p>
+        <div className={styles.activityContent}>
+          <div className={styles.activityInfo}>
+            <h3 onClick={toggleModal}>{activity.name}</h3>
+            <div className={styles.activityDateLocation}>
+              <p onClick={toggleModal}>{activity.date}</p>
+              <p className={styles.activityLocation} onClick={toggleModal}>
+                <i className="bx bx-location-plus"></i>
+                {activity.location}
+              </p>
+            </div>
           </div>
+          {adminData.admin && (
+            <div className={styles.adminButtons}>
+              <button className="edit-button" onClick={toggleEditAndModal}>
+                <i className="bx bx-edit-alt"></i>
+              </button>
+              <button onClick={handleDeleteActivity} className="delete-button">
+                <i className="bx bx-trash"></i>
+              </button>
+            </div>
+          )}
         </div>
-        {adminData.admin && (
-          <div className={styles.adminButtons}>
-            <button className="edit-button" onClick={toggleEditAndModal}>
-              <i className="bx bx-edit-alt"></i>
-            </button>
-            <button onClick={handleDeleteActivity} className="delete-button">
-              <i className="bx bx-trash"></i>
-            </button>
-          </div>
-        )}
       </div>
     </>
   );

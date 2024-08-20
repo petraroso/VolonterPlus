@@ -265,7 +265,11 @@ body.active-modal {
     margin: 2rem 5%;
   }
 }
-
+@media (max-width: 600px) {
+  .page-container {
+    margin: 2rem 1rem;
+  }
+}
 /*xs screens*/
 /*@media (min-width: 475px) {}*/
 
