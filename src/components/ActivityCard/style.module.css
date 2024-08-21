@@ -7,7 +7,7 @@
   width: 100%;
 }
 .adminButtons {
-  margin-left: auto;
+  margin-left: 0.5rem;
   display: flex;
   flex-wrap: nowrap;
   gap: 0.5rem;
@@ -43,6 +43,7 @@
   .adminButtons {
     display: flex;
     justify-content: center;
+    margin-left: 0;
     margin-top: 0.5rem;
   }
 }
