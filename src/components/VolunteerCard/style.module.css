@@ -2,8 +2,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: fit-content;
-  margin: 1rem 0;
+  width: 100%;
+  align-self: stretch; /* Stretch to fill vertically */
+  justify-self: stretch;
+  padding: 1rem 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.volunteerCard:hover {
+  border-color: var(--clr-light-gray);
+  box-shadow: 0 0 5px var(--clr-light-gray);
 }
 /*.volunteer-card:nth-child(3n + 0) {
     justify-self: flex-end;

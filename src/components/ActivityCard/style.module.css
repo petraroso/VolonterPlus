@@ -2,6 +2,14 @@
   display: flex;
   align-items: center;
   margin: 2rem 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.activityCard:hover {
+  border-color: var(--clr-light-gray);
+  box-shadow: 0 0 5px var(--clr-light-gray);
 }
 .activityContent {
   width: 100%;
@@ -29,7 +37,6 @@
   margin-left: 2rem;
   color: var(--clr-light-blue);
 }
-
 @media (max-width: 600px) {
   .activityImage {
     width: 150px;

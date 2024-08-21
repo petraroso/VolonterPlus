@@ -113,7 +113,7 @@ export default function ActivityCard({
         )
       )}
       <div className={styles.activityCard}>
-        <div>
+        <div className={styles.activityImage}>
           <img
             onClick={toggleModal}
             src={activity.image}
