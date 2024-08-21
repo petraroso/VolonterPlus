@@ -1,19 +1,19 @@
 .loaderPrompt {
   display: flex;
   flex-direction: column;
-  margin-top: 4rem;
+  margin-top: 12vh;
 }
 .loaderPrompt p {
   text-align: center;
 }
 .loader {
   margin: auto;
-  border: 16px solid #f3f3f3;
+  border: 16px solid var(--clr-light);
   border-radius: 50%;
   border-top: 16px solid var(--clr-dark-blue);
   border-right: 16px solid var(--clr-lightest-blue);
   border-bottom: 16px solid var(--clr-orange);
-  border-left: 16px solid var(--clr-lightest-orange);
+  border-left: 16px solid var(--clr-light);
   width: 100px;
   height: 100px;
   -webkit-animation: spin 3s linear infinite;
