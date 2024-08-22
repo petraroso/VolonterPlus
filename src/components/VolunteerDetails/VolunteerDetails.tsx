@@ -37,7 +37,7 @@ export default function VolunteerDetails({
         <i className="bx bx-location-plus"></i>
         {volunteer.city}
       </p>
-      <div className="contact-container">
+      <div className={styles.contactContainer}>
         <h4>Kontakt:</h4>
         <p>{volunteer.contact}</p>
       </div>
