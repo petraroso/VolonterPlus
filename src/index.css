@@ -260,7 +260,7 @@ body.active-modal {
   background: var(--clr-lightest-blue);
 }
 
-@media (max-width: 1070px) {
+@media (max-width: 1080px) {
   .page-container {
     margin: 2rem 5%;
   }

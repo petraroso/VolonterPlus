@@ -80,7 +80,7 @@
   vertical-align: text-bottom;
 }
 
-@media (min-width: 1045px) {
+@media (min-width: 1080px) {
   .bannerImage {
     width: 80%;
   }
@@ -93,6 +93,9 @@
 @media (max-width: 600px) {
   .bannerImage {
     width: 100%;
+  }
+  .section {
+    padding: 2rem 1rem;
   }
   .section div {
     padding-right: 0;
@@ -120,7 +123,7 @@
   }
   .parallaxImage div {
     width: 100%;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
