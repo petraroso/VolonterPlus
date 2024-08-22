@@ -124,7 +124,6 @@
   #check:checked ~ .icons #menu-icon {
     display: none;
   }
-
   .navbar {
     position: absolute;
     top: 100%;
@@ -156,5 +155,10 @@
     width: 100%;
     text-align: center;
     margin: 0;
+  }
+}
+@media (max-width: 600px) {
+  .header {
+    padding: 1.3rem 1rem;
   }
 }
