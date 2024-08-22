@@ -106,7 +106,7 @@ const AssociationLMEdit: React.FC<ListProps> = ({
   return (
     <div className={`${styles.form} ${styles.detailsForm}`}>
       <h3>Uredite: {association.name}</h3>
-      <label htmlFor="name">Naziv</label>
+      <label htmlFor="name">Naziv:</label>
       <input
         type="text"
         id="name"
