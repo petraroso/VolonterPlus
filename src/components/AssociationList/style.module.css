@@ -1,5 +1,6 @@
 .associationList {
   list-style-type: none;
+  margin-bottom: 3rem;
 }
 .associationList li {
   min-height: 2rem;
@@ -7,7 +8,6 @@
   align-items: center;
   padding: 0 1rem;
 }
-
 .associationList li:nth-child(odd) {
   background-color: rgba(128, 128, 128, 0.2);
 }

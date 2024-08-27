@@ -105,7 +105,6 @@ export default function AssociationsPage() {
             </select>
           </div>
           <h2 className={styles.tableTitle}>Popis udruga</h2>
-          <hr></hr>
           <AssociationList
             associations={associations}
             approvedStatus={true}
@@ -116,7 +115,6 @@ export default function AssociationsPage() {
           {adminData.admin && (
             <>
               <h2 className={styles.tableTitle}>Zahtjevi za odobrenje</h2>
-              <hr></hr>
               <AssociationList
                 associations={associations}
                 approvedStatus={false}
