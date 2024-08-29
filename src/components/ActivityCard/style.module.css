@@ -21,7 +21,7 @@
   gap: 0.5rem;
 }
 .activityImage {
-  height: 100px;
+  height: 150px;
   width: 200px;
   object-fit: cover;
   margin-right: 2rem;
@@ -40,7 +40,6 @@
 @media (max-width: 600px) {
   .activityImage {
     width: 150px;
-    height: 150px;
     margin-right: 0;
   }
   .activityDateLocation {
