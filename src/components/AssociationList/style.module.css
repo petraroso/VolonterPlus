@@ -14,3 +14,8 @@
 .associationList li div:last-child {
   justify-self: center;
 }
+@media (max-width: 600px) {
+  .associationList li {
+    padding: 0 2px;
+  }
+}
