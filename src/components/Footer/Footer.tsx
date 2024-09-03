@@ -25,7 +25,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fa-brands fa-facebook"></i>
+            <i className="fa-brands fa-instagram"></i>
           </a>
           <a
             href="https://www.twitter.com"
