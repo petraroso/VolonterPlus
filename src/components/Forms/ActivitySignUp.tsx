@@ -57,6 +57,7 @@ export default function ActivitySignUp({
             console.log(result);
             setUsername({ ...username, name: "", surname: "" });
             setUpdateActivities((prev) => !prev);
+            setFocused({ ...focused, name: false, surname: false });
           })
           .catch((err) => console.log(err.message));
       } else {
@@ -72,6 +73,7 @@ export default function ActivitySignUp({
             console.log(result);
             setUsername({ ...username, name: "", surname: "" });
             setUpdateActivities((prev) => !prev);
+            setFocused({ ...focused, name: false, surname: false });
           })
           .catch((err) => console.log(err.message));
       }
