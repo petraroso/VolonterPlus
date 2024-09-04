@@ -108,6 +108,7 @@ export default function NewActivityForm({
         type="text"
         id="name"
         name="name"
+        autoComplete="off"
         placeholder="Naziv aktivnosti"
         value={formData.name}
         onChange={handleFormData}
@@ -126,6 +127,7 @@ export default function NewActivityForm({
       <textarea
         id="description"
         name="description"
+        autoComplete="off"
         placeholder="Opis (max 300 znakova)"
         maxLength={300}
         rows={7}
@@ -174,6 +176,7 @@ export default function NewActivityForm({
             type="text"
             id="association"
             name="association"
+            autoComplete="off"
             placeholder="Naziv udruge"
             value={formData.association}
             onChange={handleFormData}
@@ -208,6 +211,7 @@ export default function NewActivityForm({
         type="text"
         id="location"
         name="location"
+        autoComplete="street-address"
         placeholder="Mjesto održavanja"
         value={formData.location}
         onChange={handleFormData}
@@ -228,6 +232,7 @@ export default function NewActivityForm({
         type="text"
         id="image"
         name="image"
+        autoComplete="off"
         placeholder="../jadro.jpg"
         value={formData.image}
         onChange={handleFormData}

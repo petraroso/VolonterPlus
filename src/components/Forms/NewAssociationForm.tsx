@@ -77,6 +77,7 @@ export default function NewAssociationForm({
         type="text"
         id="name"
         name="name"
+        autoComplete="off"
         placeholder="Naziv udruge"
         value={formData.name}
         onChange={handleFormData}
@@ -96,6 +97,7 @@ export default function NewAssociationForm({
         type="text"
         id="address"
         name="address"
+        autoComplete="street-address"
         placeholder="Adresa udruge"
         value={formData.address}
         onChange={handleFormData}

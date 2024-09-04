@@ -97,7 +97,7 @@ export default function ActivitySignUp({
         type="text"
         id="name"
         name="name"
-        autoComplete="auto"
+        autoComplete="name"
         placeholder="Vaše ime"
         value={username.name}
         onChange={handleUsernameChange}
@@ -115,7 +115,7 @@ export default function ActivitySignUp({
         type="text"
         id="surname"
         name="surname"
-        autoComplete="auto"
+        autoComplete="name"
         placeholder="Vaše prezime"
         value={username.surname}
         onChange={handleUsernameChange}

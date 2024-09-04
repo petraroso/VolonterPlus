@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import styles from "./style.module.css"
+import styles from "./style.module.css";
 
 interface City {
   id: Number;
@@ -115,6 +115,7 @@ export default function NewVolunteerForm({
         type="text"
         id="name"
         name="name"
+        autoComplete="name"
         placeholder="Ime"
         value={formData.name}
         onChange={handleFormData}
@@ -133,6 +134,7 @@ export default function NewVolunteerForm({
         type="text"
         id="surname"
         name="surname"
+        autoComplete="name"
         placeholder="Prezime"
         value={formData.surname}
         onChange={handleFormData}
@@ -159,7 +161,9 @@ export default function NewVolunteerForm({
         data-focused={focused.contact.toString()}
         onBlur={handleFocus}
       ></input>
-      <span className={styles.errorFormMessage}>Unesite ispravnu email adresu</span>
+      <span className={styles.errorFormMessage}>
+        Unesite ispravnu email adresu
+      </span>
 
       <label htmlFor="city">Grad:</label>
       <select
@@ -187,6 +191,7 @@ export default function NewVolunteerForm({
         type="text"
         id="image"
         name="image"
+        autoComplete="off"
         placeholder="../jadro.jpg"
         value={formData.image}
         onChange={handleFormData}
@@ -245,6 +250,7 @@ export default function NewVolunteerForm({
       <textarea
         id="description"
         name="description"
+        autoComplete="off"
         placeholder="Opis volontera - opcionalan (max 300 znakova)"
         maxLength={300}
         rows={7}

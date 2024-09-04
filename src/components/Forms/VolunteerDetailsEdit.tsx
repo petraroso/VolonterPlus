@@ -135,6 +135,7 @@ export default function VolunteerDetailsEdit({
         type="text"
         id="name"
         name="name"
+        autoComplete="name"
         placeholder="Ime"
         value={newData.name}
         onChange={handleFormData}
@@ -153,6 +154,7 @@ export default function VolunteerDetailsEdit({
         type="text"
         id="surname"
         name="surname"
+        autoComplete="name"
         placeholder="Prezime"
         value={newData.surname}
         onChange={handleFormData}
@@ -209,6 +211,7 @@ export default function VolunteerDetailsEdit({
         type="text"
         id="image"
         name="image"
+        autoComplete="off"
         placeholder="../jadro.jpg"
         value={newData.image}
         onChange={handleFormData}
@@ -267,6 +270,7 @@ export default function VolunteerDetailsEdit({
       <textarea
         id="description"
         name="description"
+        autoComplete="off"
         placeholder="Opis volontera - opcionalan (max 300 znakova)"
         maxLength={300}
         rows={7}
