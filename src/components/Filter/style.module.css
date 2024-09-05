@@ -4,7 +4,7 @@
 .filterActivities {
   display: flex;
   flex-direction: column;
-  margin: 0 2rem;
+  margin: 0 0 0 2rem;
 }
 
 @media (min-width: 1045px) {
